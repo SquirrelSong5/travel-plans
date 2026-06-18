@@ -908,7 +908,7 @@
       display: grid;
       grid-template-columns: 1fr 220px;
       gap: 16px;
-      align-items: start;
+      align-items: stretch;
     }
     .time-block-main { min-width: 0; }
     .time-row {
@@ -917,14 +917,22 @@
       justify-content: space-between;
       gap: var(--sp-2);
     }
-    .cost-margin { align-self: start; }
+    .cost-margin {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
     .cost-margin-card {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
       background: var(--bg-soft);
       border-left: 3px solid var(--accent);
       border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
       padding: 8px 10px;
       font-size: var(--fs-xs);
       line-height: 1.45;
+      min-height: 100%;
     }
     .cost-line {
       display: flex;
@@ -946,7 +954,7 @@
     }
     .cost-line-total {
       border-top: 1px dashed var(--line);
-      margin-top: 4px;
+      margin-top: auto;
       padding-top: 6px;
       font-weight: 700;
     }
@@ -995,7 +1003,6 @@
     }
     .cost-margin-toggle .toggle-chevron { transition: transform 0.2s; }
     .cost-margin.is-expanded .toggle-chevron { transform: rotate(180deg); }
-    .cost-margin-card--collapsed .cost-line:not(.cost-line-total) { display: none; }
     .cost-sheet-backdrop {
       position: fixed;
       inset: 0;
@@ -1050,15 +1057,18 @@
       .cost-pill { background: #1a2e24; border-color: #2d5a45; color: #86efac; }
     }
     @media (max-width: 899px) {
-      .time-block-grid { grid-template-columns: 1fr; gap: 0; }
-      .cost-margin { grid-column: 1 / -1; }
+      .time-block-grid { grid-template-columns: 1fr; gap: 0; align-items: start; }
+      .cost-margin { grid-column: 1 / -1; min-height: 0; }
       .cost-margin-toggle { display: flex; }
       .cost-margin-card {
+        flex: none;
+        min-height: 0;
         border-left: none;
         border-top: 3px solid var(--accent);
         border-radius: var(--radius-sm);
         margin-top: 0;
       }
+      .cost-line-total { margin-top: 4px; }
       .cost-margin:not(.is-expanded) .cost-margin-card { display: none; }
     }
     @media (max-width: 599px) {
@@ -12323,7 +12333,7 @@
             <button type="button" class="cost-margin-toggle" aria-expanded="false" data-slot-toggle="${esc(slotId)}">
               <span>本段花销 ${pillLabel}</span><span class="toggle-chevron">▾</span>
             </button>
-            <div class="cost-margin-card cost-margin-card--collapsed" id="cost-${esc(slotId)}">${inner}</div>
+            <div class="cost-margin-card" id="cost-${esc(slotId)}">${inner}</div>
           </aside>`,
           pillHtml: `<button type="button" class="cost-pill" data-slot-pill="${esc(slotId)}" aria-label="查看本段花销">${pillLabel}</button>`,
           totalStr: pillLabel,
@@ -12389,8 +12399,6 @@
             const margin = btn.closest('.cost-margin');
             const expanded = margin.classList.toggle('is-expanded');
             btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-            const card = margin.querySelector('.cost-margin-card');
-            if (card) card.classList.toggle('cost-margin-card--collapsed', !expanded);
           });
         });
         document.querySelectorAll('[data-slot-pill]').forEach(btn => {
