@@ -16,9 +16,6 @@
     "lng": 118.074704,
     "lat": 24.463186,
     "amap_uri": "https://uri.amap.com/marker?position=118.074704,24.463186&name=如忆酒店（中山路步行街八市店）",
-    "apple_uri": "https://maps.apple.com/?daddr=24.463186,118.074704&dirflg=w",
-    "google_uri": "https://www.google.com/maps/dir/?api=1&destination=24.463186,118.074704",
-    "booking_uri": "https://www.booking.com/search.html?ss=Ruyi+Hotel+Xiamen+Zhongshan+Road+Basin+8",
     "why": "鹭江道 270 号远洋大厦，步行 5-8 分钟到中山路/八市，打车 5-8 分钟到邮轮中心。",
     "rating": "4.1",
     "commute": [
