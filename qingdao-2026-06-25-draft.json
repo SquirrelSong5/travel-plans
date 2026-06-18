@@ -6,44 +6,82 @@
   "summary": "青岛 4 天 3 晚毕业游。酒店选汉庭栈桥火车站店（市南区，离地铁G口100米），4 天不换酒店，全程节奏松散，每天 ≤ 3 个 POI。",
   "weather_plan": "6 月底青岛气温 21-28°C，多云为主，海边紫外线强；雨天改方案：啤酒博物馆（室内）/ 大学路咖啡（半室内）。",
   "party_size": 3,
-  "trip_center": [120.317070, 36.063599],
+  "trip_center": [
+    120.31707,
+    36.063599
+  ],
   "hotel": {
     "name": "汉庭酒店(青岛栈桥火车站店)",
     "address": "山东省青岛市市南区广西路60号甲(青岛站地铁站G口步行100米)",
-    "lng": 120.317070,
+    "lng": 120.31707,
     "lat": 36.063599,
     "amap_uri": "https://uri.amap.com/marker?position=120.317070,36.063599&name=汉庭酒店(青岛栈桥火车站店)",
     "why": "市南区核心，离青岛地铁G口100米；栈桥步行 5 分钟；机场大巴705路直达；老城景点步行/1 站地铁可达。",
     "rating": "4.2",
+    "room_arrangement": "3 人订 2 间房：情侣 1 间（双床房或大床房）+ 闺蜜 1 间（单人/大床房），同一酒店方便照应。",
     "commute": [
-      {"day": 1, "region": "栈桥/啤酒街", "duration_min": 5, "mode": "步行"},
-      {"day": 2, "region": "信号山/大学路/五四广场", "duration_min": 20, "mode": "步行+地铁"},
-      {"day": 3, "region": "啤酒博物馆/八大关", "duration_min": 26, "mode": "地铁"},
-      {"day": 4, "region": "机场", "duration_min": 90, "mode": "地铁1+8号线"}
+      {
+        "day": 1,
+        "region": "栈桥/啤酒街",
+        "duration_min": 5,
+        "mode": "步行"
+      },
+      {
+        "day": 2,
+        "region": "信号山/大学路/五四广场",
+        "duration_min": 20,
+        "mode": "步行+地铁"
+      },
+      {
+        "day": 3,
+        "region": "啤酒博物馆/八大关",
+        "duration_min": 26,
+        "mode": "地铁"
+      },
+      {
+        "day": 4,
+        "region": "机场",
+        "duration_min": 90,
+        "mode": "地铁1+8号线"
+      }
     ],
     "price": {
-      "min": 200, "max": 280, "currency": "CNY", "unit": "per_night",
-      "quantity": 3, "total_min": 600, "total_max": 840,
-      "label": "住宿（双床房）", "source": "ctrip-webfetch",
-      "source_ref": "汉庭栈桥火车站店同区位段位价"
+      "min": 200,
+      "max": 280,
+      "currency": "CNY",
+      "unit": "per_night_per_room",
+      "quantity": 6,
+      "total_min": 1200,
+      "total_max": 1680,
+      "label": "住宿（2 间房 × 3 晚）",
+      "source": "ctrip-webfetch",
+      "source_ref": "汉庭栈桥火车站店同区位段位价，3 人订 2 间房"
     }
   },
   "days": [
     {
-      "day": 1, "date": "2026-06-25", "weekday": "周四",
+      "day": 1,
+      "date": "2026-06-25",
+      "weekday": "周四",
       "region": "栈桥 / 啤酒街",
       "theme": "抵达 + 老城海边漫步",
       "weather": "多云 26℃",
       "weather_emoji": "⛅",
       "weather_decision": "栈桥海边散步免费；小雨正常逛；大雨改酒店休息",
       "region_flex": true,
-      "center": [120.328, 36.067], "zoom": 14,
+      "center": [
+        120.328,
+        36.067
+      ],
+      "zoom": 14,
       "pois": [
         {
-          "idx": 1, "time": "14:00",
+          "idx": 1,
+          "time": "14:00",
           "name": "青岛胶东国际机场",
           "cat": "transport",
-          "lng": 120.093102, "lat": 36.362832,
+          "lng": 120.093102,
+          "lat": 36.362832,
           "duration_min": 90,
           "note": "取行李 + 地铁1号线→青岛北站→地铁8号线→胶东机场（90分钟全程）",
           "why": "到达日 1.5h 缓冲满足 V5",
@@ -51,17 +89,59 @@
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=120.093102,36.362832&mode=transit"
           },
-          "price": {"min": 0, "max": 0, "currency": "CNY", "unit": "free", "quantity": 1, "total_min": 0, "total_max": 0, "label": "活动", "source": "computed", "source_ref": "机场免费进出"},
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "活动",
+            "source": "computed",
+            "source_ref": "机场免费进出"
+          },
           "slot_costs": [
-            {"label": "机票", "price": {"min": 320, "max": 490, "currency": "CNY", "unit": "per_person", "quantity": 3, "total_min": 960, "total_max": 1470, "label": "机票（武汉-青岛单程）", "source": "ctrip-webfetch", "source_ref": "携程 6/25 武汉→青岛直飞 320-490/单程"}, "attach": "arrival"},
-            {"label": "地铁", "price": {"min": 8, "max": 10, "currency": "CNY", "unit": "per_person", "quantity": 3, "total_min": 24, "total_max": 30, "label": "机场地铁 1+8 号线", "source": "amap-mcp", "source_ref": "maps_direction_transit 实算"}}
+            {
+              "label": "机票",
+              "price": {
+                "min": 320,
+                "max": 490,
+                "currency": "CNY",
+                "unit": "per_person",
+                "quantity": 3,
+                "total_min": 960,
+                "total_max": 1470,
+                "label": "机票（武汉-青岛单程）",
+                "source": "ctrip-webfetch",
+                "source_ref": "携程 6/25 武汉→青岛直飞 320-490/单程"
+              },
+              "attach": "arrival"
+            },
+            {
+              "label": "地铁",
+              "price": {
+                "min": 8,
+                "max": 10,
+                "currency": "CNY",
+                "unit": "per_person",
+                "quantity": 3,
+                "total_min": 24,
+                "total_max": 30,
+                "label": "机场地铁 1+8 号线",
+                "source": "amap-mcp",
+                "source_ref": "maps_direction_transit 实算"
+              }
+            }
           ]
         },
         {
-          "idx": 2, "time": "16:30",
+          "idx": 2,
+          "time": "16:30",
           "name": "汉庭酒店(青岛栈桥火车站店)",
           "cat": "hotel",
-          "lng": 120.317070, "lat": 36.063599,
+          "lng": 120.31707,
+          "lat": 36.063599,
           "duration_min": 45,
           "note": "3 人订双床房，提前 1-2 周携程比价",
           "why": "Day 1 落地休整；酒店即锚点",
@@ -70,16 +150,43 @@
             "amap_navi": "https://uri.amap.com/navigation?to=120.317070,36.063599&mode=walk",
             "booking": "https://hotels.ctrip.com/hotel/qingdao317070"
           },
-          "price": {"min": 0, "max": 0, "currency": "CNY", "unit": "free", "quantity": 1, "total_min": 0, "total_max": 0, "label": "入住", "source": "computed", "source_ref": "房费见抽屉"},
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "入住",
+            "source": "computed",
+            "source_ref": "房费见抽屉"
+          },
           "slot_costs": [
-            {"label": "步行", "price": {"min": 0, "max": 0, "currency": "CNY", "unit": "free", "quantity": 1, "total_min": 0, "total_max": 0, "label": "步行", "source": "computed", "source_ref": "地铁口 100 米"}}
+            {
+              "label": "步行",
+              "price": {
+                "min": 0,
+                "max": 0,
+                "currency": "CNY",
+                "unit": "free",
+                "quantity": 1,
+                "total_min": 0,
+                "total_max": 0,
+                "label": "步行",
+                "source": "computed",
+                "source_ref": "地铁口 100 米"
+              }
+            }
           ]
         },
         {
-          "idx": 3, "time": "17:30",
+          "idx": 3,
+          "time": "17:30",
           "name": "栈桥",
           "cat": "scenic",
-          "lng": 120.319300, "lat": 36.061736,
+          "lng": 120.3193,
+          "lat": 36.061736,
           "duration_min": 60,
           "note": "青岛地标，免费；回澜阁看海看夕阳",
           "why": "步行 5 分钟；不暴走，1 小时来回",
@@ -88,16 +195,43 @@
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=120.319300,36.061736&mode=walk"
           },
-          "price": {"min": 0, "max": 0, "currency": "CNY", "unit": "free", "quantity": 3, "total_min": 0, "total_max": 0, "label": "门票", "source": "amap-mcp", "source_ref": "maps_search_detail 显示免门票"},
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 3,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "门票",
+            "source": "amap-mcp",
+            "source_ref": "maps_search_detail 显示免门票"
+          },
           "slot_costs": [
-            {"label": "步行", "price": {"min": 0, "max": 0, "currency": "CNY", "unit": "free", "quantity": 1, "total_min": 0, "total_max": 0, "label": "步行", "source": "computed", "source_ref": "416m/5min"}}
+            {
+              "label": "步行",
+              "price": {
+                "min": 0,
+                "max": 0,
+                "currency": "CNY",
+                "unit": "free",
+                "quantity": 1,
+                "total_min": 0,
+                "total_max": 0,
+                "label": "步行",
+                "source": "computed",
+                "source_ref": "416m/5min"
+              }
+            }
           ]
         },
         {
-          "idx": 4, "time": "19:00",
+          "idx": 4,
+          "time": "19:00",
           "name": "酒香源·精酿·海鲜·青岛菜(啤酒博物馆店)",
           "cat": "meal",
-          "lng": 120.347318, "lat": 36.079106,
+          "lng": 120.347318,
+          "lat": 36.079106,
           "duration_min": 90,
           "note": "登州路啤酒街口，青岛海鲜+精酿；人均 80-120",
           "why": "Day 1 落地简餐，海鲜补能量；地铁1号线直达",
@@ -105,28 +239,504 @@
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=120.347318,36.079106&mode=transit"
           },
-          "price": {"min": 240, "max": 360, "currency": "CNY", "unit": "per_table", "quantity": 1, "total_min": 240, "total_max": 360, "label": "晚餐 3人", "source": "amap-mcp", "source_ref": "海鲜餐人均 80-120"},
+          "price": {
+            "min": 240,
+            "max": 360,
+            "currency": "CNY",
+            "unit": "per_table",
+            "quantity": 1,
+            "total_min": 240,
+            "total_max": 360,
+            "label": "晚餐 3人",
+            "source": "amap-mcp",
+            "source_ref": "海鲜餐人均 80-120"
+          },
           "slot_costs": [
-            {"label": "地铁", "price": {"min": 2, "max": 3, "currency": "CNY", "unit": "per_person", "quantity": 3, "total_min": 6, "total_max": 9, "label": "地铁1号线 青岛站→广饶路", "source": "amap-mcp", "source_ref": "maps_direction_transit 实算"}}
+            {
+              "label": "地铁",
+              "price": {
+                "min": 2,
+                "max": 3,
+                "currency": "CNY",
+                "unit": "per_person",
+                "quantity": 3,
+                "total_min": 6,
+                "total_max": 9,
+                "label": "地铁1号线 青岛站→广饶路",
+                "source": "amap-mcp",
+                "source_ref": "maps_direction_transit 实算"
+              }
+            }
           ]
+        }
+      ],
+      "transports": [
+        {
+          "from_idx": 1,
+          "to_idx": 2,
+          "mode": "transit",
+          "duration_min": 140,
+          "distance_m": 55444,
+          "description": "地铁 1+8 号线 90 分钟（55km）机场 → 酒店",
+          "source": "amap-rest-api",
+          "duration_sec": 5404,
+          "path": [
+            [
+              120.093788,
+              36.361229
+            ],
+            [
+              120.095173,
+              36.359411
+            ],
+            [
+              120.117884,
+              36.312213
+            ],
+            [
+              120.140693,
+              36.25817
+            ],
+            [
+              120.162169,
+              36.258928
+            ],
+            [
+              120.190831,
+              36.249353
+            ],
+            [
+              120.197009,
+              36.231194
+            ],
+            [
+              120.209664,
+              36.231988
+            ],
+            [
+              120.221943,
+              36.237359
+            ],
+            [
+              120.228792,
+              36.238192
+            ],
+            [
+              120.241732,
+              36.208996
+            ],
+            [
+              120.254727,
+              36.208605
+            ],
+            [
+              120.26794,
+              36.210538
+            ],
+            [
+              120.27448,
+              36.198751
+            ],
+            [
+              120.285354,
+              36.192998
+            ],
+            [
+              120.376728,
+              36.169797
+            ],
+            [
+              120.376012,
+              36.156979
+            ],
+            [
+              120.380805,
+              36.154567
+            ],
+            [
+              120.382783,
+              36.151101
+            ],
+            [
+              120.381032,
+              36.146327
+            ],
+            [
+              120.375576,
+              36.142554
+            ],
+            [
+              120.373382,
+              36.133369
+            ],
+            [
+              120.370843,
+              36.127983
+            ],
+            [
+              120.362876,
+              36.118724
+            ],
+            [
+              120.361394,
+              36.096883
+            ],
+            [
+              120.35412,
+              36.0822
+            ],
+            [
+              120.341495,
+              36.075294
+            ],
+            [
+              120.323312,
+              36.072538
+            ],
+            [
+              120.315329,
+              36.070515
+            ],
+            [
+              120.314407,
+              36.063938
+            ],
+            [
+              120.316338,
+              36.063766
+            ],
+            [
+              120.317009,
+              36.063602
+            ]
+          ],
+          "fare": {
+            "min": 24,
+            "max": 30,
+            "currency": "CNY",
+            "unit": "per_group",
+            "quantity": 1,
+            "total_min": 24,
+            "total_max": 30,
+            "label": "地铁 3 人",
+            "source": "amap-mcp"
+          }
+        },
+        {
+          "from_idx": 2,
+          "to_idx": 3,
+          "mode": "walking",
+          "duration_min": 4,
+          "distance_m": 416,
+          "description": "步行 6 分钟（416m）酒店 → 栈桥",
+          "source": "amap-rest-api",
+          "duration_sec": 333,
+          "path": [
+            [
+              120.317005,
+              36.063598
+            ],
+            [
+              120.317005,
+              36.063702
+            ],
+            [
+              120.317005,
+              36.063702
+            ],
+            [
+              120.317005,
+              36.063767
+            ],
+            [
+              120.317005,
+              36.063767
+            ],
+            [
+              120.3176,
+              36.063772
+            ],
+            [
+              120.3176,
+              36.063772
+            ],
+            [
+              120.317947,
+              36.063785
+            ],
+            [
+              120.317947,
+              36.063785
+            ],
+            [
+              120.318212,
+              36.063793
+            ],
+            [
+              120.318212,
+              36.063793
+            ],
+            [
+              120.318872,
+              36.063815
+            ],
+            [
+              120.318872,
+              36.063815
+            ],
+            [
+              120.318958,
+              36.062799
+            ],
+            [
+              120.319006,
+              36.062678
+            ],
+            [
+              120.319006,
+              36.062678
+            ],
+            [
+              120.319067,
+              36.062452
+            ],
+            [
+              120.319067,
+              36.062452
+            ],
+            [
+              120.319132,
+              36.062248
+            ],
+            [
+              120.319132,
+              36.062248
+            ],
+            [
+              120.319158,
+              36.06217
+            ],
+            [
+              120.319158,
+              36.06217
+            ],
+            [
+              120.319301,
+              36.061823
+            ],
+            [
+              120.319301,
+              36.061823
+            ],
+            [
+              120.319336,
+              36.061749
+            ]
+          ],
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "步行免费",
+            "source": "computed"
+          }
+        },
+        {
+          "from_idx": 3,
+          "to_idx": 4,
+          "mode": "transit",
+          "duration_min": 11,
+          "distance_m": 4439,
+          "description": "地铁1号线 30 分钟（4.4km）栈桥 → 啤酒街",
+          "source": "amap-rest-api",
+          "duration_sec": 1772,
+          "path": [
+            [
+              120.319336,
+              36.061745
+            ],
+            [
+              120.319138,
+              36.062244
+            ],
+            [
+              120.319008,
+              36.062675
+            ],
+            [
+              120.318329,
+              36.062782
+            ],
+            [
+              120.316238,
+              36.06311
+            ],
+            [
+              120.31588,
+              36.063213
+            ],
+            [
+              120.315926,
+              36.063507
+            ],
+            [
+              120.315697,
+              36.063488
+            ],
+            [
+              120.315109,
+              36.06369
+            ],
+            [
+              120.314407,
+              36.063931
+            ],
+            [
+              120.314543,
+              36.064199
+            ],
+            [
+              120.314982,
+              36.065223
+            ],
+            [
+              120.314969,
+              36.068963
+            ],
+            [
+              120.315025,
+              36.070151
+            ],
+            [
+              120.315156,
+              36.070369
+            ],
+            [
+              120.315413,
+              36.070581
+            ],
+            [
+              120.317068,
+              36.071535
+            ],
+            [
+              120.31775,
+              36.071694
+            ],
+            [
+              120.320197,
+              36.071896
+            ],
+            [
+              120.32169,
+              36.072184
+            ],
+            [
+              120.323312,
+              36.072538
+            ],
+            [
+              120.323529,
+              36.072587
+            ],
+            [
+              120.324294,
+              36.072603
+            ],
+            [
+              120.328788,
+              36.07291
+            ],
+            [
+              120.330704,
+              36.073257
+            ],
+            [
+              120.33663,
+              36.074432
+            ],
+            [
+              120.342499,
+              36.075478
+            ],
+            [
+              120.343788,
+              36.075264
+            ],
+            [
+              120.343803,
+              36.075546
+            ],
+            [
+              120.344688,
+              36.075729
+            ],
+            [
+              120.345764,
+              36.07597
+            ],
+            [
+              120.34549,
+              36.07695
+            ],
+            [
+              120.345291,
+              36.077682
+            ],
+            [
+              120.345085,
+              36.078514
+            ],
+            [
+              120.34597,
+              36.078671
+            ],
+            [
+              120.34597,
+              36.078671
+            ]
+          ],
+          "fare": {
+            "min": 6,
+            "max": 9,
+            "currency": "CNY",
+            "unit": "per_group",
+            "quantity": 1,
+            "total_min": 6,
+            "total_max": 9,
+            "label": "地铁 3 人",
+            "source": "amap-mcp"
+          }
         }
       ]
     },
     {
-      "day": 2, "date": "2026-06-26", "weekday": "周五",
+      "day": 2,
+      "date": "2026-06-26",
+      "weekday": "周五",
       "region": "信号山 / 大学路 / 五四广场",
       "theme": "老城全景 + 文艺漫步",
       "weather": "多云 27℃",
       "weather_emoji": "⛅",
       "weather_decision": "信号山户外；小雨改大学路咖啡+室内",
       "region_flex": false,
-      "center": [120.350, 36.062], "zoom": 13,
+      "center": [
+        120.35,
+        36.062
+      ],
+      "zoom": 13,
       "pois": [
         {
-          "idx": 1, "time": "09:30",
+          "idx": 1,
+          "time": "09:30",
           "name": "信号山公园",
           "cat": "scenic",
-          "lng": 120.331561, "lat": 36.066446,
+          "lng": 120.331561,
+          "lat": 36.066446,
           "duration_min": 90,
           "note": "海拔 98 米，山顶三座红色蘑菇楼；公园免门票，旋转观景楼 10 元/人",
           "why": "步行 20 分钟；俯瞰青岛红瓦绿树最佳点",
@@ -135,16 +745,43 @@
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=120.331561,36.066446&mode=walk"
           },
-          "price": {"min": 0, "max": 30, "currency": "CNY", "unit": "per_person", "quantity": 3, "total_min": 0, "total_max": 90, "label": "旋转观景楼 3 人（可选）", "source": "ctrip-webfetch", "source_ref": "携程/同程 10 元/人（免门票+观景楼）"},
+          "price": {
+            "min": 0,
+            "max": 30,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 0,
+            "total_max": 90,
+            "label": "旋转观景楼 3 人（可选）",
+            "source": "ctrip-webfetch",
+            "source_ref": "携程/同程 10 元/人（免门票+观景楼）"
+          },
           "slot_costs": [
-            {"label": "步行", "price": {"min": 0, "max": 0, "currency": "CNY", "unit": "free", "quantity": 1, "total_min": 0, "total_max": 0, "label": "步行", "source": "amap-mcp", "source_ref": "1555m/20min"}}
+            {
+              "label": "步行",
+              "price": {
+                "min": 0,
+                "max": 0,
+                "currency": "CNY",
+                "unit": "free",
+                "quantity": 1,
+                "total_min": 0,
+                "total_max": 0,
+                "label": "步行",
+                "source": "amap-mcp",
+                "source_ref": "1555m/20min"
+              }
+            }
           ]
         },
         {
-          "idx": 2, "time": "12:00",
+          "idx": 2,
+          "time": "12:00",
           "name": "米高咖啡吧(大学路店) / 附近午餐",
           "cat": "meal",
-          "lng": 120.334759, "lat": 36.064487,
+          "lng": 120.334759,
+          "lat": 36.064487,
           "duration_min": 75,
           "note": "大学路 48 号院内，文艺咖啡；周边也有丽姐小馆、平价快餐",
           "why": "步行 12 分钟；信号山下山后顺路午餐",
@@ -152,16 +789,43 @@
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=120.334759,36.064487&mode=walk"
           },
-          "price": {"min": 90, "max": 180, "currency": "CNY", "unit": "per_table", "quantity": 1, "total_min": 90, "total_max": 180, "label": "午餐+咖啡 3人", "source": "amap-mcp", "source_ref": "咖啡 30-40/杯 + 简餐人均 30-60"},
+          "price": {
+            "min": 90,
+            "max": 180,
+            "currency": "CNY",
+            "unit": "per_table",
+            "quantity": 1,
+            "total_min": 90,
+            "total_max": 180,
+            "label": "午餐+咖啡 3人",
+            "source": "amap-mcp",
+            "source_ref": "咖啡 30-40/杯 + 简餐人均 30-60"
+          },
           "slot_costs": [
-            {"label": "步行", "price": {"min": 0, "max": 0, "currency": "CNY", "unit": "free", "quantity": 1, "total_min": 0, "total_max": 0, "label": "步行", "source": "amap-mcp", "source_ref": "929m/12min"}}
+            {
+              "label": "步行",
+              "price": {
+                "min": 0,
+                "max": 0,
+                "currency": "CNY",
+                "unit": "free",
+                "quantity": 1,
+                "total_min": 0,
+                "total_max": 0,
+                "label": "步行",
+                "source": "amap-mcp",
+                "source_ref": "929m/12min"
+              }
+            }
           ]
         },
         {
-          "idx": 3, "time": "14:30",
+          "idx": 3,
+          "time": "14:30",
           "name": "五四广场",
           "cat": "scenic",
-          "lng": 120.384576, "lat": 36.062740,
+          "lng": 120.384576,
+          "lat": 36.06274,
           "duration_min": 90,
           "note": "地标'五月的风'，奥帆中心隔壁；地铁3号线直达",
           "why": "地铁 34 分钟；下午阳光不晒，看城市海岸线",
@@ -169,16 +833,43 @@
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=120.384576,36.062740&mode=transit"
           },
-          "price": {"min": 0, "max": 0, "currency": "CNY", "unit": "free", "quantity": 3, "total_min": 0, "total_max": 0, "label": "门票", "source": "amap-mcp", "source_ref": "广场免门票"},
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 3,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "门票",
+            "source": "amap-mcp",
+            "source_ref": "广场免门票"
+          },
           "slot_costs": [
-            {"label": "地铁", "price": {"min": 3, "max": 4, "currency": "CNY", "unit": "per_person", "quantity": 3, "total_min": 9, "total_max": 12, "label": "地铁3号线 人民会堂→五四广场", "source": "amap-mcp", "source_ref": "maps_direction_transit 实算 2051s"}}
+            {
+              "label": "地铁",
+              "price": {
+                "min": 3,
+                "max": 4,
+                "currency": "CNY",
+                "unit": "per_person",
+                "quantity": 3,
+                "total_min": 9,
+                "total_max": 12,
+                "label": "地铁3号线 人民会堂→五四广场",
+                "source": "amap-mcp",
+                "source_ref": "maps_direction_transit 实算 2051s"
+              }
+            }
           ]
         },
         {
-          "idx": 4, "time": "19:00",
+          "idx": 4,
+          "time": "19:00",
           "name": "出海·地标小船海鲜(云霄路)",
           "cat": "meal",
-          "lng": 120.387000, "lat": 36.065000,
+          "lng": 120.387,
+          "lat": 36.065,
           "duration_min": 90,
           "note": "五四广场附近；主打青岛本地海鲜+创意菜；人均 120-150",
           "why": "Day 2 海鲜正餐；地铁3号线回酒店前吃",
@@ -186,28 +877,540 @@
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=120.387000,36.065000&mode=walk"
           },
-          "price": {"min": 360, "max": 450, "currency": "CNY", "unit": "per_table", "quantity": 1, "total_min": 360, "total_max": 450, "label": "晚餐 3人", "source": "amap-mcp", "source_ref": "海鲜正餐人均 120-150"},
+          "price": {
+            "min": 360,
+            "max": 450,
+            "currency": "CNY",
+            "unit": "per_table",
+            "quantity": 1,
+            "total_min": 360,
+            "total_max": 450,
+            "label": "晚餐 3人",
+            "source": "amap-mcp",
+            "source_ref": "海鲜正餐人均 120-150"
+          },
           "slot_costs": [
-            {"label": "地铁", "price": {"min": 3, "max": 4, "currency": "CNY", "unit": "per_person", "quantity": 3, "total_min": 9, "total_max": 12, "label": "地铁3号线 五四广场→青岛站", "source": "amap-mcp", "source_ref": "maps_direction_transit 实算 1811s"}}
+            {
+              "label": "地铁",
+              "price": {
+                "min": 3,
+                "max": 4,
+                "currency": "CNY",
+                "unit": "per_person",
+                "quantity": 3,
+                "total_min": 9,
+                "total_max": 12,
+                "label": "地铁3号线 五四广场→青岛站",
+                "source": "amap-mcp",
+                "source_ref": "maps_direction_transit 实算 1811s"
+              }
+            }
           ]
+        }
+      ],
+      "transports": [
+        {
+          "from_idx": 1,
+          "to_idx": 2,
+          "mode": "walking",
+          "duration_min": 5,
+          "distance_m": 929,
+          "description": "步行 12 分钟（929m）信号山 → 大学路咖啡",
+          "source": "amap-rest-api",
+          "duration_sec": 743,
+          "path": [
+            [
+              120.33145,
+              36.066419
+            ],
+            [
+              120.331497,
+              36.066306
+            ],
+            [
+              120.331606,
+              36.066202
+            ],
+            [
+              120.331367,
+              36.066185
+            ],
+            [
+              120.331189,
+              36.06628
+            ],
+            [
+              120.331007,
+              36.066337
+            ],
+            [
+              120.330694,
+              36.066437
+            ],
+            [
+              120.330447,
+              36.066467
+            ],
+            [
+              120.330247,
+              36.06638
+            ],
+            [
+              120.329957,
+              36.066246
+            ],
+            [
+              120.329952,
+              36.066159
+            ],
+            [
+              120.330048,
+              36.066128
+            ],
+            [
+              120.330026,
+              36.066098
+            ],
+            [
+              120.329909,
+              36.065929
+            ],
+            [
+              120.330056,
+              36.065816
+            ],
+            [
+              120.330187,
+              36.065664
+            ],
+            [
+              120.330339,
+              36.065473
+            ],
+            [
+              120.330547,
+              36.065278
+            ],
+            [
+              120.330738,
+              36.065161
+            ],
+            [
+              120.330985,
+              36.064922
+            ],
+            [
+              120.331406,
+              36.064583
+            ],
+            [
+              120.332352,
+              36.064045
+            ],
+            [
+              120.3325,
+              36.064032
+            ],
+            [
+              120.332305,
+              36.063806
+            ],
+            [
+              120.332118,
+              36.063568
+            ],
+            [
+              120.332083,
+              36.063173
+            ],
+            [
+              120.332179,
+              36.063155
+            ],
+            [
+              120.332418,
+              36.063142
+            ],
+            [
+              120.332622,
+              36.063151
+            ],
+            [
+              120.33299,
+              36.063181
+            ],
+            [
+              120.333429,
+              36.06326
+            ],
+            [
+              120.3348,
+              36.063728
+            ],
+            [
+              120.334601,
+              36.063789
+            ],
+            [
+              120.334601,
+              36.063789
+            ]
+          ],
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "步行免费",
+            "source": "computed"
+          }
+        },
+        {
+          "from_idx": 2,
+          "to_idx": 3,
+          "mode": "transit",
+          "duration_min": 16,
+          "distance_m": 4846,
+          "description": "地铁3号线 34 分钟（4.8km）大学路 → 五四广场",
+          "source": "amap-rest-api",
+          "duration_sec": 2051,
+          "path": [
+            [
+              120.334595,
+              36.063789
+            ],
+            [
+              120.334343,
+              36.063023
+            ],
+            [
+              120.333603,
+              36.062401
+            ],
+            [
+              120.330574,
+              36.060635
+            ],
+            [
+              120.330376,
+              36.060303
+            ],
+            [
+              120.329875,
+              36.060331
+            ],
+            [
+              120.33205,
+              36.059202
+            ],
+            [
+              120.335161,
+              36.058856
+            ],
+            [
+              120.340125,
+              36.059098
+            ],
+            [
+              120.342585,
+              36.05951
+            ],
+            [
+              120.347624,
+              36.060728
+            ],
+            [
+              120.3487,
+              36.06089
+            ],
+            [
+              120.349478,
+              36.060848
+            ],
+            [
+              120.350156,
+              36.060545
+            ],
+            [
+              120.350986,
+              36.059422
+            ],
+            [
+              120.351731,
+              36.058427
+            ],
+            [
+              120.352518,
+              36.057473
+            ],
+            [
+              120.35373,
+              36.056434
+            ],
+            [
+              120.355113,
+              36.055502
+            ],
+            [
+              120.355977,
+              36.054721
+            ],
+            [
+              120.356976,
+              36.053548
+            ],
+            [
+              120.359051,
+              36.053636
+            ],
+            [
+              120.361602,
+              36.054196
+            ],
+            [
+              120.365417,
+              36.055403
+            ],
+            [
+              120.369183,
+              36.057541
+            ],
+            [
+              120.373084,
+              36.06018
+            ],
+            [
+              120.374846,
+              36.061695
+            ],
+            [
+              120.375544,
+              36.062206
+            ],
+            [
+              120.37942,
+              36.064278
+            ],
+            [
+              120.38073,
+              36.064953
+            ],
+            [
+              120.381599,
+              36.065075
+            ],
+            [
+              120.382401,
+              36.065628
+            ],
+            [
+              120.38369,
+              36.066017
+            ],
+            [
+              120.383804,
+              36.065739
+            ],
+            [
+              120.384254,
+              36.064716
+            ],
+            [
+              120.384689,
+              36.06377
+            ],
+            [
+              120.385025,
+              36.062908
+            ],
+            [
+              120.384583,
+              36.062729
+            ],
+            [
+              120.384583,
+              36.062729
+            ]
+          ],
+          "fare": {
+            "min": 9,
+            "max": 12,
+            "currency": "CNY",
+            "unit": "per_group",
+            "quantity": 1,
+            "total_min": 9,
+            "total_max": 12,
+            "label": "地铁 3 人",
+            "source": "amap-mcp"
+          }
+        },
+        {
+          "from_idx": 3,
+          "to_idx": 4,
+          "mode": "walking",
+          "duration_min": 5,
+          "distance_m": 600,
+          "description": "步行 8 分钟（600m）五四广场 → 出海海鲜(云霄路)",
+          "source": "amap-rest-api",
+          "duration_sec": 480,
+          "path": [
+            [
+              120.384579,
+              36.062726
+            ],
+            [
+              120.385074,
+              36.062799
+            ],
+            [
+              120.385074,
+              36.062795
+            ],
+            [
+              120.385026,
+              36.062904
+            ],
+            [
+              120.385026,
+              36.062904
+            ],
+            [
+              120.385026,
+              36.062904
+            ],
+            [
+              120.385009,
+              36.062964
+            ],
+            [
+              120.385009,
+              36.062964
+            ],
+            [
+              120.386385,
+              36.063064
+            ],
+            [
+              120.386385,
+              36.063064
+            ],
+            [
+              120.387196,
+              36.063125
+            ],
+            [
+              120.387196,
+              36.063125
+            ],
+            [
+              120.386953,
+              36.063464
+            ],
+            [
+              120.386953,
+              36.063464
+            ],
+            [
+              120.386549,
+              36.064032
+            ],
+            [
+              120.386549,
+              36.064032
+            ],
+            [
+              120.386467,
+              36.064136
+            ],
+            [
+              120.386463,
+              36.064136
+            ],
+            [
+              120.386463,
+              36.064201
+            ],
+            [
+              120.386484,
+              36.064275
+            ],
+            [
+              120.386549,
+              36.06434
+            ],
+            [
+              120.386658,
+              36.06441
+            ],
+            [
+              120.386658,
+              36.06441
+            ],
+            [
+              120.386727,
+              36.064514
+            ],
+            [
+              120.386727,
+              36.064722
+            ],
+            [
+              120.386727,
+              36.064722
+            ],
+            [
+              120.386832,
+              36.064735
+            ],
+            [
+              120.386862,
+              36.064761
+            ],
+            [
+              120.386875,
+              36.065
+            ]
+          ],
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "步行免费",
+            "source": "computed"
+          }
         }
       ]
     },
     {
-      "day": 3, "date": "2026-06-27", "weekday": "周六",
+      "day": 3,
+      "date": "2026-06-27",
+      "weekday": "周六",
       "region": "啤酒博物馆 / 八大关",
       "theme": "啤酒文化 + 万国建筑",
       "weather": "多云 28℃",
       "weather_emoji": "⛅",
       "weather_decision": "八大关户外；极热可缩短为 1.5 小时",
       "region_flex": false,
-      "center": [120.345, 36.065], "zoom": 13,
+      "center": [
+        120.345,
+        36.065
+      ],
+      "zoom": 13,
       "pois": [
         {
-          "idx": 1, "time": "09:30",
+          "idx": 1,
+          "time": "09:30",
           "name": "青岛啤酒博物馆",
           "cat": "museum",
-          "lng": 120.345974, "lat": 36.078675,
+          "lng": 120.345974,
+          "lat": 36.078675,
           "duration_min": 150,
           "note": "百年青啤工业遗产；需提前公众号/携程实名预约；双馆票 60 元，含原浆+鲜啤各一杯",
           "why": "青岛特色必打卡；地铁1号线直达",
@@ -216,16 +1419,43 @@
             "amap_navi": "https://uri.amap.com/navigation?to=120.345974,36.078675&mode=transit",
             "booking": "https://you.ctrip.com/sight/qingdao5/55144.html"
           },
-          "price": {"min": 180, "max": 180, "currency": "CNY", "unit": "per_person", "quantity": 3, "total_min": 180, "total_max": 180, "label": "门票 3 人", "source": "ctrip-webfetch", "source_ref": "双馆票 60/人"},
+          "price": {
+            "min": 180,
+            "max": 180,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 180,
+            "total_max": 180,
+            "label": "门票 3 人",
+            "source": "ctrip-webfetch",
+            "source_ref": "双馆票 60/人"
+          },
           "slot_costs": [
-            {"label": "地铁", "price": {"min": 2, "max": 3, "currency": "CNY", "unit": "per_person", "quantity": 3, "total_min": 6, "total_max": 9, "label": "地铁1号线 青岛站→广饶路", "source": "amap-mcp", "source_ref": "maps_direction_transit 实算 1537s"}}
+            {
+              "label": "地铁",
+              "price": {
+                "min": 2,
+                "max": 3,
+                "currency": "CNY",
+                "unit": "per_person",
+                "quantity": 3,
+                "total_min": 6,
+                "total_max": 9,
+                "label": "地铁1号线 青岛站→广饶路",
+                "source": "amap-mcp",
+                "source_ref": "maps_direction_transit 实算 1537s"
+              }
+            }
           ]
         },
         {
-          "idx": 2, "time": "13:00",
+          "idx": 2,
+          "time": "13:00",
           "name": "八大关风景区",
           "cat": "scenic",
-          "lng": 120.350903, "lat": 36.053625,
+          "lng": 120.350903,
+          "lat": 36.053625,
           "duration_min": 180,
           "note": "万国建筑博览，免费；公主楼/花石楼/第二海水浴场；午餐可在景区内简餐",
           "why": "公交219路 33 分钟；下午时光最美",
@@ -234,17 +1464,58 @@
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=120.350903,36.053625&mode=transit"
           },
-          "price": {"min": 0, "max": 0, "currency": "CNY", "unit": "free", "quantity": 3, "total_min": 0, "total_max": 0, "label": "门票", "source": "amap-mcp", "source_ref": "免门票"},
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 3,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "门票",
+            "source": "amap-mcp",
+            "source_ref": "免门票"
+          },
           "slot_costs": [
-            {"label": "公交", "price": {"min": 1, "max": 2, "currency": "CNY", "unit": "per_person", "quantity": 3, "total_min": 3, "total_max": 6, "label": "219路公交", "source": "amap-mcp", "source_ref": "maps_direction_transit 实算 1964s"}},
-            {"label": "午餐", "price": {"min": 90, "max": 150, "currency": "CNY", "unit": "per_table", "quantity": 1, "total_min": 90, "total_max": 150, "label": "景区内简餐", "source": "amap-mcp", "source_ref": "人均 30-50"}}
+            {
+              "label": "公交",
+              "price": {
+                "min": 1,
+                "max": 2,
+                "currency": "CNY",
+                "unit": "per_person",
+                "quantity": 3,
+                "total_min": 3,
+                "total_max": 6,
+                "label": "219路公交",
+                "source": "amap-mcp",
+                "source_ref": "maps_direction_transit 实算 1964s"
+              }
+            },
+            {
+              "label": "午餐",
+              "price": {
+                "min": 90,
+                "max": 150,
+                "currency": "CNY",
+                "unit": "per_table",
+                "quantity": 1,
+                "total_min": 90,
+                "total_max": 150,
+                "label": "景区内简餐",
+                "source": "amap-mcp",
+                "source_ref": "人均 30-50"
+              }
+            }
           ]
         },
         {
-          "idx": 3, "time": "19:00",
+          "idx": 3,
+          "time": "19:00",
           "name": "蓝港海鲜-臻选(奥帆中心店)",
           "cat": "meal",
-          "lng": 120.388000, "lat": 36.064000,
+          "lng": 120.388,
+          "lat": 36.064,
           "duration_min": 90,
           "note": "奥帆中心，增城路2号；高德评分 4.7+；人均 150-200",
           "why": "Day 3 海鲜大餐；地铁3号线回酒店途中",
@@ -252,28 +1523,381 @@
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=120.388000,36.064000&mode=transit"
           },
-          "price": {"min": 450, "max": 600, "currency": "CNY", "unit": "per_table", "quantity": 1, "total_min": 450, "total_max": 600, "label": "晚餐 3人", "source": "amap-mcp", "source_ref": "海鲜大餐人均 150-200"},
+          "price": {
+            "min": 450,
+            "max": 600,
+            "currency": "CNY",
+            "unit": "per_table",
+            "quantity": 1,
+            "total_min": 450,
+            "total_max": 600,
+            "label": "晚餐 3人",
+            "source": "amap-mcp",
+            "source_ref": "海鲜大餐人均 150-200"
+          },
           "slot_costs": [
-            {"label": "地铁", "price": {"min": 2, "max": 3, "currency": "CNY", "unit": "per_person", "quantity": 3, "total_min": 6, "total_max": 9, "label": "地铁3号线 八大关→青岛站", "source": "amap-mcp", "source_ref": "maps_direction_transit 实算 1489s"}}
+            {
+              "label": "地铁",
+              "price": {
+                "min": 2,
+                "max": 3,
+                "currency": "CNY",
+                "unit": "per_person",
+                "quantity": 3,
+                "total_min": 6,
+                "total_max": 9,
+                "label": "地铁3号线 八大关→青岛站",
+                "source": "amap-mcp",
+                "source_ref": "maps_direction_transit 实算 1489s"
+              }
+            }
           ]
+        }
+      ],
+      "transports": [
+        {
+          "from_idx": 1,
+          "to_idx": 2,
+          "mode": "transit",
+          "duration_min": 10,
+          "distance_m": 3347,
+          "description": "公交 219 路 33 分钟（3.3km）啤酒博物馆 → 八大关",
+          "source": "amap-rest-api",
+          "duration_sec": 1964,
+          "path": [
+            [
+              120.34597,
+              36.078671
+            ],
+            [
+              120.346786,
+              36.078434
+            ],
+            [
+              120.347237,
+              36.077564
+            ],
+            [
+              120.34803,
+              36.076614
+            ],
+            [
+              120.348975,
+              36.076772
+            ],
+            [
+              120.348127,
+              36.076016
+            ],
+            [
+              120.348036,
+              36.07438
+            ],
+            [
+              120.347762,
+              36.073152
+            ],
+            [
+              120.347279,
+              36.071778
+            ],
+            [
+              120.346775,
+              36.070791
+            ],
+            [
+              120.346233,
+              36.069705
+            ],
+            [
+              120.346163,
+              36.069134
+            ],
+            [
+              120.346544,
+              36.068034
+            ],
+            [
+              120.346888,
+              36.066951
+            ],
+            [
+              120.346507,
+              36.065996
+            ],
+            [
+              120.34508,
+              36.064478
+            ],
+            [
+              120.344238,
+              36.062981
+            ],
+            [
+              120.343546,
+              36.06171
+            ],
+            [
+              120.343058,
+              36.060862
+            ],
+            [
+              120.342172,
+              36.059639
+            ],
+            [
+              120.343254,
+              36.059605
+            ],
+            [
+              120.345214,
+              36.0601
+            ],
+            [
+              120.348213,
+              36.06068
+            ],
+            [
+              120.348213,
+              36.059902
+            ],
+            [
+              120.348165,
+              36.057659
+            ],
+            [
+              120.3481,
+              36.056892
+            ],
+            [
+              120.347612,
+              36.056436
+            ],
+            [
+              120.346115,
+              36.056034
+            ],
+            [
+              120.344847,
+              36.055634
+            ],
+            [
+              120.344608,
+              36.055331
+            ],
+            [
+              120.344989,
+              36.054462
+            ],
+            [
+              120.345718,
+              36.053641
+            ],
+            [
+              120.346807,
+              36.053416
+            ],
+            [
+              120.347458,
+              36.053493
+            ],
+            [
+              120.349716,
+              36.053638
+            ],
+            [
+              120.350906,
+              36.053623
+            ]
+          ],
+          "fare": {
+            "min": 3,
+            "max": 6,
+            "currency": "CNY",
+            "unit": "per_group",
+            "quantity": 1,
+            "total_min": 3,
+            "total_max": 6,
+            "label": "公交 3 人",
+            "source": "amap-mcp"
+          }
+        },
+        {
+          "from_idx": 2,
+          "to_idx": 3,
+          "mode": "transit",
+          "duration_min": 13,
+          "distance_m": 4303,
+          "description": "地铁3号线 25 分钟（4.3km）八大关 → 蓝港海鲜(奥帆中心)",
+          "source": "amap-rest-api",
+          "duration_sec": 1489,
+          "path": [
+            [
+              120.350906,
+              36.053619
+            ],
+            [
+              120.351486,
+              36.054306
+            ],
+            [
+              120.352219,
+              36.055687
+            ],
+            [
+              120.35302,
+              36.05703
+            ],
+            [
+              120.352379,
+              36.057503
+            ],
+            [
+              120.351967,
+              36.057724
+            ],
+            [
+              120.351738,
+              36.058426
+            ],
+            [
+              120.352457,
+              36.057531
+            ],
+            [
+              120.353601,
+              36.056557
+            ],
+            [
+              120.354926,
+              36.055606
+            ],
+            [
+              120.35583,
+              36.054937
+            ],
+            [
+              120.356732,
+              36.053613
+            ],
+            [
+              120.3584,
+              36.053572
+            ],
+            [
+              120.36076,
+              36.054033
+            ],
+            [
+              120.363012,
+              36.054591
+            ],
+            [
+              120.367699,
+              36.056656
+            ],
+            [
+              120.372761,
+              36.059931
+            ],
+            [
+              120.374413,
+              36.061292
+            ],
+            [
+              120.375437,
+              36.062146
+            ],
+            [
+              120.37914,
+              36.064131
+            ],
+            [
+              120.380341,
+              36.064747
+            ],
+            [
+              120.383537,
+              36.066214
+            ],
+            [
+              120.385823,
+              36.066354
+            ],
+            [
+              120.390663,
+              36.065735
+            ],
+            [
+              120.389671,
+              36.065681
+            ],
+            [
+              120.389435,
+              36.065536
+            ],
+            [
+              120.389221,
+              36.064968
+            ],
+            [
+              120.389336,
+              36.064293
+            ],
+            [
+              120.389137,
+              36.064167
+            ],
+            [
+              120.388351,
+              36.06424
+            ],
+            [
+              120.388077,
+              36.064152
+            ],
+            [
+              120.388077,
+              36.064152
+            ]
+          ],
+          "fare": {
+            "min": 6,
+            "max": 9,
+            "currency": "CNY",
+            "unit": "per_group",
+            "quantity": 1,
+            "total_min": 6,
+            "total_max": 9,
+            "label": "地铁 3 人",
+            "source": "amap-mcp"
+          }
         }
       ]
     },
     {
-      "day": 4, "date": "2026-06-28", "weekday": "周日",
+      "day": 4,
+      "date": "2026-06-28",
+      "weekday": "周日",
       "region": "栈桥 / 机场",
       "theme": "海边告别 + 返程",
       "weather": "多云 27℃",
       "weather_emoji": "⛅",
       "weather_decision": "上午海边轻松走；早午餐后去机场",
       "region_flex": true,
-      "center": [120.317, 36.063], "zoom": 13,
+      "center": [
+        120.317,
+        36.063
+      ],
+      "zoom": 13,
       "pois": [
         {
-          "idx": 1, "time": "09:00",
+          "idx": 1,
+          "time": "09:00",
           "name": "栈桥 / 海边告别漫步",
           "cat": "scenic",
-          "lng": 120.319300, "lat": 36.061736,
+          "lng": 120.3193,
+          "lat": 36.061736,
           "duration_min": 90,
           "note": "退房寄存行李；最后海边散步+拍照",
           "why": "步行 5 分钟；不暴走，留点松弛感",
@@ -282,16 +1906,43 @@
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=120.319300,36.061736&mode=walk"
           },
-          "price": {"min": 0, "max": 0, "currency": "CNY", "unit": "free", "quantity": 3, "total_min": 0, "total_max": 0, "label": "门票", "source": "amap-mcp", "source_ref": "免门票"},
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 3,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "门票",
+            "source": "amap-mcp",
+            "source_ref": "免门票"
+          },
           "slot_costs": [
-            {"label": "行李寄存", "price": {"min": 0, "max": 30, "currency": "CNY", "unit": "per_room", "quantity": 1, "total_min": 0, "total_max": 30, "label": "酒店寄存（多为免费）", "source": "computed", "source_ref": "汉庭前台寄存"}}
+            {
+              "label": "行李寄存",
+              "price": {
+                "min": 0,
+                "max": 30,
+                "currency": "CNY",
+                "unit": "per_room",
+                "quantity": 1,
+                "total_min": 0,
+                "total_max": 30,
+                "label": "酒店寄存（多为免费）",
+                "source": "computed",
+                "source_ref": "汉庭前台寄存"
+              }
+            }
           ]
         },
         {
-          "idx": 2, "time": "11:30",
+          "idx": 2,
+          "time": "11:30",
           "name": "前海沿·海鲜水饺青岛菜(栈桥前海利群店)",
           "cat": "meal",
-          "lng": 120.305000, "lat": 36.063000,
+          "lng": 120.305,
+          "lat": 36.063,
           "duration_min": 60,
           "note": "贵州路40号前海利群F1；本地海鲜+鲅鱼水饺；人均 70-100",
           "why": "返程前最后一顿本地味；离酒店近",
@@ -299,16 +1950,43 @@
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=120.305000,36.063000&mode=walk"
           },
-          "price": {"min": 210, "max": 300, "currency": "CNY", "unit": "per_table", "quantity": 1, "total_min": 210, "total_max": 300, "label": "午餐 3人", "source": "amap-mcp", "source_ref": "海鲜水饺人均 70-100"},
+          "price": {
+            "min": 210,
+            "max": 300,
+            "currency": "CNY",
+            "unit": "per_table",
+            "quantity": 1,
+            "total_min": 210,
+            "total_max": 300,
+            "label": "午餐 3人",
+            "source": "amap-mcp",
+            "source_ref": "海鲜水饺人均 70-100"
+          },
           "slot_costs": [
-            {"label": "步行", "price": {"min": 0, "max": 0, "currency": "CNY", "unit": "free", "quantity": 1, "total_min": 0, "total_max": 0, "label": "步行", "source": "computed", "source_ref": "800m/10min"}}
+            {
+              "label": "步行",
+              "price": {
+                "min": 0,
+                "max": 0,
+                "currency": "CNY",
+                "unit": "free",
+                "quantity": 1,
+                "total_min": 0,
+                "total_max": 0,
+                "label": "步行",
+                "source": "computed",
+                "source_ref": "800m/10min"
+              }
+            }
           ]
         },
         {
-          "idx": 3, "time": "13:30",
+          "idx": 3,
+          "time": "13:30",
           "name": "青岛胶东国际机场",
           "cat": "transport",
-          "lng": 120.093102, "lat": 36.362832,
+          "lng": 120.093102,
+          "lat": 36.362832,
           "duration_min": 120,
           "note": "地铁1号线青岛站→青岛北站（34分钟）→地铁8号线青岛北站→胶东机场（42分钟）共 90 分钟",
           "why": "返程日 2h 缓冲满足 V5",
@@ -316,36 +1994,480 @@
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=120.093102,36.362832&mode=transit"
           },
-          "price": {"min": 0, "max": 0, "currency": "CNY", "unit": "free", "quantity": 1, "total_min": 0, "total_max": 0, "label": "活动", "source": "computed", "source_ref": "无门票"},
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "活动",
+            "source": "computed",
+            "source_ref": "无门票"
+          },
           "slot_costs": [
-            {"label": "地铁", "price": {"min": 8, "max": 10, "currency": "CNY", "unit": "per_person", "quantity": 3, "total_min": 24, "total_max": 30, "label": "地铁 1+8 号线", "source": "amap-mcp", "source_ref": "maps_direction_transit 实算 5404s"}},
-            {"label": "机票", "price": {"min": 320, "max": 490, "currency": "CNY", "unit": "per_person", "quantity": 3, "total_min": 960, "total_max": 1470, "label": "机票（青岛-武汉单程）", "source": "ctrip-webfetch", "source_ref": "携程 6/28 青岛→武汉直飞 320-490/单程"}, "attach": "departure"}
+            {
+              "label": "地铁",
+              "price": {
+                "min": 8,
+                "max": 10,
+                "currency": "CNY",
+                "unit": "per_person",
+                "quantity": 3,
+                "total_min": 24,
+                "total_max": 30,
+                "label": "地铁 1+8 号线",
+                "source": "amap-mcp",
+                "source_ref": "maps_direction_transit 实算 5404s"
+              }
+            },
+            {
+              "label": "机票",
+              "price": {
+                "min": 320,
+                "max": 490,
+                "currency": "CNY",
+                "unit": "per_person",
+                "quantity": 3,
+                "total_min": 960,
+                "total_max": 1470,
+                "label": "机票（青岛-武汉单程）",
+                "source": "ctrip-webfetch",
+                "source_ref": "携程 6/28 青岛→武汉直飞 320-490/单程"
+              },
+              "attach": "departure"
+            }
           ]
+        }
+      ],
+      "transports": [
+        {
+          "from_idx": 1,
+          "to_idx": 2,
+          "mode": "walking",
+          "duration_min": 19,
+          "distance_m": 800,
+          "description": "步行 10 分钟（800m）栈桥告别 → 前海沿午饭",
+          "source": "amap-rest-api",
+          "duration_sec": 600,
+          "path": [
+            [
+              120.319336,
+              36.061745
+            ],
+            [
+              120.319306,
+              36.061819
+            ],
+            [
+              120.319162,
+              36.062166
+            ],
+            [
+              120.319136,
+              36.062244
+            ],
+            [
+              120.319071,
+              36.062448
+            ],
+            [
+              120.319006,
+              36.062674
+            ],
+            [
+              120.318863,
+              36.0627
+            ],
+            [
+              120.318581,
+              36.062739
+            ],
+            [
+              120.318329,
+              36.062782
+            ],
+            [
+              120.317613,
+              36.062882
+            ],
+            [
+              120.316363,
+              36.063099
+            ],
+            [
+              120.316115,
+              36.063147
+            ],
+            [
+              120.315838,
+              36.063047
+            ],
+            [
+              120.315599,
+              36.063038
+            ],
+            [
+              120.315477,
+              36.062934
+            ],
+            [
+              120.315286,
+              36.062847
+            ],
+            [
+              120.314991,
+              36.062791
+            ],
+            [
+              120.314536,
+              36.062973
+            ],
+            [
+              120.314457,
+              36.06303
+            ],
+            [
+              120.314397,
+              36.063194
+            ],
+            [
+              120.313681,
+              36.062986
+            ],
+            [
+              120.313607,
+              36.062964
+            ],
+            [
+              120.313116,
+              36.062812
+            ],
+            [
+              120.311476,
+              36.0623
+            ],
+            [
+              120.311319,
+              36.062292
+            ],
+            [
+              120.31125,
+              36.06227
+            ],
+            [
+              120.310495,
+              36.062135
+            ],
+            [
+              120.309553,
+              36.061975
+            ],
+            [
+              120.309275,
+              36.061923
+            ],
+            [
+              120.308008,
+              36.061719
+            ],
+            [
+              120.307973,
+              36.061762
+            ],
+            [
+              120.307656,
+              36.062174
+            ],
+            [
+              120.307348,
+              36.062565
+            ],
+            [
+              120.3073,
+              36.062609
+            ],
+            [
+              120.307183,
+              36.0627
+            ],
+            [
+              120.306732,
+              36.063043
+            ],
+            [
+              120.306675,
+              36.063077
+            ],
+            [
+              120.306315,
+              36.062765
+            ],
+            [
+              120.305998,
+              36.0625
+            ],
+            [
+              120.305816,
+              36.062348
+            ],
+            [
+              120.305681,
+              36.062444
+            ],
+            [
+              120.305161,
+              36.062791
+            ]
+          ],
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "步行免费",
+            "source": "computed"
+          }
+        },
+        {
+          "from_idx": 2,
+          "to_idx": 3,
+          "mode": "transit",
+          "duration_min": 138,
+          "distance_m": 55444,
+          "description": "地铁 1+8 号线 90 分钟（55km）前海沿 → 胶东机场",
+          "source": "amap-rest-api",
+          "duration_sec": 5404,
+          "path": [
+            [
+              120.317009,
+              36.063599
+            ],
+            [
+              120.315193,
+              36.06369
+            ],
+            [
+              120.315025,
+              36.070151
+            ],
+            [
+              120.320467,
+              36.071926
+            ],
+            [
+              120.329802,
+              36.073089
+            ],
+            [
+              120.34829,
+              36.076851
+            ],
+            [
+              120.361346,
+              36.093571
+            ],
+            [
+              120.360598,
+              36.115633
+            ],
+            [
+              120.367932,
+              36.125485
+            ],
+            [
+              120.373332,
+              36.13207
+            ],
+            [
+              120.374627,
+              36.140648
+            ],
+            [
+              120.379415,
+              36.144793
+            ],
+            [
+              120.382665,
+              36.149656
+            ],
+            [
+              120.381763,
+              36.154447
+            ],
+            [
+              120.377168,
+              36.15566
+            ],
+            [
+              120.377004,
+              36.16548
+            ],
+            [
+              120.291488,
+              36.19305
+            ],
+            [
+              120.277462,
+              36.197182
+            ],
+            [
+              120.27128,
+              36.204046
+            ],
+            [
+              120.264566,
+              36.211672
+            ],
+            [
+              120.242512,
+              36.208401
+            ],
+            [
+              120.233132,
+              36.236249
+            ],
+            [
+              120.222887,
+              36.237739
+            ],
+            [
+              120.215058,
+              36.233618
+            ],
+            [
+              120.197898,
+              36.23077
+            ],
+            [
+              120.192481,
+              36.242258
+            ],
+            [
+              120.184686,
+              36.264116
+            ],
+            [
+              120.148453,
+              36.255709
+            ],
+            [
+              120.118681,
+              36.309025
+            ],
+            [
+              120.114663,
+              36.321919
+            ],
+            [
+              120.093788,
+              36.361229
+            ],
+            [
+              120.093788,
+              36.361229
+            ]
+          ],
+          "fare": {
+            "min": 24,
+            "max": 30,
+            "currency": "CNY",
+            "unit": "per_group",
+            "quantity": 1,
+            "total_min": 24,
+            "total_max": 30,
+            "label": "地铁 3 人",
+            "source": "amap-mcp"
+          }
         }
       ]
     }
   ],
   "prebook": [
-    {"item": "青岛啤酒博物馆门票", "deadline": "2026-06-26 23:59", "url": "https://you.ctrip.com/sight/qingdao5/55144.html", "note": "微信公众号或携程实名预约；建议选 9:30-12:00 场"},
-    {"item": "武汉→青岛机票", "deadline": "2026-06-18 23:59", "url": "https://flights.ctrip.com/booking/WUH-TAO-day-1.html", "note": "建议周四 6/25 出发，320-490/单程"},
-    {"item": "青岛→武汉机票", "deadline": "2026-06-21 23:59", "url": "https://flights.ctrip.com/booking/TAO-WUH-day-1.html", "note": "建议周日 6/28 返程，320-490/单程"},
-    {"item": "汉庭酒店(青岛栈桥火车站店)", "deadline": "2026-06-20 23:59", "url": "https://hotels.ctrip.com/hotel/qingdao317070", "note": "3 晚双床房，200-280/晚"}
+    {
+      "item": "青岛啤酒博物馆门票",
+      "deadline": "2026-06-26 23:59",
+      "url": "https://you.ctrip.com/sight/qingdao5/55144.html",
+      "note": "微信公众号或携程实名预约；建议选 9:30-12:00 场"
+    },
+    {
+      "item": "武汉→青岛机票",
+      "deadline": "2026-06-18 23:59",
+      "url": "https://flights.ctrip.com/booking/WUH-TAO-day-1.html",
+      "note": "建议周四 6/25 出发，320-490/单程"
+    },
+    {
+      "item": "青岛→武汉机票",
+      "deadline": "2026-06-21 23:59",
+      "url": "https://flights.ctrip.com/booking/TAO-WUH-day-1.html",
+      "note": "建议周日 6/28 返程，320-490/单程"
+    },
+    {
+      "item": "汉庭酒店(青岛栈桥火车站店)",
+      "deadline": "2026-06-20 23:59",
+      "url": "https://hotels.ctrip.com/hotel/qingdao317070",
+      "note": "3 晚双床房，200-280/晚"
+    }
   ],
   "budget_summary": {
     "per_person": {
-      "flight": {"min": 640, "max": 980, "currency": "CNY", "label": "往返机票"},
-      "hotel": {"min": 200, "max": 280, "currency": "CNY", "label": "住宿（3 人摊 1 间房）"},
-      "meal": {"min": 380, "max": 530, "currency": "CNY", "label": "餐饮（4 天 3 人合计/3）"},
-      "ticket": {"min": 70, "max": 90, "currency": "CNY", "label": "门票（啤酒博物馆+信号山观景楼）"},
-      "transit": {"min": 30, "max": 45, "currency": "CNY", "label": "市内+机场地铁"}
+      "flight": {
+        "min": 640,
+        "max": 980,
+        "currency": "CNY",
+        "label": "往返机票"
+      },
+      "hotel": {
+        "min": 400,
+        "max": 560,
+        "currency": "CNY",
+        "label": "住宿（2 间房 3 晚，按 3 人摊）"
+      },
+      "meal": {
+        "min": 380,
+        "max": 530,
+        "currency": "CNY",
+        "label": "餐饮（4 天 3 人合计/3）"
+      },
+      "ticket": {
+        "min": 70,
+        "max": 90,
+        "currency": "CNY",
+        "label": "门票（啤酒博物馆+信号山观景楼）"
+      },
+      "transit": {
+        "min": 30,
+        "max": 45,
+        "currency": "CNY",
+        "label": "市内+机场地铁"
+      }
     },
-    "per_person_total": {"min": 1320, "max": 1925},
-    "for_3_people_total": {"min": 3960, "max": 5775},
-    "note": "3 人 4 天总预算约 4000-5800 RMB，人均 1300-1900。机票和酒店波动大，按实际购买时为准。"
+    "per_person_total": {
+      "min": 1520,
+      "max": 2205
+    },
+    "for_3_people_total": {
+      "min": 4560,
+      "max": 6615
+    },
+    "note": "3 人 4 天总预算约 4600-6600 RMB，人均 1500-2200。2 间房比 1 间多 600-840 RMB。机票和酒店波动大，按实际购买时为准。"
   },
   "deleted": [
-    {"item": "崂山", "reason": "单程 1.5 小时，全天耗尽；低精力人群不合适"},
-    {"item": "金沙滩（西海岸）", "reason": "过海远，需 1 小时+；Day 2 时间不够"},
-    {"item": "方特/极地海洋世界", "reason": "主题公园，排队久；不符合低精力"}
+    {
+      "item": "崂山",
+      "reason": "单程 1.5 小时，全天耗尽；低精力人群不合适"
+    },
+    {
+      "item": "金沙滩（西海岸）",
+      "reason": "过海远，需 1 小时+；Day 2 时间不够"
+    },
+    {
+      "item": "方特/极地海洋世界",
+      "reason": "主题公园，排队久；不符合低精力"
+    }
   ]
 }
