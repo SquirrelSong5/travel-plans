@@ -648,6 +648,18 @@
       height: 3px;
       border-radius: 1px;
     }
+    .legend-item .legend-line {
+      display: inline-block;
+      width: 22px;
+      height: 0;
+      border-top-width: 2px;
+      border-top-style: solid;
+      vertical-align: middle;
+    }
+    .legend-line-walk { border-top-color: var(--c-walk); border-top-style: dotted; }
+    .legend-line-bike { border-top-color: var(--c-bike); border-top-style: dashed; }
+    .legend-line-transit { border-top-color: var(--c-transit); border-top-style: dashed; border-top-width: 2px; }
+    .legend-line-drive { border-top-color: var(--c-drive); border-top-style: solid; border-top-width: 3px; }
     .route-summary {
       display: flex;
       flex-wrap: wrap;
@@ -1234,10 +1246,11 @@
             <span>显示路线</span>
           </label>
           <div class="legend">
-            <span class="legend-item"><span class="dot" style="background:var(--c-walk)"></span>步行</span>
-            <span class="legend-item"><span class="dot" style="background:var(--c-transit)"></span>地铁/公交/JR</span>
-            <span class="legend-item"><span class="dot" style="background:var(--c-drive)"></span>驾车</span>
-            <span class="legend-item"><span class="dot" style="background:var(--c-bike)"></span>骑行</span>
+            <span class="legend-item"><span class="legend-line legend-line-walk"></span>步行</span>
+            <span class="legend-item"><span class="legend-line legend-line-bike"></span>骑行</span>
+            <span class="legend-item"><span class="legend-line legend-line-transit"></span>地铁/公交</span>
+            <span class="legend-item"><span class="legend-line legend-line-drive"></span>驾车</span>
+            <span class="legend-item" style="opacity:0.85">· 相邻路段异色</span>
           </div>
           <div class="route-summary" id="route-summary" aria-live="polite"></div>
         </div>
@@ -16437,18 +16450,27 @@
         mapLayers = [];
       }
 
+      function normalizeMode(mode) {
+        const m = (mode || 'transit').toLowerCase();
+        if (m === 'walk' || m === 'walking') return 'walking';
+        if (m === 'bike' || m === 'biking' || m === 'cycling' || m === 'ride') return 'biking';
+        if (m === 'drive' || m === 'driving' || m === 'taxi' || m === 'car') return 'driving';
+        return 'transit';
+      }
+
       function colorForMode(mode) {
-        if (mode === 'walking') return getCss('--c-walk');
-        if (mode === 'driving') return getCss('--c-drive');
-        if (mode === 'biking')  return getCss('--c-bike');
+        const n = normalizeMode(mode);
+        if (n === 'walking') return getCss('--c-walk');
+        if (n === 'driving') return getCss('--c-drive');
+        if (n === 'biking') return getCss('--c-bike');
         return getCss('--c-transit');
       }
 
-      // 按段顺序给不同颜色（避免同 mode 多段挤一团色）
+      // 相邻路段（1→2、2→3…）用不同颜色；线型仍按交通方式区分
       const SEGMENT_PALETTE = [
-        '#1f6feb', '#e67e22', '#16a085', '#c0392b',
-        '#8e44ad', '#d35400', '#27ae60', '#2c3e50',
-        '#e84393', '#f39c12', '#00b894', '#6c5ce7'
+        '#2563eb', '#ea580c', '#059669', '#dc2626',
+        '#7c3aed', '#ca8a04', '#0891b2', '#be185d',
+        '#4f46e5', '#d97706', '#0d9488', '#9333ea'
       ];
       function colorForSegment(segIdx) {
         return SEGMENT_PALETTE[segIdx % SEGMENT_PALETTE.length];
@@ -16458,16 +16480,25 @@
         return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || '#888';
       }
 
+      /** 线型按交通方式：步行点线、骑行短虚线、公交长虚线、驾车实线 */
       function dashForMode(mode) {
-        if (mode === 'walking') return [6, 4];
-        if (mode === 'biking') return [8, 4];
-        return null;
+        const n = normalizeMode(mode);
+        if (n === 'walking') return [2, 5];
+        if (n === 'biking') return [6, 4];
+        if (n === 'transit') return [10, 6];
+        return null; // driving → solid
       }
 
       function widthForMode(mode) {
-        if (mode === 'walking') return 6;
-        if (mode === 'biking') return 7;
-        return 8;
+        const n = normalizeMode(mode);
+        if (n === 'walking') return 3;
+        if (n === 'biking') return 3;
+        if (n === 'driving') return 4;
+        return 3.5; // transit
+      }
+
+      function outlineExtraForMode(mode) {
+        return 2; // 描边比主线略粗，保持细线可读
       }
 
       function updateRouteSummary(dayIdx) {
@@ -16478,14 +16509,12 @@
           el.innerHTML = '';
           return;
         }
-        const counts = {};
-        d.transports.forEach(t => {
-          const label = fmtMode(t.mode);
-          counts[label] = (counts[label] || 0) + 1;
-        });
-        el.innerHTML = Object.entries(counts)
-          .map(([label, n]) => `<span class="route-chip">${n} 段${label}</span>`)
-          .join('');
+        el.innerHTML = d.transports.map((t, segIdx) => {
+          const from = t.from_idx === 0 ? '酒店' : String(t.from_idx);
+          const to = t.to_idx === 0 ? '酒店' : String(t.to_idx);
+          const color = colorForSegment(segIdx);
+          return `<span class="route-chip" style="border-left:3px solid ${color}">${from}→${to} ${esc(fmtMode(t.mode))}</span>`;
+        }).join('');
       }
 
       function updateMap(dayIdx) {
@@ -16545,7 +16574,7 @@
               border:2px solid white;
               box-shadow:0 2px 4px rgba(0,0,0,0.4);
               font-family:system-ui;
-            ">${i + 1}</div>`,
+            ">${p.idx != null ? p.idx : i + 1}</div>`,
             title: p.name,
             zIndex: 100 + i
           });
@@ -16574,48 +16603,37 @@
               : [[from.lng, from.lat], [to.lng, to.lat]];
             const weight = widthForMode(t.mode);
             const segColor = colorForSegment(segIdx);
+            const outlineW = weight + outlineExtraForMode(t.mode);
+            const dash = dashForMode(t.mode);
             const outline = new AMap.Polyline({
               path: pathCoords,
               strokeColor: outlineColor,
-              strokeWeight: weight + 4,
-              strokeOpacity: 0.85,
+              strokeWeight: outlineW,
+              strokeOpacity: 0.9,
               lineJoin: 'round',
+              lineCap: 'round',
               zIndex: 10
             });
             map.add(outline);
             mapLayers.push(outline);
-            const polyline = new AMap.Polyline({
+            const lineOpts = {
               path: pathCoords,
               strokeColor: segColor,
               strokeWeight: weight,
-              strokeOpacity: 1.0,
-              strokeStyle: dashForMode(t.mode) ? 'dashed' : 'solid',
+              strokeOpacity: 0.95,
               lineJoin: 'round',
+              lineCap: 'round',
               zIndex: 11
-            });
+            };
+            if (dash) {
+              lineOpts.strokeStyle = 'dashed';
+              lineOpts.strokeDasharray = dash;
+            } else {
+              lineOpts.strokeStyle = 'solid';
+            }
+            const polyline = new AMap.Polyline(lineOpts);
             map.add(polyline);
             mapLayers.push(polyline);
-            // 段标签：在 polyline 中点放一个数字气泡（避免同 mode 多段混淆）
-            const midIdx = Math.floor(pathCoords.length / 2);
-            const mid = pathCoords[midIdx];
-            const segLabel = new AMap.Marker({
-              position: mid,
-              anchor: 'center',
-              offset: new AMap.Pixel(-10, -10),
-              content: `<div style="
-                background:${segColor};color:white;
-                width:20px;height:20px;
-                border-radius:50%;
-                display:flex;align-items:center;justify-content:center;
-                font-weight:600;font-size:11px;
-                border:2px solid white;
-                box-shadow:0 1px 3px rgba(0,0,0,0.3);
-                font-family:system-ui;
-              ">${segIdx + 1}</div>`,
-              zIndex: 50 + segIdx
-            });
-            map.add(segLabel);
-            mapLayers.push(segLabel);
           });
         }
 
