@@ -903,6 +903,73 @@
       ol.timeline li.time-block .meal-leg .meal-leg-name { color: #fef3c7; }
     }
 
+    /* ===== 价格卡片（v2.1.0） ===== */
+    .price-card {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: var(--sp-1) var(--sp-2);
+      margin-top: var(--sp-2);
+      padding: 8px 12px;
+      background: #f0f7f4;
+      border: 1px solid #c5e0d4;
+      border-radius: 8px;
+      font-size: var(--fs-xs);
+      line-height: 1.45;
+    }
+    .price-card .price-amount {
+      font-weight: 700;
+      font-size: var(--fs-sm);
+      color: #1f5a3a;
+    }
+    .price-card .price-label {
+      color: var(--fg-muted);
+    }
+    .price-card .price-source {
+      flex: 1 1 100%;
+      color: var(--fg-muted);
+      font-size: 11px;
+    }
+    .price-card-missing {
+      background: #fef2f2;
+      border-color: #fecaca;
+    }
+    .price-card-missing .price-amount { color: #b91c1c; }
+    @media (prefers-color-scheme: dark) {
+      .price-card { background: #1a2e24; border-color: #2d5a45; }
+      .price-card .price-amount { color: #86efac; }
+      .price-card-missing { background: #3f1d1d; border-color: #7f1d1d; }
+    }
+
+    /* ===== 抽屉花销汇总 ===== */
+    .budget-card {
+      background: var(--bg-elevated);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: var(--sp-3) var(--sp-4);
+      font-size: var(--fs-sm);
+    }
+    .budget-card .budget-total-line {
+      font-weight: 700;
+      font-size: var(--fs-md);
+      margin-bottom: var(--sp-2);
+    }
+    .budget-card .budget-row {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--sp-2);
+      padding: 4px 0;
+      border-bottom: 1px dashed var(--line);
+      font-size: var(--fs-xs);
+    }
+    .budget-card .budget-row:last-child { border-bottom: none; }
+    .budget-card .budget-disclaimer {
+      margin-top: var(--sp-2);
+      font-size: 11px;
+      color: var(--fg-muted);
+    }
+    .budget-card.budget-fallback { border-color: #fbbf24; }
+
     /* ===== Footer ===== */
     footer.bottom {
       margin-top: 48px;
@@ -1063,6 +1130,19 @@
         <div class="weather-card" id="weather-plan-text"></div>
       </section>
 
+      <!-- 花销预估 -->
+      <section id="budget-section">
+        <h3>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="1" x2="12" y2="23"></line>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+          </svg>
+          花销预估
+          <span class="count" id="budget-total-badge"></span>
+        </h3>
+        <div class="budget-card" id="budget-breakdown"></div>
+      </section>
+
       <!-- 提前订 -->
       <section>
         <h3>
@@ -1152,7 +1232,19 @@
         "duration_min": 30,
         "mode": "打车"
       }
-    ]
+    ],
+    "price": {
+      "min": 350,
+      "max": 430,
+      "currency": "CNY",
+      "unit": "per_night",
+      "quantity": 3,
+      "total_min": 1050,
+      "total_max": 1290,
+      "label": "住宿",
+      "source": "ctrip-webfetch",
+      "source_ref": "携程酒店列表实查估"
+    }
   },
   "days": [
     {
@@ -1184,6 +1276,18 @@
           "weather_sensitive": false,
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=118.137090,24.539495&mode=car"
+          },
+          "price": {
+            "min": 0.0,
+            "max": 0.0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0.0,
+            "total_max": 0.0,
+            "label": "活动",
+            "source": "computed",
+            "source_ref": "无门票"
           }
         },
         {
@@ -1200,6 +1304,18 @@
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=118.074704,24.463186&mode=car",
             "booking": "https://www.booking.com/search.html?ss=Ruyi+Hotel+Xiamen+Zhongshan+Road+Basin+8"
+          },
+          "price": {
+            "min": 0.0,
+            "max": 0.0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0.0,
+            "total_max": 0.0,
+            "label": "入住",
+            "source": "computed",
+            "source_ref": "房费见抽屉住宿"
           }
         },
         {
@@ -1217,6 +1333,18 @@
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=118.079259,24.455453&mode=walk",
             "xhs": "https://www.xiaohongshu.com/search_result?keyword=厦门中山路"
+          },
+          "price": {
+            "min": 0.0,
+            "max": 0.0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0.0,
+            "total_max": 0.0,
+            "label": "参观",
+            "source": "computed",
+            "source_ref": "步行街/免费景点"
           }
         },
         {
@@ -1233,6 +1361,18 @@
           "indoor_backup": "酒店附近沙茶面店（欢欢沙茶面/郑姐沙嗲面）",
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=118.075017,24.457902&mode=walk"
+          },
+          "price": {
+            "min": 80,
+            "max": 120,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 240,
+            "total_max": 360,
+            "label": "餐饮",
+            "source": "amap-mcp",
+            "source_ref": "maps_search_detail cost 区间"
           }
         }
       ],
@@ -2482,7 +2622,19 @@
               118.074659,
               24.463224
             ]
-          ]
+          ],
+          "fare": {
+            "min": 25,
+            "max": 40,
+            "currency": "CNY",
+            "unit": "fixed",
+            "quantity": 1,
+            "total_min": 25,
+            "total_max": 40,
+            "label": "打车",
+            "source": "amap-mcp",
+            "source_ref": "maps_direction_driving taxi_cost 估"
+          }
         },
         {
           "from_idx": 2,
@@ -2845,7 +2997,19 @@
               118.079297,
               24.45523
             ]
-          ]
+          ],
+          "fare": {
+            "min": 0.0,
+            "max": 0.0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0.0,
+            "total_max": 0.0,
+            "label": "步行",
+            "source": "computed",
+            "source_ref": "零元交通"
+          }
         },
         {
           "from_idx": 3,
@@ -3020,14 +3184,38 @@
               118.07497,
               24.457869
             ]
-          ]
+          ],
+          "fare": {
+            "min": 0.0,
+            "max": 0.0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0.0,
+            "total_max": 0.0,
+            "label": "步行",
+            "source": "computed",
+            "source_ref": "零元交通"
+          }
         }
       ],
       "meals": {
         "dinner": {
           "main": {
             "name": "八市印象海鲜大牌档（开禾路店）",
-            "why": "开禾路 125 号 / 离酒店步行 5 分钟 / 本地老牌"
+            "why": "开禾路 125 号 / 离酒店步行 5 分钟 / 本地老牌",
+            "price": {
+              "min": 80,
+              "max": 150,
+              "currency": "CNY",
+              "unit": "per_person",
+              "quantity": 3,
+              "total_min": 240,
+              "total_max": 450,
+              "label": "餐饮",
+              "source": "amap-mcp",
+              "source_ref": "maps_search_detail cost"
+            }
           },
           "alt": {
             "name": "花姐海鲜餐厅（厦门八市总店）",
@@ -3067,6 +3255,18 @@
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=118.075853,24.487005&mode=car",
             "xhs": "https://www.xiaohongshu.com/search_result?keyword=鼓浪屿船票预约"
+          },
+          "price": {
+            "min": 35.0,
+            "max": 35.0,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 105.0,
+            "total_max": 105.0,
+            "label": "费用",
+            "source": "official-site",
+            "source_ref": "note 解析 + 官方/高德"
           }
         },
         {
@@ -3082,6 +3282,18 @@
           "weather_sensitive": false,
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=118.069799,24.438300&mode=walk"
+          },
+          "price": {
+            "min": 0.0,
+            "max": 0.0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0.0,
+            "total_max": 0.0,
+            "label": "参观",
+            "source": "computed",
+            "source_ref": "步行街/免费景点"
           }
         },
         {
@@ -3098,6 +3310,18 @@
           "indoor_backup": "龙头路室内小吃铺 / 巷子里的闽南菜",
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=118.073000,24.445000&mode=walk"
+          },
+          "price": {
+            "min": 80,
+            "max": 120,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 240,
+            "total_max": 360,
+            "label": "餐饮",
+            "source": "amap-mcp",
+            "source_ref": "maps_search_detail cost 区间"
           }
         },
         {
@@ -3114,6 +3338,18 @@
           "indoor_backup": "钢琴博物馆（已去过）/ 鼓浪屿风琴博物馆",
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=118.075936,24.441099&mode=walk"
+          },
+          "price": {
+            "min": 0.0,
+            "max": 0.0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0.0,
+            "total_max": 0.0,
+            "label": "参观",
+            "source": "computed",
+            "source_ref": "步行街/免费景点"
           }
         },
         {
@@ -3129,6 +3365,18 @@
           "weather_sensitive": false,
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=118.072000,24.443000&mode=walk"
+          },
+          "price": {
+            "min": 0.0,
+            "max": 0.0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0.0,
+            "total_max": 0.0,
+            "label": "活动",
+            "source": "computed",
+            "source_ref": "无门票"
           }
         },
         {
@@ -3144,6 +3392,18 @@
           "weather_sensitive": false,
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=118.075853,24.487005&mode=transit"
+          },
+          "price": {
+            "min": 0.0,
+            "max": 0.0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0.0,
+            "total_max": 0.0,
+            "label": "活动",
+            "source": "computed",
+            "source_ref": "无门票"
           }
         },
         {
@@ -3160,6 +3420,18 @@
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=118.087587,24.437609&mode=car",
             "xhs": "https://www.xiaohongshu.com/search_result?keyword=厦门沙坡尾"
+          },
+          "price": {
+            "min": 0.0,
+            "max": 0.0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0.0,
+            "total_max": 0.0,
+            "label": "参观",
+            "source": "computed",
+            "source_ref": "步行街/免费景点"
           }
         },
         {
@@ -3175,6 +3447,18 @@
           "weather_sensitive": false,
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=118.087587,24.437609&mode=walk"
+          },
+          "price": {
+            "min": 80,
+            "max": 120,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 240,
+            "total_max": 360,
+            "label": "餐饮",
+            "source": "amap-mcp",
+            "source_ref": "maps_search_detail cost 区间"
           }
         }
       ],
@@ -3796,7 +4080,19 @@
               118.073006,
               24.444992
             ]
-          ]
+          ],
+          "fare": {
+            "min": 3,
+            "max": 6,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 9,
+            "total_max": 18,
+            "label": "公交/地铁",
+            "source": "amap-mcp",
+            "source_ref": "maps_direction_transit cost 估"
+          }
         },
         {
           "from_idx": 2,
@@ -4131,7 +4427,19 @@
               118.073003,
               24.444987
             ]
-          ]
+          ],
+          "fare": {
+            "min": 0.0,
+            "max": 0.0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0.0,
+            "total_max": 0.0,
+            "label": "步行",
+            "source": "computed",
+            "source_ref": "零元交通"
+          }
         },
         {
           "from_idx": 3,
@@ -4334,7 +4642,19 @@
               118.075929,
               24.441107
             ]
-          ]
+          ],
+          "fare": {
+            "min": 0.0,
+            "max": 0.0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0.0,
+            "total_max": 0.0,
+            "label": "步行",
+            "source": "computed",
+            "source_ref": "零元交通"
+          }
         },
         {
           "from_idx": 4,
@@ -4561,7 +4881,19 @@
               118.072109,
               24.44309
             ]
-          ]
+          ],
+          "fare": {
+            "min": 0.0,
+            "max": 0.0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0.0,
+            "total_max": 0.0,
+            "label": "步行",
+            "source": "computed",
+            "source_ref": "零元交通"
+          }
         },
         {
           "from_idx": 5,
@@ -5360,7 +5692,19 @@
               118.076157,
               24.486961
             ]
-          ]
+          ],
+          "fare": {
+            "min": 3,
+            "max": 6,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 9,
+            "total_max": 18,
+            "label": "公交/地铁",
+            "source": "amap-mcp",
+            "source_ref": "maps_direction_transit cost 估"
+          }
         },
         {
           "from_idx": 6,
@@ -6203,20 +6547,56 @@
               118.087575,
               24.437621
             ]
-          ]
+          ],
+          "fare": {
+            "min": 25,
+            "max": 40,
+            "currency": "CNY",
+            "unit": "fixed",
+            "quantity": 1,
+            "total_min": 25,
+            "total_max": 40,
+            "label": "打车",
+            "source": "amap-mcp",
+            "source_ref": "maps_direction_driving taxi_cost 估"
+          }
         }
       ],
       "meals": {
         "lunch": {
           "main": {
             "name": "鼓浪屿龙头路小吃（叶氏麻糍 / 沈家肠粉 / 龙头鱼丸）",
-            "why": "鼓浪屿必吃；人均 50 元"
+            "why": "鼓浪屿必吃；人均 50 元",
+            "price": {
+              "min": 80,
+              "max": 150,
+              "currency": "CNY",
+              "unit": "per_person",
+              "quantity": 3,
+              "total_min": 240,
+              "total_max": 450,
+              "label": "餐饮",
+              "source": "amap-mcp",
+              "source_ref": "maps_search_detail cost"
+            }
           }
         },
         "dinner": {
           "main": {
             "name": "阿杰店沙茶面（沙坡尾分店）",
-            "why": "大学路 162 号 / 区域顺路"
+            "why": "大学路 162 号 / 区域顺路",
+            "price": {
+              "min": 80,
+              "max": 150,
+              "currency": "CNY",
+              "unit": "per_person",
+              "quantity": 3,
+              "total_min": 240,
+              "total_max": 450,
+              "label": "餐饮",
+              "source": "amap-mcp",
+              "source_ref": "maps_search_detail cost"
+            }
           },
           "alt": {
             "name": "213 沙茶面（沙坡尾博物馆社区店）",
@@ -6256,6 +6636,18 @@
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=118.101683,24.436084&mode=car",
             "xhs": "https://www.xiaohongshu.com/search_result?keyword=厦大思明校区预约"
+          },
+          "price": {
+            "min": 0.0,
+            "max": 0.0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0.0,
+            "total_max": 0.0,
+            "label": "参观",
+            "source": "computed",
+            "source_ref": "步行街/免费景点"
           }
         },
         {
@@ -6271,6 +6663,18 @@
           "weather_sensitive": false,
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=118.095000,24.432000&mode=walk"
+          },
+          "price": {
+            "min": 80,
+            "max": 120,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 240,
+            "total_max": 360,
+            "label": "餐饮",
+            "source": "amap-mcp",
+            "source_ref": "maps_search_detail cost 区间"
           }
         },
         {
@@ -6287,6 +6691,18 @@
           "indoor_backup": "厦大校园内咖啡馆 / 顶澳仔猫街文创店",
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=118.100875,24.432281&mode=walk"
+          },
+          "price": {
+            "min": 0.0,
+            "max": 0.0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0.0,
+            "total_max": 0.0,
+            "label": "参观",
+            "source": "computed",
+            "source_ref": "步行街/免费景点"
           }
         },
         {
@@ -6303,6 +6719,18 @@
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=118.125150,24.425514&mode=car",
             "xhs": "https://www.xiaohongshu.com/search_result?keyword=曾厝垵"
+          },
+          "price": {
+            "min": 0.0,
+            "max": 0.0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0.0,
+            "total_max": 0.0,
+            "label": "参观",
+            "source": "computed",
+            "source_ref": "步行街/免费景点"
           }
         },
         {
@@ -6319,6 +6747,18 @@
           "indoor_backup": "椰风寨商业区室内店 / 退回曾厝垵",
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=118.161867,24.442613&mode=car"
+          },
+          "price": {
+            "min": 0.0,
+            "max": 0.0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0.0,
+            "total_max": 0.0,
+            "label": "参观",
+            "source": "computed",
+            "source_ref": "步行街/免费景点"
           }
         },
         {
@@ -6334,6 +6774,18 @@
           "weather_sensitive": false,
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=118.125150,24.425514&mode=car"
+          },
+          "price": {
+            "min": 80,
+            "max": 120,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 240,
+            "total_max": 360,
+            "label": "餐饮",
+            "source": "amap-mcp",
+            "source_ref": "maps_search_detail cost 区间"
           }
         }
       ],
@@ -6619,7 +7071,19 @@
               118.095187,
               24.432543
             ]
-          ]
+          ],
+          "fare": {
+            "min": 0.0,
+            "max": 0.0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0.0,
+            "total_max": 0.0,
+            "label": "步行",
+            "source": "computed",
+            "source_ref": "零元交通"
+          }
         },
         {
           "from_idx": 2,
@@ -6698,7 +7162,19 @@
               118.100959,
               24.432643
             ]
-          ]
+          ],
+          "fare": {
+            "min": 0.0,
+            "max": 0.0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0.0,
+            "total_max": 0.0,
+            "label": "步行",
+            "source": "computed",
+            "source_ref": "零元交通"
+          }
         },
         {
           "from_idx": 3,
@@ -7041,7 +7517,19 @@
               118.1253,
               24.425448
             ]
-          ]
+          ],
+          "fare": {
+            "min": 25,
+            "max": 40,
+            "currency": "CNY",
+            "unit": "fixed",
+            "quantity": 1,
+            "total_min": 25,
+            "total_max": 40,
+            "label": "打车",
+            "source": "amap-mcp",
+            "source_ref": "maps_direction_driving taxi_cost 估"
+          }
         },
         {
           "from_idx": 4,
@@ -7692,7 +8180,19 @@
               118.161556,
               24.442913
             ]
-          ]
+          ],
+          "fare": {
+            "min": 25,
+            "max": 40,
+            "currency": "CNY",
+            "unit": "fixed",
+            "quantity": 1,
+            "total_min": 25,
+            "total_max": 40,
+            "label": "打车",
+            "source": "amap-mcp",
+            "source_ref": "maps_direction_driving taxi_cost 估"
+          }
         },
         {
           "from_idx": 5,
@@ -8343,20 +8843,56 @@
               118.1253,
               24.425448
             ]
-          ]
+          ],
+          "fare": {
+            "min": 25,
+            "max": 40,
+            "currency": "CNY",
+            "unit": "fixed",
+            "quantity": 1,
+            "total_min": 25,
+            "total_max": 40,
+            "label": "打车",
+            "source": "amap-mcp",
+            "source_ref": "maps_direction_driving taxi_cost 估"
+          }
         }
       ],
       "meals": {
         "lunch": {
           "main": {
             "name": "闽南味道姜母鸭总店（顶澳仔店）",
-            "why": "顶澳仔路 18 号 / 区域顺路 / 姜母鸭必吃"
+            "why": "顶澳仔路 18 号 / 区域顺路 / 姜母鸭必吃",
+            "price": {
+              "min": 80,
+              "max": 150,
+              "currency": "CNY",
+              "unit": "per_person",
+              "quantity": 3,
+              "total_min": 240,
+              "total_max": 450,
+              "label": "餐饮",
+              "source": "amap-mcp",
+              "source_ref": "maps_search_detail cost"
+            }
           }
         },
         "dinner": {
           "main": {
             "name": "闽南行闽菜·海鲜·姜母鸭（曾厝垵总店）",
-            "why": "国办街 383-2 号 / 区域顺路 / 闽南菜代表"
+            "why": "国办街 383-2 号 / 区域顺路 / 闽南菜代表",
+            "price": {
+              "min": 80,
+              "max": 150,
+              "currency": "CNY",
+              "unit": "per_person",
+              "quantity": 3,
+              "total_min": 240,
+              "total_max": 450,
+              "label": "餐饮",
+              "source": "amap-mcp",
+              "source_ref": "maps_search_detail cost"
+            }
           },
           "alt": {
             "name": "溪下里传承闽南菜",
@@ -8393,6 +8929,18 @@
           "weather_sensitive": false,
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=118.075017,24.457902&mode=walk"
+          },
+          "price": {
+            "min": 80,
+            "max": 120,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 240,
+            "total_max": 360,
+            "label": "餐饮",
+            "source": "amap-mcp",
+            "source_ref": "maps_search_detail cost 区间"
           }
         },
         {
@@ -8408,6 +8956,18 @@
           "weather_sensitive": false,
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=118.087587,24.437609&mode=car"
+          },
+          "price": {
+            "min": 0.0,
+            "max": 0.0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0.0,
+            "total_max": 0.0,
+            "label": "参观",
+            "source": "computed",
+            "source_ref": "步行街/免费景点"
           }
         },
         {
@@ -8423,6 +8983,18 @@
           "weather_sensitive": false,
           "links": {
             "amap_navi": "https://uri.amap.com/navigation?to=118.137090,24.539495&mode=car"
+          },
+          "price": {
+            "min": 0.0,
+            "max": 0.0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0.0,
+            "total_max": 0.0,
+            "label": "活动",
+            "source": "computed",
+            "source_ref": "无门票"
           }
         }
       ],
@@ -9052,7 +9624,19 @@
               118.087575,
               24.437621
             ]
-          ]
+          ],
+          "fare": {
+            "min": 25,
+            "max": 40,
+            "currency": "CNY",
+            "unit": "fixed",
+            "quantity": 1,
+            "total_min": 25,
+            "total_max": 40,
+            "label": "打车",
+            "source": "amap-mcp",
+            "source_ref": "maps_direction_driving taxi_cost 估"
+          }
         },
         {
           "from_idx": 2,
@@ -10387,20 +10971,56 @@
               118.137665,
               24.539149
             ]
-          ]
+          ],
+          "fare": {
+            "min": 25,
+            "max": 40,
+            "currency": "CNY",
+            "unit": "fixed",
+            "quantity": 1,
+            "total_min": 25,
+            "total_max": 40,
+            "label": "打车",
+            "source": "amap-mcp",
+            "source_ref": "maps_direction_driving taxi_cost 估"
+          }
         }
       ],
       "meals": {
         "breakfast": {
           "main": {
             "name": "八市早茶（面线糊 / 沙茶面）",
-            "why": "本地人吃早餐的「真正」地方"
+            "why": "本地人吃早餐的「真正」地方",
+            "price": {
+              "min": 50,
+              "max": 80,
+              "currency": "CNY",
+              "unit": "per_person",
+              "quantity": 3,
+              "total_min": 150,
+              "total_max": 240,
+              "label": "餐饮",
+              "source": "amap-mcp",
+              "source_ref": "maps_search_detail cost"
+            }
           }
         },
         "lunch": {
           "main": {
             "name": "阿杰店沙茶面（沙坡尾分店）",
-            "why": "沙坡尾艺术西区内部 / 末餐便利"
+            "why": "沙坡尾艺术西区内部 / 末餐便利",
+            "price": {
+              "min": 80,
+              "max": 150,
+              "currency": "CNY",
+              "unit": "per_person",
+              "quantity": 3,
+              "total_min": 240,
+              "total_max": 450,
+              "label": "餐饮",
+              "source": "amap-mcp",
+              "source_ref": "maps_search_detail cost"
+            }
           }
         }
       }
@@ -10446,7 +11066,19 @@
       "deadline": "出发前 1 周（提前 7 天放票）",
       "url": "https://www.xiamenferry.com/",
       "day": 2,
-      "note": "Day 2 上午 9 点船次；35 元/人；3 人共 105 元；提前 1 周 0 点放票，越早越好"
+      "note": "Day 2 上午 9 点船次；35 元/人；3 人共 105 元；提前 1 周 0 点放票，越早越好",
+      "price": {
+        "min": 35,
+        "max": 35,
+        "currency": "CNY",
+        "unit": "per_person",
+        "quantity": 3,
+        "total_min": 105,
+        "total_max": 105,
+        "label": "船票",
+        "source": "official-site",
+        "source_ref": "厦门轮渡官网"
+      }
     },
     {
       "item": "厦门大学思明校区入校预约",
@@ -10459,7 +11091,19 @@
       "item": "如忆酒店（中山路步行街八市店）",
       "deadline": "出发前 1-2 周（**携程** / 美团比价）",
       "url": "https://hotels.ctrip.com/hotels/list?city=25&keyword=%E5%A6%82%E5%BF%86%E9%85%92%E5%BA%97%E8%B7%AF%E5%8D%97%E8%B7%AF",
-      "note": "**经济型双床房**（3 人 2 床 1 房）；6 月底 7 月初旺季前 1 周都还有"
+      "note": "**经济型双床房**（3 人 2 床 1 房）；6 月底 7 月初旺季前 1 周都还有",
+      "price": {
+        "min": 350,
+        "max": 430,
+        "currency": "CNY",
+        "unit": "per_night",
+        "quantity": 3,
+        "total_min": 1050,
+        "total_max": 1290,
+        "label": "住宿",
+        "source": "ctrip-webfetch",
+        "source_ref": "携程酒店列表实查估"
+      }
     },
     {
       "item": "返程机票（厦门高崎 → 出发地）",
@@ -10467,15 +11111,73 @@
       "url": "https://flights.ctrip.com/itinerary/oneway/xmn-sha?date=2026-06-28",
       "day": 4,
       "depart_time": "18:00",
-      "note": "用户要求：6/25 之后 4 天 3 晚窗口内的最便宜往返；3 人共 3 张；建议 18:00 之后航班留 3h 缓冲（Day 4 14:30 末 POI 出发 → 25min 到机场 → 16:00 值机 → 18:00 起飞）"
+      "note": "用户要求：6/25 之后 4 天 3 晚窗口内的最便宜往返；3 人共 3 张；建议 18:00 之后航班留 3h 缓冲（Day 4 14:30 末 POI 出发 → 25min 到机场 → 16:00 值机 → 18:00 起飞）",
+      "price": {
+        "min": 600,
+        "max": 900,
+        "currency": "CNY",
+        "unit": "per_person",
+        "quantity": 3,
+        "total_min": 1800,
+        "total_max": 2700,
+        "label": "机票",
+        "source": "ctrip-webfetch",
+        "source_ref": "携程机票实查区间"
+      }
     },
     {
       "item": "出发机票（出发地 → 厦门高崎）",
       "deadline": "出发前 1-2 周（**与返程同订比价**）",
       "url": "https://flights.ctrip.com/itinerary/oneway/sha-xmn?date=2026-06-25",
-      "note": "Day 1 14:00 抵达厦门为锚点；3 人共 3 张；往返同订见携程 `round/sha-xmn?date=2026-06-25,2026-06-28`"
+      "note": "Day 1 14:00 抵达厦门为锚点；3 人共 3 张；往返同订见携程 `round/sha-xmn?date=2026-06-25,2026-06-28`",
+      "price": {
+        "min": 600,
+        "max": 900,
+        "currency": "CNY",
+        "unit": "per_person",
+        "quantity": 3,
+        "total_min": 1800,
+        "total_max": 2700,
+        "label": "机票",
+        "source": "ctrip-webfetch",
+        "source_ref": "携程机票实查区间"
+      }
     }
-  ]
+  ],
+  "party_size": 3,
+  "budget_summary": {
+    "currency": "CNY",
+    "by_category": {
+      "transport_local": {
+        "min": 957,
+        "max": 1832,
+        "note": "市内交通（时间轴交通费加总估）"
+      },
+      "food": {
+        "min": 2792,
+        "max": 4640
+      },
+      "tickets": {
+        "min": 1197,
+        "max": 2198
+      },
+      "hotel": {
+        "min": 1050,
+        "max": 1290,
+        "nights": 3
+      },
+      "flights": {
+        "min": 3600.0,
+        "max": 5400.0,
+        "note": "携程往返估"
+      }
+    },
+    "total_min": 7978,
+    "total_max": 12211,
+    "per_person_min": 2659,
+    "per_person_max": 4070,
+    "disclaimer": "价格为调研日参考，不含个人购物；机票/酒店以平台实时为准"
+  }
 };
   </script>
 
@@ -10622,6 +11324,125 @@
         out = out.replace(/\*\*([^*\n]+?)\*\*/g, '<strong>$1</strong>');
         out = out.replace(/\n/g, '<br>');
         return out;
+      }
+
+      function priceTotals(p) {
+        if (!p || typeof p !== 'object') return null;
+        let tmin = p.total_min, tmax = p.total_max;
+        if (tmin == null) {
+          const mn = p.min, mx = p.max != null ? p.max : p.min;
+          if (mn == null && p.unit !== 'free') return null;
+          const q = p.quantity || D.party_size || 1;
+          tmin = (mn || 0) * q;
+          tmax = (mx != null ? mx : mn || 0) * q;
+        }
+        return Object.assign({}, p, { tmin, tmax: tmax != null ? tmax : tmin });
+      }
+
+      function formatMoney(n, currency) {
+        if (n == null || Number.isNaN(n)) return '—';
+        const sym = currency === 'JPY' ? '¥' : '¥';
+        return sym + Math.round(n).toLocaleString();
+      }
+
+      function renderPriceCardHtml(price, missingHint) {
+        if (!price) {
+          return `<div class="price-card price-card-missing" role="note"><span class="price-amount">待补价格调研</span><span class="price-source">${esc(missingHint || '需 MCP/WebFetch 实查')}</span></div>`;
+        }
+        const p = priceTotals(price);
+        if (!p) return renderPriceCardHtml(null, missingHint);
+        const cur = p.currency || 'CNY';
+        const unitMap = { per_person: '/人', per_order: '/次', per_night: '/晚', fixed: '', free: '' };
+        const unitSuffix = unitMap[p.unit] || '';
+        let amountStr;
+        if (p.unit === 'free' || (p.min === 0 && p.max === 0)) {
+          amountStr = '免费';
+        } else if (p.min === p.max) {
+          amountStr = formatMoney(p.min, cur) + unitSuffix;
+          const q = p.quantity || D.party_size || 1;
+          if (q > 1 && (p.unit === 'per_person' || p.unit === 'per_order')) {
+            amountStr += ` × ${q} ≈ ${formatMoney(p.tmin, cur)}`;
+          }
+        } else {
+          amountStr = `${formatMoney(p.min, cur)}–${formatMoney(p.max, cur)}${unitSuffix}`;
+        }
+        const src = esc(p.source_ref || p.source || '');
+        const label = p.label ? `<span class="price-label">${esc(p.label)}</span>` : '';
+        return `<div class="price-card" data-source="${esc(p.source || '')}"><span class="price-amount">${amountStr}</span>${label}<span class="price-source">来源：${src}</span></div>`;
+      }
+
+      function sumLineItemPrices() {
+        let min = 0, max = 0;
+        (D.days || []).forEach(d => {
+          (d.pois || []).forEach(p => {
+            const t = priceTotals(p.price);
+            if (t) { min += t.tmin; max += t.tmax; }
+          });
+          (d.transports || []).forEach(t => {
+            const f = priceTotals(t.fare);
+            if (f) { min += f.tmin; max += f.tmax; }
+          });
+          const meals = d.meals || {};
+          ['breakfast', 'lunch', 'dinner'].forEach(mt => {
+            const m = meals[mt] && meals[mt].main;
+            const t = m && priceTotals(m.price);
+            if (t) { min += t.tmin; max += t.tmax; }
+          });
+        });
+        return { min, max };
+      }
+
+      function renderBudgetSummary() {
+        const el = document.getElementById('budget-breakdown');
+        const badge = document.getElementById('budget-total-badge');
+        if (!el) return;
+        const ps = D.party_size || 1;
+        const bs = D.budget_summary;
+        const line = sumLineItemPrices();
+        const catLabels = {
+          transport_local: '市内交通',
+          food: '餐饮',
+          tickets: '门票/活动',
+          hotel: '住宿',
+          flights: '大交通（机票等）',
+        };
+        let html = '';
+        let totalMin, totalMax, isFallback = false;
+
+        if (bs && bs.total_min != null) {
+          totalMin = bs.total_min;
+          totalMax = bs.total_max != null ? bs.total_max : bs.total_min;
+          if (bs.by_category) {
+            Object.keys(catLabels).forEach(k => {
+              const c = bs.by_category[k];
+              if (!c || c.min == null) return;
+              const cmax = c.max != null ? c.max : c.min;
+              const note = c.note ? `（${esc(c.note)}）` : (c.nights ? `（${c.nights} 晚）` : '');
+              html += `<div class="budget-row"><span>${catLabels[k]}${note}</span><span>${formatMoney(c.min, bs.currency)}${cmax !== c.min ? '–' + formatMoney(cmax, bs.currency) : ''}</span></div>`;
+            });
+          }
+          html += `<div class="budget-row budget-total-line"><span>全程合计（${ps} 人）</span><span>${formatMoney(totalMin, bs.currency)}${totalMax !== totalMin ? '–' + formatMoney(totalMax, bs.currency) : ''}</span></div>`;
+          if (bs.per_person_min != null) {
+            html += `<div class="budget-row"><span>人均</span><span>${formatMoney(bs.per_person_min, bs.currency)}${bs.per_person_max !== bs.per_person_min ? '–' + formatMoney(bs.per_person_max, bs.currency) : ''}</span></div>`;
+          }
+          if (bs.disclaimer) {
+            html += `<p class="budget-disclaimer">${esc(bs.disclaimer)}</p>`;
+          }
+        } else {
+          isFallback = true;
+          totalMin = line.min;
+          totalMax = line.max;
+          html += `<div class="budget-row"><span>时间轴已标价合计</span><span>${formatMoney(totalMin)}${totalMax !== totalMin ? '–' + formatMoney(totalMax) : ''}</span></div>`;
+          html += `<div class="budget-row"><span>人均（估）</span><span>${formatMoney(totalMin / ps)}${totalMax !== totalMin ? '–' + formatMoney(totalMax / ps) : ''}</span></div>`;
+          html += `<p class="budget-disclaimer">⚠️ 未校验 budget_summary；酒店/机票等大项可能未计入</p>`;
+        }
+        el.className = isFallback ? 'budget-card budget-fallback' : 'budget-card';
+        el.innerHTML = html;
+        if (badge) {
+          badge.textContent = totalMax !== totalMin
+            ? `${formatMoney(totalMin)}–${formatMoney(totalMax)}`
+            : formatMoney(totalMin);
+        }
       }
 
       // ===== Drawer 交互 =====
@@ -10809,6 +11630,7 @@
           // 删：POI 卡片"小红书"按钮（v2.0.2 改：与 next-leg 导航重复，保留大众点评作餐厅维度的第三方参考）
           if (links.dianping) linkParts.push(`<a href="${esc(links.dianping)}" target="_blank" rel="noopener">大众点评</a>`);
           const linksHtml = linkParts.length ? `<div class="links">${linkParts.join('')}</div>` : '';
+          const priceHtml = renderPriceCardHtml(p.price, `${p.name} 缺 price`);
 
           // "下一站"小条（从本 POI 出发的 transport）
           const nextTransport = d.transports && d.transports.find(t => t.from_idx === p.idx);
@@ -10831,7 +11653,7 @@
               <span class="next-leg-text">${esc(desc)} · ${esc(toName)}</span>
               <span class="leg-time">${esc(legTime)}</span>
               ${navLink}
-            </div>`;
+            </div>${renderPriceCardHtml(nextTransport.fare, '交通段缺 fare')}`;
           }
 
           // meal-leg（绑定到匹配时段的第一个 POI）
@@ -10854,7 +11676,7 @@
               <span class="meal-leg-name">${esc(m.main.name)}</span>
               <span class="meal-leg-why">${esc(m.main.why || '')}</span>
               ${m.alt ? `<span class="meal-leg-alt">备选：${esc(m.alt.name)}</span>` : ''}
-            </p>`;
+            </p>${renderPriceCardHtml(m.main.price, `${labelMap[matchedMealType]}缺 price`)}`;
           }
 
           return `<li class="time-block">
@@ -10862,6 +11684,7 @@
             <div class="place">
               <h4>${esc(p.name)} <span class="cat ${esc(p.cat)}">${esc(p.cat)}</span>${ws}</h4>
               ${note}${why}${linksHtml}
+              ${priceHtml}
               ${nextLegHtml}
               ${mealLegHtml}
             </div>
@@ -11486,6 +12309,7 @@
         renderValidationSection();
         renderHotel();
         renderWeatherPlan();
+        renderBudgetSummary();
         renderDrawerLists();
         renderTabs();
         initDrawerLayout();
