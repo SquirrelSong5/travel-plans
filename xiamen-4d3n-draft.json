@@ -9351,14 +9351,14 @@
     },
     {
       "item": "如忆酒店（中山路步行街八市店）",
-      "deadline": "出发前 1-2 周（Booking / 携程 / 美团比价）",
-      "url": "https://www.booking.com/search.html?ss=Ruyi+Hotel+Xiamen+Zhongshan+Road+Basin+8",
+      "deadline": "出发前 1-2 周（**携程** / 美团比价）",
+      "url": "https://hotels.ctrip.com/hotels/list?city=25&keyword=%E5%A6%82%E5%BF%86%E9%85%92%E5%BA%97%E8%B7%AF%E5%8D%97%E8%B7%AF",
       "note": "**经济型双床房**（3 人 2 床 1 房）；6 月底 7 月初旺季前 1 周都还有"
     },
     {
       "item": "返程机票（厦门高崎 → 出发地）",
       "deadline": "出发前 1-2 周（**找最便宜往返日**）",
-      "url": "https://www.trip.com/",
+      "url": "https://flights.ctrip.com/itinerary/oneway/xmn-sha?date=2026-06-28",
       "day": 4,
       "depart_time": "18:00",
       "note": "用户要求：6/25 之后 4 天 3 晚窗口内的最便宜往返；3 人共 3 张；建议 18:00 之后航班留 3h 缓冲（Day 4 14:30 末 POI 出发 → 25min 到机场 → 16:00 值机 → 18:00 起飞）"
@@ -9366,8 +9366,8 @@
     {
       "item": "出发机票（出发地 → 厦门高崎）",
       "deadline": "出发前 1-2 周（**与返程同订比价**）",
-      "url": "https://www.trip.com/",
-      "note": "Day 1 14:00 抵达厦门为锚点；3 人共 3 张"
+      "url": "https://flights.ctrip.com/itinerary/oneway/sha-xmn?date=2026-06-25",
+      "note": "Day 1 14:00 抵达厦门为锚点；3 人共 3 张；往返同订见携程 `round/sha-xmn?date=2026-06-25,2026-06-28`"
     }
   ]
 }

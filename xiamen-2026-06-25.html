@@ -1079,33 +1079,7 @@
           提前订
           <span class="count" id="prebook-count"></span>
         </h3>
-        <ul class="drawer-list" id="prebook-list">
-          <li>
-  <div class="li-title">鼓浪屿船票<a href="https://www.xiamenferry.com/" target="_blank" rel="noopener">打开</a></div>
-  <div class="li-meta">截止 出发前 1 周（提前 7 天放票）</div>
-  <div class="li-note">Day 2 上午 9 点船次；35 元/人；3 人共 105 元；提前 1 周 0 点放票，越早越好</div>
-</li>
-<li>
-  <div class="li-title">厦门大学思明校区入校预约<a href="https://cabbage.xmu.edu.cn/" target="_blank" rel="noopener">打开</a></div>
-  <div class="li-meta">截止 出发前 1-3 天（**厦门大学**官方公众号）</div>
-  <div class="li-note">Day 3 上午 10 点入校；周末紧张；提前 1-3 天 0 点放票</div>
-</li>
-<li>
-  <div class="li-title">如忆酒店（中山路步行街八市店）<a href="https://www.booking.com/search.html?ss=Ruyi+Hotel+Xiamen+Zhongshan+Road+Basin+8" target="_blank" rel="noopener">打开</a></div>
-  <div class="li-meta">截止 出发前 1-2 周（Booking / 携程 / 美团比价）</div>
-  <div class="li-note">**经济型双床房**（3 人 2 床 1 房）；6 月底 7 月初旺季前 1 周都还有</div>
-</li>
-<li>
-  <div class="li-title">返程机票（厦门高崎 → 出发地）<a href="https://www.trip.com/" target="_blank" rel="noopener">打开</a></div>
-  <div class="li-meta">截止 出发前 1-2 周（**找最便宜往返日**）</div>
-  <div class="li-note">用户要求：6/25 之后 4 天 3 晚窗口内的最便宜往返；3 人共 3 张；建议 18:00 之后航班留 3h 缓冲（Day 4 14:30 末 POI 出发 → 25min 到机场 → 16:00 值机 → 18:00 起飞）</div>
-</li>
-<li>
-  <div class="li-title">出发机票（出发地 → 厦门高崎）<a href="https://www.trip.com/" target="_blank" rel="noopener">打开</a></div>
-  <div class="li-meta">截止 出发前 1-2 周（**与返程同订比价**）</div>
-  <div class="li-note">Day 1 14:00 抵达厦门为锚点；3 人共 3 张</div>
-</li>
-        </ul>
+        <ul class="drawer-list" id="prebook-list"></ul>
       </section>
 
     </div>
@@ -1120,7 +1094,7 @@
   <script>
     // v2.0.5 安全：AMAP_WEB_KEY 不内嵌到 HTML（防 git 泄露）
     // 三种 runtime 注入方式（按优先级）：
-    // 1. URL 加 ?k=YOUR_KEY 参数（如 https://xxx.github.io/.../x.html?k=6b5e3a...）
+    // 1. URL 加 ?k=YOUR_KEY 参数（如 https://xxx.github.io/.../x.html?k=YOUR_KEY）
     // 2. localStorage 设置 amap_web_key（持久化，一次设置永久）
     // 3. 空 → 地图降级为文字版行程
     (function injectAmapKey() {
@@ -10489,14 +10463,14 @@
     },
     {
       "item": "如忆酒店（中山路步行街八市店）",
-      "deadline": "出发前 1-2 周（Booking / 携程 / 美团比价）",
-      "url": "https://www.booking.com/search.html?ss=Ruyi+Hotel+Xiamen+Zhongshan+Road+Basin+8",
+      "deadline": "出发前 1-2 周（**携程** / 美团比价）",
+      "url": "https://hotels.ctrip.com/hotels/list?city=25&keyword=%E5%A6%82%E5%BF%86%E9%85%92%E5%BA%97%E8%B7%AF%E5%8D%97%E8%B7%AF",
       "note": "**经济型双床房**（3 人 2 床 1 房）；6 月底 7 月初旺季前 1 周都还有"
     },
     {
       "item": "返程机票（厦门高崎 → 出发地）",
       "deadline": "出发前 1-2 周（**找最便宜往返日**）",
-      "url": "https://www.trip.com/",
+      "url": "https://flights.ctrip.com/itinerary/oneway/xmn-sha?date=2026-06-28",
       "day": 4,
       "depart_time": "18:00",
       "note": "用户要求：6/25 之后 4 天 3 晚窗口内的最便宜往返；3 人共 3 张；建议 18:00 之后航班留 3h 缓冲（Day 4 14:30 末 POI 出发 → 25min 到机场 → 16:00 值机 → 18:00 起飞）"
@@ -10504,8 +10478,8 @@
     {
       "item": "出发机票（出发地 → 厦门高崎）",
       "deadline": "出发前 1-2 周（**与返程同订比价**）",
-      "url": "https://www.trip.com/",
-      "note": "Day 1 14:00 抵达厦门为锚点；3 人共 3 张"
+      "url": "https://flights.ctrip.com/itinerary/oneway/sha-xmn?date=2026-06-25",
+      "note": "Day 1 14:00 抵达厦门为锚点；3 人共 3 张；往返同订见携程 `round/sha-xmn?date=2026-06-25,2026-06-28`"
     }
   ]
 };
@@ -10541,7 +10515,60 @@
       }
 
       function isPlaceholderUrl(url) {
-        return /ctrip\.com\/flight\/show-1|example\.com|placeholder|\/flight\/show-\d+\.html$/i.test(url || '');
+        if (!url) return true;
+        if (/ctrip\.com\/flight\/show-1|example\.com|placeholder|\/flight\/show-\d+\.html$/i.test(url)) return true;
+        try {
+          const u = new URL(url.trim());
+          const path = (u.pathname || '/').replace(/\/$/, '') || '/';
+          const host = u.hostname.replace(/^www\./, '');
+          // 泛域名首页 / 无搜索参数的占位链
+          if ((host === 'trip.com' || host === 'ctrip.com' || host === 'fliggy.com') && path === '/') return true;
+          if (host === 'booking.com' && path === '/search.html' && !u.searchParams.get('ss')) return true;
+        } catch (e) { return true; }
+        return false;
+      }
+
+      function isForeignOtaUrl(url) {
+        return /booking\.com|agoda\.com|expedia\.com|trip\.com/i.test(url || '');
+      }
+
+      function parseTripDates() {
+        const m = (D.date_range || '').match(/(\d{4}-\d{2}-\d{2})/g);
+        return { start: m?.[0] || '', end: m?.[1] || m?.[0] || '' };
+      }
+
+      /** prebook 链接降级：国内 OTA 深链（携程优先），禁止 Bing / Booking / Trip.com 首页 */
+      function buildDomesticPrebookFallback(x) {
+        const item = x.item || x.title || '';
+        const q = encodeURIComponent(item);
+        const { start, end } = parseTripDates();
+        const city = encodeURIComponent(D.city || '');
+        if (/机票|航班/.test(item)) {
+          if (/返程|离厦|厦门.*→|厦门.*到/.test(item) && end) {
+            return `https://flights.ctrip.com/itinerary/oneway/xmn-sha?date=${end}`;
+          }
+          if (/出发|抵达厦门|→.*厦门|到厦门/.test(item) && start) {
+            return `https://flights.ctrip.com/itinerary/oneway/sha-xmn?date=${start}`;
+          }
+          if (start && end) {
+            return `https://flights.ctrip.com/itinerary/round/sha-xmn?date=${start},${end}`;
+          }
+          return `https://flights.ctrip.com/`;
+        }
+        if (/高铁|火车/.test(item)) {
+          return `https://trains.ctrip.com/`;
+        }
+        if (/酒店|宾馆|民宿/.test(item)) {
+          const kw = encodeURIComponent(item.split(/[（(]/)[0].trim());
+          return `https://hotels.ctrip.com/hotels/list?keyword=${kw}${city ? `&cityname=${city}` : ''}`;
+        }
+        if (/船票|轮渡/.test(item) && /鼓浪屿|厦门/.test(item)) {
+          return 'https://www.xiamenferry.com/';
+        }
+        if (/门票|预约|入校/.test(item)) {
+          return `https://www.ctrip.com/search/searchresult?keyword=${q}`;
+        }
+        return `https://www.ctrip.com/search/searchresult?keyword=${q}`;
       }
 
       function isAmapNaviUrl(url) {
@@ -10572,11 +10599,10 @@
 
       function resolvePrebookLink(x) {
         const url = (x.url || '').trim();
-        if (isValidHttpUrl(url) && !isPlaceholderUrl(url)) {
+        if (isValidHttpUrl(url) && !isPlaceholderUrl(url) && !isForeignOtaUrl(url)) {
           return { href: url, search: false };
         }
-        const q = encodeURIComponent(x.item || x.title || '');
-        return { href: `https://www.bing.com/search?q=${q}`, search: true };
+        return { href: buildDomesticPrebookFallback(x), search: true };
       }
 
       function isDesktopDrawer() {
@@ -10897,7 +10923,7 @@
               ? `<a href="${esc(link.href)}" target="_blank" rel="noopener">${title}</a><span class="item-search-hint">（搜索）</span>`
               : `<a href="${esc(link.href)}" target="_blank" rel="noopener">${title}</a>`;
             return `<li>
-              <span class="item-title">${titleHtml}<span class="item-deadline">· ${esc(x.deadline)}</span></span>
+              <span class="item-title">${titleHtml}<span class="item-deadline">· ${mdLite(x.deadline)}</span></span>
               ${x.note ? `<span class="item-meta">${mdLite(x.note)}</span>` : ''}
             </li>`;
           }).join('');
