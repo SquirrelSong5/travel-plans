@@ -16352,11 +16352,11 @@
               <div class="time-block-main">
                 <div class="time-row">
                   <time>${esc(p.time)}</time>
-                  <span class="slot-badge" title="地图上第 ${i + 1} 个标记">${i + 1}</span>
+                  <span class="slot-badge" title="地图上第 ${poiArrIdx + 1} 个标记">${poiArrIdx + 1}</span>
                   ${costUi.pillHtml}
                 </div>
                 <div class="place">
-                  <h4><span class="slot-num">${i + 1}</span> ${esc(p.name)} <span class="cat ${esc(p.cat)}">${esc(p.cat)}</span>${ws}</h4>
+                  <h4><span class="slot-num">${poiArrIdx + 1}</span> ${esc(p.name)} <span class="cat ${esc(p.cat)}">${esc(p.cat)}</span>${ws}</h4>
                   ${note}${why}${linksHtml}
                   ${nextLegHtml}
                   ${mealLegHtml}
