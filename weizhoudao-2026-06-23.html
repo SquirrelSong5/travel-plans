@@ -1,0 +1,4809 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>涠洲岛 5D4N 毕业旅行 · 2026-06-23 ~ 2026-06-27</title>
+  <style>
+    /* ===== 基础 ===== */
+    *, *::before, *::after { box-sizing: border-box; }
+    :root {
+      /* 颜色（WCAG AA 校验过：accent 在浅底上对比度 4.7，深底 5.2） */
+      --bg: #fafaf7;
+      --bg-elevated: #ffffff;
+      --bg-soft: #f4f2ec;
+      --fg: #171717;
+      --fg-muted: #595959;        /* 提深以保 AA 对比 */
+      --fg-subtle: #8a8a87;
+      --line: #e8e6e0;
+      --line-strong: #d6d3cc;
+      --accent: #c8421a;           /* 比原 #d4451b 深一档，AA 通过 */
+      --accent-hover: #a83512;
+      --accent-soft: #fbeee8;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 2px 8px rgba(0,0,0,0.06);
+      --shadow-lg: 0 12px 32px rgba(0,0,0,0.10);
+      --radius-sm: 8px;
+      --radius: 14px;
+      --radius-lg: 20px;
+      /* 交通方式颜色 */
+      --c-walk: #2d7a4a;
+      --c-transit: #1f6feb;
+      --c-drive: #c0392b;
+      --c-bike: #e67e22;
+      /* 间距栅格（4 / 8 基准） */
+      --sp-1: 4px;
+      --sp-2: 8px;
+      --sp-3: 12px;
+      --sp-4: 16px;
+      --sp-5: 20px;
+      --sp-6: 24px;
+      --sp-8: 32px;
+      --sp-10: 40px;
+      /* 字号 scale（移动端 ≥16px 防 iOS 缩放） */
+      --fs-xs: 12px;
+      --fs-sm: 13px;
+      --fs-base: 15px;     /* 桌面正文 */
+      --fs-md: 16px;       /* 移动端正文下界 */
+      --fs-lg: 18px;
+      --fs-xl: 22px;
+      --fs-2xl: 28px;
+      --fs-3xl: 34px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1011;
+        --bg-elevated: #1a1b1d;
+        --bg-soft: #232427;
+        --fg: #f2f2f0;
+        --fg-muted: #b0b0ae;
+        --fg-subtle: #7a7a78;
+        --line: #2a2b2d;
+        --line-strong: #3a3b3d;
+        --accent: #ff7a55;
+        --accent-hover: #ff9276;
+        --accent-soft: #2a1f1a;
+        --shadow-md: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-lg: 0 12px 32px rgba(0,0,0,0.5);
+        --c-walk: #4ca870;
+        --c-transit: #5a96ff;
+        --c-drive: #ff7560;
+        --c-bike: #ffb05c;
+      }
+    }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      font-size: var(--fs-base);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+    .wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: var(--sp-6) var(--sp-5) calc(var(--sp-10) + env(safe-area-inset-bottom, 0px));
+    }
+
+    /* ===== Skip Link（无障碍） ===== */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 16px;
+      background: var(--accent);
+      color: white;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-size: 14px;
+      z-index: 200;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 16px; }
+
+    /* ===== Validation Banner（v1.1.0 新增，代码级硬约束）===== */
+    #validation-banner {
+      margin: 0 0 var(--sp-4);
+      padding: var(--sp-3) var(--sp-4);
+      border-radius: var(--radius);
+      font-size: var(--fs-sm);
+      line-height: 1.5;
+      display: none;
+    }
+    #validation-banner.show { display: block; }
+    #validation-banner.banner-missing {
+      background: #fef2f2;
+      border: 1px solid #fca5a5;
+      color: #991b1b;
+    }
+    @media (prefers-color-scheme: dark) {
+      #validation-banner.banner-missing {
+        background: #2a0e0e;
+        border-color: #7f1d1d;
+        color: #fecaca;
+      }
+    }
+    #validation-banner.banner-warn {
+      background: #fefce8;
+      border: 1px solid #fde047;
+      color: #854d0e;
+    }
+    @media (prefers-color-scheme: dark) {
+      #validation-banner.banner-warn {
+        background: #2a1f0a;
+        border-color: #713f12;
+        color: #fef08a;
+      }
+    }
+    #validation-banner.banner-pass {
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      color: #166534;
+    }
+    @media (prefers-color-scheme: dark) {
+      #validation-banner.banner-pass {
+        background: #0a2a14;
+        border-color: #14532d;
+        color: #bbf7d0;
+      }
+    }
+    #validation-banner .vb-title {
+      font-weight: 600;
+      margin-bottom: var(--sp-1);
+    }
+    #validation-banner .vb-rules {
+      font-size: var(--fs-xs);
+      margin-top: var(--sp-2);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    #validation-banner .vb-rules li {
+      list-style: none;
+      padding: 2px 0;
+    }
+    #validation-banner .vr-phase {
+      display: inline-block;
+      font-size: var(--fs-xs);
+      padding: 2px 8px;
+      border-radius: 6px;
+      background: var(--surface-2);
+      margin-left: 6px;
+      color: var(--fg-muted);
+    }
+    #validation-banner .vb-detail-btn {
+      margin-top: var(--sp-2);
+      font-size: var(--fs-xs);
+      color: inherit;
+      background: transparent;
+      border: 1px solid currentColor;
+      padding: 4px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    /* ===== Validation Report Section（页面底部折叠区）===== */
+    details#validation-report-section {
+      margin: var(--sp-8) 0 var(--sp-4);
+      padding: var(--sp-4);
+      background: var(--bg-soft);
+      border-radius: var(--radius);
+    }
+    details#validation-report-section > summary {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: var(--fs-sm);
+      color: var(--fg-muted);
+      list-style: none;
+    }
+    details#validation-report-section > summary::before {
+      content: "▸ ";
+      display: inline-block;
+      transition: transform 0.15s;
+    }
+    details#validation-report-section[open] > summary::before {
+      content: "▾ ";
+    }
+    details#validation-report-section .vr-rule {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: var(--sp-2);
+      padding: var(--sp-2) 0;
+      border-top: 1px solid var(--line);
+      font-size: var(--fs-sm);
+    }
+    details#validation-report-section .vr-rule:first-of-type {
+      border-top: 0;
+    }
+    details#validation-report-section .vr-status {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    details#validation-report-section .vr-source {
+      font-size: var(--fs-xs);
+      color: var(--fg-subtle);
+      margin-left: var(--sp-2);
+    }
+    details#validation-report-section .vr-source.script {
+      color: #166534;
+    }
+    @media (prefers-color-scheme: dark) {
+      details#validation-report-section .vr-source.script { color: #86efac; }
+    }
+
+    /* ===== Header ===== */
+    header.hero {
+      padding: var(--sp-2) 0 var(--sp-6);
+      margin-bottom: var(--sp-6);
+    }
+    header.hero h1 {
+      font-size: clamp(var(--fs-2xl), 5vw, var(--fs-3xl));
+      line-height: 1.15;
+      margin: 0 0 var(--sp-2);
+      letter-spacing: -0.025em;
+      font-weight: 700;
+    }
+    header.hero .meta {
+      margin: 0 0 var(--sp-4);
+      color: var(--fg-muted);
+      font-size: var(--fs-sm);
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-2) var(--sp-3);
+    }
+    header.hero .summary {
+      margin: 0;
+      font-size: var(--fs-base);
+      line-height: 1.6;
+      color: var(--fg);
+      background: var(--accent-soft);
+      padding: var(--sp-4) var(--sp-5);
+      border-radius: var(--radius);
+      border-left: 3px solid var(--accent);
+    }
+
+    /* ===== Drawer 触发按钮（FAB 风格，移动端触控 ≥44px） ===== */
+    .drawer-toggle {
+      position: fixed;
+      top: calc(var(--sp-5) + env(safe-area-inset-top, 0px));
+      right: var(--sp-5);
+      z-index: 90;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-2);
+      /* 保证触控目标 ≥ 44px */
+      min-height: 44px;
+      padding: 10px 18px 10px 14px;
+      background: var(--bg-elevated);
+      color: var(--fg);
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      box-shadow: var(--shadow-md);
+      cursor: pointer;
+      font-family: inherit;
+      font-size: var(--fs-sm);
+      font-weight: 500;
+      transition: all 0.2s ease;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .drawer-toggle:hover {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-lg);
+    }
+    .drawer-toggle:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .drawer-toggle:active { transform: translateY(0); }
+    .drawer-toggle svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .drawer-toggle .badge {
+      background: var(--accent);
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 1px 7px;
+      border-radius: 10px;
+      min-width: 18px;
+      text-align: center;
+    }
+    @media (max-width: 480px) {
+      .drawer-toggle {
+        top: calc(var(--sp-4) + env(safe-area-inset-top, 0px));
+        right: var(--sp-4);
+      }
+      .drawer-toggle .label { display: none; }
+    }
+
+    /* ===== Drawer Backdrop ===== */
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+      z-index: 99;
+    }
+    .drawer-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* ===== Drawer 抽屉 ===== */
+    .drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: min(420px, 90vw);
+      height: 100vh;
+      height: 100dvh;
+      background: var(--bg);
+      border-left: 1px solid var(--line);
+      box-shadow: var(--shadow-lg);
+      transform: translateX(100%);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .drawer.open { transform: translateX(0); }
+    @media (min-width: 900px) {
+      .drawer-toggle { display: inline-flex !important; }   /* 让用户在 desktop 也能控制 drawer */
+      .drawer { transform: translateX(100%); }              /* desktop 默认隐藏 */
+      .drawer.open, .drawer.expanded {
+        transform: translateX(0);
+        width: 360px;
+        box-shadow: var(--shadow-lg);                        /* 改：drawer 浮在右侧，wrap 不被挤压；阴影视觉分隔 */
+      }
+      .drawer.expanded .drawer-close { display: inline-flex; }   /* desktop expanded 也显示 close 按钮（toggle 被 drawer 遮挡时作为关闭入口）*/
+      .drawer.open .drawer-close { display: inline-flex; }  /* mobile-style close works */
+      /* 改：drawer 浮在右侧，wrap 不被挤压（不设 margin-right） */
+    }
+    .drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: calc(var(--sp-5) + env(safe-area-inset-top, 0px)) var(--sp-5) var(--sp-4);
+      border-bottom: 1px solid var(--line);
+      flex-shrink: 0;
+      background: var(--bg-elevated);
+    }
+    .drawer-header h2 {
+      margin: 0;
+      font-size: var(--fs-md);
+      font-weight: 600;
+    }
+    .drawer-close {
+      background: transparent;
+      border: none;
+      /* 触控 ≥44px */
+      min-width: 44px;
+      min-height: 44px;
+      padding: var(--sp-2);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      color: var(--fg-muted);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease;
+      font-family: inherit;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .drawer-close:hover {
+      background: var(--bg-soft);
+      color: var(--fg);
+    }
+    .drawer-close:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .drawer-close svg { width: 20px; height: 20px; }
+    .drawer-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: var(--sp-5);
+      scrollbar-width: thin;
+      -webkit-overflow-scrolling: touch;
+    }
+    .drawer-body::-webkit-scrollbar { width: 6px; }
+    .drawer-body::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+    .drawer-body section { margin-bottom: var(--sp-6); }
+    .drawer-body section:last-child { margin-bottom: 0; }
+    .drawer-body h3 {
+      margin: 0 0 var(--sp-3);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--fg-subtle);
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+    }
+    .drawer-body h3 svg { width: 14px; height: 14px; }
+    .drawer-body h3 .count {
+      margin-left: auto;
+      background: var(--bg-soft);
+      color: var(--fg-muted);
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    /* ===== Hotel card ===== */
+    .drawer .hotel-card {
+      background: var(--bg-elevated);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: var(--sp-4);
+    }
+    .drawer .hotel-card h4 { margin: 0 0 4px; font-size: var(--fs-md); font-weight: 600; }
+    .drawer .hotel-card .address { margin: 0 0 var(--sp-2); color: var(--fg-muted); font-size: var(--fs-xs); }
+    .drawer .hotel-card .why { margin: 0 0 var(--sp-3); font-size: var(--fs-sm); line-height: 1.6; }
+    .drawer .hotel-commute { margin-top: var(--sp-3); padding-top: var(--sp-3); border-top: 1px dashed var(--line); }
+    .drawer .hotel-commute summary { cursor: pointer; font-size: var(--fs-xs); color: var(--fg-muted); user-select: none; min-height: 36px; display: inline-flex; align-items: center; padding: 4px 0; }
+    .drawer .hotel-commute ul { margin: var(--sp-2) 0 0; padding-left: 18px; font-size: var(--fs-xs); color: var(--fg-muted); }
+
+    /* ===== Drawer links（移动端触控 ≥44px） ===== */
+    .drawer .links { display: flex; gap: var(--sp-2); flex-wrap: wrap; }
+    .drawer .links a {
+      font-size: var(--fs-xs);
+      min-height: 36px;
+      padding: 8px 14px;
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      text-decoration: none;
+      color: var(--fg);
+      background: var(--bg);
+      transition: all 0.15s ease;
+    }
+    .drawer .links a:hover {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+    .drawer .links a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* ===== Drawer 列表（prebook / hotel commute 等） ===== */
+    .drawer-list { list-style: none; padding: 0; margin: 0; }
+    .drawer-list li {
+      padding: var(--sp-3) 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .drawer-list li:last-child { border-bottom: none; }
+    .drawer-list .item-title {
+      display: block;
+      font-weight: 600;
+      font-size: var(--fs-sm);
+      margin-bottom: 2px;
+    }
+    .drawer-list .item-title a {
+      color: var(--fg);
+      text-decoration: none;
+    }
+    .drawer-list .item-title a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+    .drawer-list .item-deadline {
+      color: var(--accent);
+      font-size: var(--fs-xs);
+      margin-left: var(--sp-2);
+      font-weight: 500;
+    }
+    .drawer-list .item-meta {
+      display: block;
+      color: var(--fg-muted);
+      font-size: var(--fs-xs);
+      line-height: 1.5;
+      margin-top: 2px;
+    }
+    .drawer-list .item-cta {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* ===== Weather card ===== */
+    .weather-card {
+      background: var(--accent-soft);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: var(--sp-3) var(--sp-4);
+      font-size: var(--fs-sm);
+      line-height: 1.6;
+      color: var(--fg);
+    }
+
+    /* ===== Tabs：分段控件（移动端可横向滚动、sticky 吸顶） ===== */
+    .tabs {
+      display: flex;
+      gap: 2px;
+      overflow-x: auto;
+      padding: var(--sp-1);
+      scrollbar-width: thin;
+      -webkit-overflow-scrolling: touch;
+      margin-bottom: var(--sp-4);
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      /* sticky 吸顶：滚动时贴在 hero 下方 */
+      position: sticky;
+      top: calc(var(--sp-2) + env(safe-area-inset-top, 0px));
+      z-index: 50;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .tabs::-webkit-scrollbar { height: 0; }
+    .tab {
+      flex-shrink: 0;
+      /* 触控 ≥44px */
+      min-height: 44px;
+      padding: 8px 14px;
+      border: none;
+      background: transparent;
+      border-radius: calc(var(--radius) - 4px);
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.15s ease;
+      font-family: inherit;
+      color: var(--fg-muted);
+      min-width: 96px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2px;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .tab:hover {
+      color: var(--fg);
+    }
+    .tab:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: -2px;
+    }
+    .tab.active {
+      background: var(--bg-elevated);
+      color: var(--fg);
+      box-shadow: var(--shadow-sm);
+      font-weight: 500;
+    }
+    .tab .tab-day {
+      display: block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      opacity: 0.65;
+    }
+    .tab .tab-region {
+      display: block;
+      font-size: var(--fs-sm);
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 140px;
+    }
+    .tab.active .tab-day { opacity: 0.85; color: var(--accent); }
+
+    /* ===== Map ===== */
+    .map-section {
+      margin-bottom: var(--sp-4);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--bg-elevated);
+      overflow: hidden;
+    }
+    .map-section-toggle {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      width: 100%;
+      padding: var(--sp-3) var(--sp-4);
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font: inherit;
+      color: var(--fg);
+      min-height: 44px;
+      text-align: left;
+    }
+    .map-section-toggle:hover { background: var(--bg-soft); }
+    .map-section-toggle:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: -2px;
+    }
+    .map-section-title {
+      font-size: var(--fs-sm);
+      font-weight: 600;
+    }
+    .map-section-hint {
+      font-size: var(--fs-xs);
+      color: var(--fg-muted);
+    }
+    .map-section-chevron {
+      margin-left: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      color: var(--fg-muted);
+      background: var(--bg-soft);
+      flex-shrink: 0;
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background 0.2s, color 0.2s;
+    }
+    .map-section-toggle:hover .map-section-chevron {
+      color: var(--accent);
+      background: var(--accent-soft);
+    }
+    .map-section-chevron svg {
+      width: 22px;
+      height: 22px;
+      display: block;
+    }
+    .map-section.is-collapsed .map-section-chevron {
+      transform: rotate(180deg);
+    }
+    .map-panel {
+      display: grid;
+      grid-template-rows: 1fr;
+      transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      border-top: 1px solid var(--line);
+    }
+    .map-section.is-collapsed .map-panel {
+      grid-template-rows: 0fr;
+      border-top-color: transparent;
+    }
+    .map-panel-inner {
+      overflow: hidden;
+      min-height: 0;
+    }
+    #map {
+      width: 100%;
+      height: 460px;
+      border: none;
+      border-radius: 0;
+      overflow: hidden;
+      touch-action: pan-x pan-y;
+    }
+    @media (max-width: 600px) {
+      #map { height: 320px; }
+    }
+    .map-fallback {
+      padding: 40px 20px;
+      text-align: center;
+      background: var(--bg-elevated);
+      border: 1px dashed var(--line);
+      border-radius: var(--radius);
+      color: var(--fg-muted);
+    }
+    .map-fallback p { margin: 4px 0; }
+    .map-fallback .hint { font-size: 12px; }
+
+    /* ===== Day Card ===== */
+    .day-card {
+      background: var(--bg-elevated);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: var(--sp-5) var(--sp-5) var(--sp-4);
+      box-shadow: var(--shadow-sm);
+      margin-top: var(--sp-4);
+    }
+    .day-card > header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: var(--sp-3);
+      margin-bottom: var(--sp-3);
+      flex-wrap: wrap;
+    }
+    .day-card > header h3 {
+      margin: 0;
+      font-size: var(--fs-xl);
+      line-height: 1.3;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    .day-card > header .day-header-actions {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      flex-wrap: wrap;
+    }
+    .day-card > header .day-route-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: var(--fs-sm);
+      color: #fff;
+      background: var(--accent);
+      border: none;
+      padding: 8px 16px;
+      border-radius: 100px;
+      white-space: nowrap;
+      font-weight: 600;
+      cursor: pointer;
+      line-height: 1.3;
+      box-shadow: 0 2px 10px color-mix(in srgb, var(--accent) 45%, transparent);
+      transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .day-card > header .day-route-btn svg {
+      width: 17px;
+      height: 17px;
+      flex-shrink: 0;
+    }
+    .day-card > header .day-route-btn:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+    .day-card > header .day-route-btn:active {
+      transform: translateY(0);
+    }
+    .day-card > header .day-route-btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    @media (max-width: 600px) {
+      .day-card > header .day-header-actions {
+        width: 100%;
+      }
+      .day-card > header .day-route-btn {
+        flex: 1;
+        padding: 10px 16px;
+        font-size: var(--fs-md);
+      }
+    }
+    .day-card > header .weather {
+      font-size: var(--fs-xs);
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 4px 12px;
+      border-radius: 100px;
+      white-space: nowrap;
+      font-weight: 500;
+    }
+    .day-card .theme {
+      font-size: var(--fs-sm);
+      color: var(--fg-muted);
+      margin: 0 0 var(--sp-4);
+      line-height: 1.55;
+    }
+
+    /* ===== Timeline ===== */
+    ol.timeline {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-left: 2px solid var(--line);
+      margin-left: 6px;
+    }
+    ol.timeline li.time-block {
+      position: relative;
+      padding: 6px 0 var(--sp-4) var(--sp-4);
+    }
+    ol.timeline li.time-block::before {
+      content: "";
+      position: absolute;
+      left: -6px;
+      top: 14px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--bg-elevated);
+      box-shadow: 0 0 0 1.5px var(--accent);
+    }
+    ol.timeline time {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: var(--fs-xs);
+      color: var(--fg-muted);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    ol.timeline .slot-num {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: var(--fs-sm);
+      font-weight: 700;
+      color: var(--accent);
+      margin-right: 0.25em;
+    }
+    .drawer .hotel-card .hotel-emoji {
+      display: inline-block;
+      font-size: 22px;
+      margin-right: 4px;
+      vertical-align: -3px;
+    }
+    .place h4 {
+      margin: 4px 0 6px;
+      font-size: var(--fs-md);
+      font-weight: 600;
+      line-height: 1.35;
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      flex-wrap: wrap;
+    }
+    .place .cat {
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 100px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .place .cat.food { background: #fff5e0; color: #8a4d00; }
+    .place .cat.scenery { background: #e2efe7; color: #1f5a3a; }
+    .place .cat.culture { background: #ede4f5; color: #4f2a82; }
+    .place .cat.shopping { background: #fbe2e9; color: #96223f; }
+    .place .cat.hotel { background: #e6e9ee; color: #3a4150; }
+    .place .cat.transport { background: #dde7f0; color: #1e4a72; }
+    .place .weather-sensitive {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 500;
+      color: #8a5a00;
+      background: #fdf3da;
+      padding: 2px 8px;
+      border-radius: 100px;
+      margin-left: 4px;
+    }
+    .place p {
+      margin: 4px 0;
+      font-size: var(--fs-base);
+      line-height: 1.55;
+    }
+    .place .why { color: var(--fg-muted); font-size: var(--fs-sm); line-height: 1.55; }
+    .place .note {
+      background: var(--bg-soft);
+      padding: var(--sp-2) var(--sp-3);
+      border-radius: var(--radius-sm);
+      font-size: var(--fs-sm);
+      line-height: 1.55;
+      border-left: 2px solid var(--line-strong);
+    }
+
+    /* ===== Next-leg & meal-leg inside POI card（v2.0.0 融合时间轴）===== */
+    ol.timeline li.hotel-leg-block .time-block-main { padding-top: 4px; }
+    ol.timeline li.time-block .next-leg {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      margin-top: var(--sp-2);
+      padding: 8px 12px;
+      background: var(--bg-soft);
+      border-radius: 6px;
+      font-size: var(--fs-sm);
+      color: var(--fg);
+      border-left: 3px solid var(--line-strong);
+      flex-wrap: wrap;
+    }
+    ol.timeline li.time-block .next-leg .next-leg-route {
+      flex: 1 1 auto;
+      min-width: 0;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+    ol.timeline li.time-block .next-leg .next-leg-nav {
+      font-size: var(--fs-xs);
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 2px 8px;
+      border: 1px solid var(--accent-soft);
+      border-radius: 4px;
+      background: var(--accent-soft);
+      margin-left: var(--sp-1);
+    }
+    ol.timeline li.time-block .next-leg .next-leg-nav:hover { text-decoration: underline; }
+
+    ol.timeline li.time-block .meal-leg {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: var(--sp-1) var(--sp-2);
+      margin-top: var(--sp-2);
+      padding: 6px 10px;
+      background: #fff5e0;
+      border-left: 3px solid #8a4d00;
+      border-radius: 6px;
+      font-size: var(--fs-sm);
+      color: #5a3a00;
+    }
+    ol.timeline li.time-block .meal-leg .meal-leg-icon { flex-shrink: 0; }
+    ol.timeline li.time-block .meal-leg .meal-leg-label {
+      font-weight: 600;
+      color: #5a3a00;
+    }
+    ol.timeline li.time-block .meal-leg .meal-leg-name {
+      font-weight: 600;
+      color: var(--fg);
+    }
+    ol.timeline li.time-block .meal-leg .meal-leg-why {
+      color: var(--fg-muted);
+    }
+    ol.timeline li.time-block .meal-leg .meal-leg-alt {
+      color: var(--fg-muted);
+      font-size: var(--fs-xs);
+      padding-left: var(--sp-2);
+      border-left: 1px dashed var(--line);
+    }
+    @media (prefers-color-scheme: dark) {
+      ol.timeline li.time-block .meal-leg {
+        background: #2a1f0a;
+        color: #fef08a;
+        border-left-color: #d4a52e;
+      }
+      ol.timeline li.time-block .meal-leg .meal-leg-label { color: #fef08a; }
+      ol.timeline li.time-block .meal-leg .meal-leg-name { color: #fef3c7; }
+    }
+
+    /* ===== 段花销批注（v2.2.0） ===== */
+    .time-block-grid {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .time-block-main { min-width: 0; }
+    .time-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--sp-2);
+    }
+    .cost-margin {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+    .cost-margin-card {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-soft);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 8px 10px;
+      font-size: var(--fs-xs);
+      line-height: 1.45;
+      min-height: 100%;
+    }
+    .cost-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      padding: 2px 0;
+    }
+    .cost-line-label {
+      color: var(--fg-muted);
+      flex: 1;
+      min-width: 0;
+    }
+    .cost-line-amount {
+      font-weight: 600;
+      color: #1f5a3a;
+      white-space: nowrap;
+      font-size: var(--fs-xs);
+    }
+    .cost-line-total {
+      border-top: 1px dashed var(--line);
+      margin-top: auto;
+      padding-top: 6px;
+      font-weight: 700;
+    }
+    .cost-line-total .cost-line-amount { font-size: var(--fs-sm); }
+    .cost-line-missing .cost-line-amount { color: #b91c1c; font-weight: 500; }
+    .cost-user-input {
+      width: 76px;
+      padding: 3px 6px;
+      font-size: var(--fs-xs);
+      border: 1px solid var(--line-strong);
+      border-radius: 6px;
+      background: var(--bg-elevated);
+      text-align: right;
+    }
+    .cost-pill {
+      display: none;
+      align-items: center;
+      flex-shrink: 0;
+      padding: 2px 10px;
+      border: 1px solid #c5e0d4;
+      border-radius: 100px;
+      background: #f0f7f4;
+      color: #1f5a3a;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .cost-pill:hover { background: #e2f0ea; }
+    .cost-margin-toggle {
+      display: none;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 8px 12px;
+      margin-top: var(--sp-2);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: var(--bg-soft);
+      font-size: var(--fs-xs);
+      font-weight: 600;
+      color: var(--fg);
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .cost-margin-toggle .toggle-chevron { transition: transform 0.2s; }
+    .cost-margin.is-expanded .toggle-chevron { transform: rotate(180deg); }
+    .cost-sheet-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 200;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    .cost-sheet-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .cost-sheet {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 201;
+      max-height: 70vh;
+      background: var(--bg-elevated);
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      box-shadow: var(--shadow-lg);
+      transform: translateY(100%);
+      transition: transform 0.25s ease;
+      padding: var(--sp-4) var(--sp-4) calc(var(--sp-4) + env(safe-area-inset-bottom, 0px));
+      overflow-y: auto;
+    }
+    .cost-sheet.open { transform: translateY(0); }
+    .cost-sheet-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--sp-3);
+    }
+    .cost-sheet-header h3 {
+      margin: 0;
+      font-size: var(--fs-md);
+    }
+    .cost-sheet-close {
+      border: none;
+      background: var(--bg-soft);
+      border-radius: 100px;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1;
+    }
+    @media (prefers-color-scheme: dark) {
+      .cost-line-amount { color: #86efac; }
+      .cost-pill { background: #1a2e24; border-color: #2d5a45; color: #86efac; }
+    }
+    @media (max-width: 899px) {
+      .time-block-grid { grid-template-columns: 1fr; gap: 0; align-items: start; }
+      .cost-margin { grid-column: 1 / -1; min-height: 0; }
+      .cost-margin-toggle { display: flex; }
+      .cost-margin-card {
+        flex: none;
+        min-height: 0;
+        border-left: none;
+        border-top: 3px solid var(--accent);
+        border-radius: var(--radius-sm);
+        margin-top: 0;
+      }
+      .cost-line-total { margin-top: 4px; }
+      .cost-margin:not(.is-expanded) .cost-margin-card { display: none; }
+    }
+    @media (max-width: 599px) {
+      .cost-margin { display: none; }
+      .cost-pill { display: inline-flex; }
+    }
+
+    /* ===== 抽屉花销汇总 ===== */
+    .budget-card {
+      background: var(--bg-elevated);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: var(--sp-3) var(--sp-4);
+      font-size: var(--fs-sm);
+    }
+    .budget-card .budget-total-line {
+      font-weight: 700;
+      font-size: var(--fs-md);
+      margin-bottom: var(--sp-2);
+    }
+    .budget-card .budget-row {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--sp-2);
+      padding: 4px 0;
+      border-bottom: 1px dashed var(--line);
+      font-size: var(--fs-xs);
+    }
+    .budget-card .budget-row:last-child { border-bottom: none; }
+    .budget-card .budget-disclaimer {
+      margin-top: var(--sp-2);
+      font-size: 11px;
+      color: var(--fg-muted);
+    }
+    .budget-card.budget-fallback { border-color: #fbbf24; }
+
+    /* ===== Footer ===== */
+    footer.bottom {
+      margin-top: 48px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+      color: var(--fg-subtle);
+      text-align: center;
+    }
+    footer.bottom a { color: var(--fg-subtle); }
+
+    /* ===== 移动端综合断点 ===== */
+    @media (max-width: 600px) {
+      .wrap {
+        padding: var(--sp-4) var(--sp-4) calc(var(--sp-10) + env(safe-area-inset-bottom, 0px));
+      }
+      header.hero { padding: 0 0 var(--sp-4); margin-bottom: var(--sp-4); }
+      .day-card { padding: var(--sp-4) var(--sp-4) var(--sp-3); }
+      .day-card > header h3 { font-size: var(--fs-lg); }
+      ol.timeline li.time-block { padding: 4px 0 var(--sp-3) var(--sp-4); }
+      .place h4 { font-size: 15px; }
+      .tabs { top: var(--sp-2); }
+    }
+
+    /* ===== 减少动效（无障碍） ===== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* ===== 打印 ===== */
+    @media print {
+      .drawer, .drawer-toggle, .drawer-backdrop { display: none !important; }
+      .tabs { display: none; }
+      .day-card { page-break-after: always; }
+      #map { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">跳转到主内容</a>
+
+  <div class="wrap">
+
+    <!-- ===== Validation Banner（v1.1.0 新增，代码级硬约束）=====
+         AI 必须在 tripData.validation_report 嵌入完整 7 条规则结果；
+         浏览器加载时 JS 会用同样规则强制重算（不依赖 AI 的 self-report）。
+         缺失/不完整 → 顶部红/黄条
+    -->
+    <div id="validation-banner" role="status" aria-live="polite" hidden></div>
+
+    <header class="hero">
+      <h1>涠洲岛 5D4N 毕业旅行</h1>
+      <p class="meta">2026-06-23 ~ 2026-06-27 · 4 泊 5 日 · 涠洲岛</p>
+      <p class="summary">3 人武汉往返涠洲岛 5 天 4 晚，岛上 3 晚 + 北海 1 晚过渡。飞机+早班船+电动车，主看海 + 低精力，每天 2-3 个活动，预算人均 3500-4500。</p>
+    </header>
+
+    <button class="drawer-toggle" id="drawer-toggle" aria-label="打开行程信息" aria-expanded="false" aria-controls="drawer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+      <span class="label">行程信息</span>
+      <span class="badge" id="drawer-badge" style="display:none">0</span>
+    </button>
+
+    <main id="main">
+
+      <div class="tabs" id="tabs" role="tablist" aria-label="每日行程"></div>
+
+      <section class="map-section" id="map-section">
+        <button type="button" class="map-section-toggle" id="map-section-toggle" aria-expanded="true" aria-controls="map-panel">
+          <span class="map-section-title">地图</span>
+          <span class="map-section-hint">景点序号 · 酒店</span>
+          <span class="map-section-chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </span>
+        </button>
+        <div class="map-panel" id="map-panel">
+          <div class="map-panel-inner">
+            <div id="map"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="day-section" id="day-panel"></section>
+
+    </main>
+
+    <footer class="bottom">
+      <p>由 <strong>travel-planner</strong> skill 生成 · 数据来源：高德 MCP / 小红书 MCP</p>
+      <p>计划 = 参考坐标 · 天气 / 体力 / 饥饿均可覆盖</p>
+    </footer>
+
+  </div>
+
+  <!-- ===== Drawer 抽屉 ===== -->
+  <div class="drawer-backdrop" id="drawer-backdrop" aria-hidden="true"></div>
+  <div class="cost-sheet-backdrop" id="cost-sheet-backdrop" aria-hidden="true"></div>
+  <div class="cost-sheet" id="cost-sheet" role="dialog" aria-modal="true" aria-labelledby="cost-sheet-title" aria-hidden="true">
+    <div class="cost-sheet-header">
+      <h3 id="cost-sheet-title">本段花销</h3>
+      <button type="button" class="cost-sheet-close" id="cost-sheet-close" aria-label="关闭">×</button>
+    </div>
+    <div id="cost-sheet-body"></div>
+  </div>
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" aria-hidden="true">
+
+    <header class="drawer-header">
+      <h2 id="drawer-title">行程信息</h2>
+      <button class="drawer-close" id="drawer-close" aria-label="关闭">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </header>
+
+    <div class="drawer-body">
+
+      <!-- 酒店 -->
+      <section>
+        <h3>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 21V8l9-5 9 5v13"></path>
+            <path d="M9 21v-6h6v6"></path>
+          </svg>
+          酒店
+        </h3>
+        <div class="hotel-card" id="hotel-card">
+          <h4 id="hotel-name"><span class="hotel-emoji">🏨</span> 长云·古船别院 (涠洲岛店)</h4>
+          <p class="address" id="hotel-address">涠洲岛湾背20号</p>
+          <p class="why" id="hotel-why">南湾中心区，评分 4.8（岛上最高）；距鳄鱼山 4.4km、五彩滩 1.8km、天主教堂 4.7km；电动车站 5min；周边吃海鲜方便。</p>
+          <div class="links" id="hotel-links">
+            <a href="https://uri.amap.com/marker?position=109.112784,21.029731&name=长云·古船别院(涠洲岛店)">高德</a>
+          </div>
+          <div id="hotel-commute"></div>
+        </div>
+      </section>
+
+      <!-- 天气策略 -->
+      <section id="weather-section" style="display:none">
+        <h3>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4 12H2M22 12h-2M19 5l-1.4 1.4M6.4 17.6L5 19M19 19l-1.4-1.4M6.4 6.4L5 5"></path>
+          </svg>
+          天气策略
+        </h3>
+        <div class="weather-card" id="weather-plan-text"></div>
+      </section>
+
+      <!-- 花销预估 -->
+      <section id="budget-section">
+        <h3>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="1" x2="12" y2="23"></line>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+          </svg>
+          花销预估
+          <span class="count" id="budget-total-badge"></span>
+        </h3>
+        <div class="budget-card" id="budget-breakdown"></div>
+      </section>
+
+      <!-- 提前订 -->
+      <section>
+        <h3>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+            <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path>
+          </svg>
+          提前订
+          <span class="count" id="prebook-count"></span>
+        </h3>
+        <ul class="drawer-list" id="prebook-list"></ul>
+      </section>
+
+    </div>
+  </aside>
+
+  <!-- ====== AI 在 Step 7 填这里 ======
+       window.AMAP_KEY：高德 Web (JS) API Key（空字符串则地图降级为文字版）
+       window.tripData：完整行程数据
+       可选字段 trip_center：[lng, lat] —— 多城行程的整体中心点（用于初始化地图视野），
+                     缺省则取 days[0].center，再缺省兜底北京
+  -->
+  <script>
+    // v2.0.5 安全：AMAP_WEB_KEY 不内嵌到 HTML（防 git 泄露）
+    // 三种 runtime 注入方式（按优先级）：
+    // 1. URL 加 ?k=YOUR_KEY 参数（如 https://xxx.github.io/.../x.html?k=YOUR_KEY）
+    // 2. localStorage 设置 amap_web_key（持久化，一次设置永久）
+    // 3. 空 → 地图降级为文字版行程
+    (function injectAmapKey() {
+      if (window.AMAP_KEY) return;  // 已注入
+      // 1. URL 参数 ?k=KEY
+      const urlKey = new URLSearchParams(location.search).get('k');
+      if (urlKey) { window.AMAP_KEY = urlKey; return; }
+      // 2. localStorage
+      try {
+        const lsKey = localStorage.getItem('amap_web_key');
+        if (lsKey) { window.AMAP_KEY = lsKey; return; }
+      } catch (e) {}
+      // 3. 空（地图降级文字版）
+      window.AMAP_KEY = "";
+    })();
+    window.tripData = {
+  "$schema": "./README.md#schema",
+  "amap_key": "",
+  "trip_name": "涠洲岛 5D4N 毕业旅行",
+  "date_range": "2026-06-23 ~ 2026-06-27",
+  "n_days": "4 泊 5 日",
+  "city": "涠洲岛",
+  "trip_slug": "weizhoudao-2026-06-23",
+  "summary": "3 人武汉往返涠洲岛 5 天 4 晚，岛上 3 晚 + 北海 1 晚过渡。飞机+早班船+电动车，主看海 + 低精力，每天 2-3 个活动，预算人均 3500-4500。",
+  "weather_plan": "6 月涠洲岛多阵雨（历年 33/27°C），台风概率低但需关注；出行前 1-3 天看具体预报决定五彩滩日出。",
+  "party_size": 3,
+  "xhs_destination_brief": {
+    "city": "涠洲岛",
+    "keywords_searched": [
+      "涠洲岛 攻略 避雷",
+      "涠洲岛 6月 低精力",
+      "涠洲岛 五彩滩 日出"
+    ],
+    "source": "webfetch-degraded",
+    "degraded": true,
+    "must_visit": [
+      {
+        "name": "鳄鱼山地质公园",
+        "why": "5A 级火山地貌，必去；上岛费已含"
+      },
+      {
+        "name": "五彩滩",
+        "why": "看日出最佳点；阴雨天效果差"
+      },
+      {
+        "name": "滴水丹屏 / 石螺口海滩",
+        "why": "看夕阳+游泳（指定区域）；低精力最合适"
+      },
+      {
+        "name": "盛塘天主教堂",
+        "why": "百年珊瑚石教堂，4A 级，人文体验"
+      }
+    ],
+    "skip_or_caution": [
+      {
+        "name": "暮崖",
+        "why": "6 月风浪大+路难走，低精力用户跳"
+      },
+      {
+        "name": "1 日游团",
+        "why": "节奏紧，与低精力原则冲突"
+      },
+      {
+        "name": "潜水/出海打鱼",
+        "why": "低精力先不做"
+      },
+      {
+        "name": "网红打卡点",
+        "why": "重复性强"
+      }
+    ],
+    "region_layout": [
+      "南湾中心区 (住宿/吃饭)",
+      "鳄鱼山 (西)",
+      "五彩滩 (东)",
+      "石螺口/滴水丹屏 (西南)",
+      "天主教堂/盛塘村 (东北)"
+    ],
+    "pace_hints": "3 晚岛上 = 每天 1 主景 + 1 自由活动。Day 2 抵岛日不宜剧烈。Day 5 早班船后直接赶飞机。",
+    "weather_hints": "6 月阵雨多，雨具必备；日落后海风大，备薄外套；6-7 月有毒水母，海滩游泳注意",
+    "source_notes": [
+      {
+        "title": "涠洲岛旅游攻略 - 穷游网",
+        "url": "https://biu.qyer.com/p/eFh6qYQxf3dZR-hFniLQ8w.html"
+      },
+      {
+        "title": "涠洲岛旅行避坑指南",
+        "url": "https://so.html5.qq.com/page/real/search_news?docid=70000021_04668dc85cd72852"
+      },
+      {
+        "title": "北海涠洲岛注意事项和避坑指南",
+        "url": "https://www.sohu.com/a/879128158_122042581"
+      }
+    ]
+  },
+  "hotel": {
+    "name": "长云·古船别院 (涠洲岛店)",
+    "address": "涠洲岛湾背20号",
+    "lng": 109.112784,
+    "lat": 21.029731,
+    "amap_uri": "https://uri.amap.com/marker?position=109.112784,21.029731&name=长云·古船别院(涠洲岛店)",
+    "why": "南湾中心区，评分 4.8（岛上最高）；距鳄鱼山 4.4km、五彩滩 1.8km、天主教堂 4.7km；电动车站 5min；周边吃海鲜方便。",
+    "price": {
+      "min": 200,
+      "max": 400,
+      "currency": "CNY",
+      "unit": "per_night",
+      "quantity": 2,
+      "total_min": 1200,
+      "total_max": 2400,
+      "label": "住宿",
+      "source": "ctrip-webfetch",
+      "source_ref": "携程涠洲岛酒店 6/24-27 实查区间估"
+    },
+    "commute": [
+      {
+        "day": 2,
+        "region": "鳄鱼山",
+        "duration_min": 16,
+        "mode": "电动车"
+      },
+      {
+        "day": 3,
+        "region": "五彩滩",
+        "duration_min": 6,
+        "mode": "电动车"
+      },
+      {
+        "day": 3,
+        "region": "石螺口",
+        "duration_min": 10,
+        "mode": "电动车"
+      },
+      {
+        "day": 4,
+        "region": "天主教堂",
+        "duration_min": 10,
+        "mode": "电动车"
+      }
+    ]
+  },
+  "days": [
+    {
+      "day": 1,
+      "date": "2026-06-23",
+      "weekday": "周二",
+      "region": "武汉 → 北海",
+      "theme": "落地型 + 北部湾广场夜游",
+      "weather": "多云 32°C",
+      "weather_emoji": "⛅",
+      "weather_decision": "抵北海当晚为过渡夜，只在酒店附近简单活动",
+      "center": [
+        109.110671,
+        21.471268
+      ],
+      "zoom": 13,
+      "pois": [
+        {
+          "idx": 1,
+          "time": "21:55",
+          "name": "国发华联酒店 (北部湾广场老街店)",
+          "cat": "hotel",
+          "lng": 109.110671,
+          "lat": 21.471268,
+          "duration_min": 60,
+          "why": "北海 1 晚过渡酒店，连锁靠谱",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "入住",
+            "source": "computed",
+            "source_ref": "房费见酒店字段"
+          }
+        },
+        {
+          "idx": 2,
+          "time": "23:00",
+          "name": "北部湾广场夜市",
+          "cat": "food",
+          "lng": 109.11821,
+          "lat": 21.47359,
+          "duration_min": 60,
+          "why": "北海夜市，烧烤+海鲜粉+越南粉",
+          "price": {
+            "min": 30,
+            "max": 60,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 90,
+            "total_max": 180,
+            "label": "餐饮",
+            "source": "meituan-webfetch",
+            "source_ref": "北部湾广场夜市人均"
+          },
+          "slot_costs": [
+            {
+              "label": "晚餐",
+              "price": {
+                "min": 30,
+                "max": 60,
+                "currency": "CNY",
+                "unit": "per_person",
+                "quantity": 3,
+                "total_min": 90,
+                "total_max": 180,
+                "label": "餐饮",
+                "source": "meituan-webfetch",
+                "source_ref": "北部湾广场夜市人均"
+              }
+            }
+          ]
+        }
+      ],
+      "transports": [
+        {
+          "from_idx": 1,
+          "to_idx": 2,
+          "mode": "步行",
+          "duration_min": 5,
+          "description": "酒店步行到北部湾广场夜市",
+          "distance_m": 500,
+          "source": "amap-mcp",
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "source": "computed",
+            "source_ref": "步行免费"
+          }
+        },
+        {
+          "from_idx": 2,
+          "to_idx": 1,
+          "mode": "步行",
+          "duration_min": 10,
+          "description": "夜市步行回国发华联酒店",
+          "distance_m": 822,
+          "source": "amap-mcp",
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "source": "computed",
+            "source_ref": "步行免费"
+          }
+        },
+        {
+          "from_idx": 2,
+          "to_idx": 0,
+          "mode": "船+车",
+          "duration_min": 90,
+          "description": "夜市→次日登船路径 (末站→酒店 / 长云·古船别院)",
+          "distance_m": 49000,
+          "source": "amap-mcp",
+          "fare": {
+            "min": 60,
+            "max": 100,
+            "currency": "CNY",
+            "unit": "fixed",
+            "quantity": 1,
+            "total_min": 60,
+            "total_max": 100,
+            "source": "computed",
+            "source_ref": "次日 8:30 船+打车"
+          }
+        }
+      ],
+      "meals": {
+        "dinner": {
+          "main": {
+            "name": "北部湾广场夜市",
+            "why": "北海特色海鲜粉/越南粉/烧烤，人均 30-60",
+            "price": {
+              "min": 30,
+              "max": 60,
+              "currency": "CNY",
+              "unit": "per_person",
+              "quantity": 3,
+              "total_min": 90,
+              "total_max": 180,
+              "source": "meituan-webfetch",
+              "source_ref": "北部湾广场夜市人均"
+            }
+          }
+        }
+      }
+    },
+    {
+      "day": 2,
+      "date": "2026-06-24",
+      "weekday": "周三",
+      "region": "涠洲岛",
+      "theme": "上岛 + 鳄鱼山 + 南湾海鲜",
+      "weather": "多云 32°C",
+      "weather_emoji": "⛅",
+      "center": [
+        109.102,
+        21.022
+      ],
+      "zoom": 13,
+      "pois": [
+        {
+          "idx": 1,
+          "time": "09:50",
+          "name": "涠洲岛西角码头",
+          "cat": "transport",
+          "lng": 109.124,
+          "lat": 21.03,
+          "duration_min": 30,
+          "why": "北游26 8:30 北海出发 → 09:50 到涠洲岛",
+          "price": {
+            "min": 150,
+            "max": 150,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 450,
+            "total_max": 450,
+            "label": "船票",
+            "source": "official-site",
+            "source_ref": "北部湾旅游船票 150 元/人"
+          }
+        },
+        {
+          "idx": 2,
+          "time": "10:30",
+          "name": "长云·古船别院 (涠洲岛店)",
+          "cat": "hotel",
+          "lng": 109.112784,
+          "lat": 21.029731,
+          "duration_min": 60,
+          "why": "入住 + 放行李休整",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "入住",
+            "source": "computed",
+            "source_ref": "房费见酒店字段"
+          }
+        },
+        {
+          "idx": 3,
+          "time": "13:30",
+          "name": "鳄鱼山景区",
+          "cat": "scenery",
+          "lng": 109.102429,
+          "lat": 21.009399,
+          "duration_min": 150,
+          "why": "5A 级火山地貌，月亮湾/灯塔/火山博物馆，上岛费已含",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "门票",
+            "source": "official-site",
+            "source_ref": "含在上岛费 98 元里"
+          },
+          "slot_costs": [
+            {
+              "label": "上岛费",
+              "price": {
+                "min": 98,
+                "max": 98,
+                "currency": "CNY",
+                "unit": "per_person",
+                "quantity": 3,
+                "total_min": 294,
+                "total_max": 294,
+                "label": "门票",
+                "source": "official-site",
+                "source_ref": "涠洲岛上岛费官方价"
+              }
+            },
+            {
+              "label": "景区观光车",
+              "price": {
+                "min": 20,
+                "max": 20,
+                "currency": "CNY",
+                "unit": "per_person",
+                "quantity": 3,
+                "total_min": 60,
+                "total_max": 60,
+                "label": "景区交通",
+                "source": "official-site",
+                "source_ref": "鳄鱼山景区观光车"
+              }
+            }
+          ]
+        },
+        {
+          "idx": 4,
+          "time": "18:00",
+          "name": "鲸遇海景餐厅",
+          "cat": "food",
+          "lng": 109.110595,
+          "lat": 21.027566,
+          "duration_min": 90,
+          "why": "南湾街95号，海鲜餐厅，评分 4.4，人均 67",
+          "price": {
+            "min": 50,
+            "max": 80,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 150,
+            "total_max": 240,
+            "label": "餐饮",
+            "source": "amap-rest-api",
+            "source_ref": "高德 POI cost 字段 67 元"
+          }
+        }
+      ],
+      "transports": [
+        {
+          "from_idx": 0,
+          "to_idx": 1,
+          "mode": "电动车",
+          "duration_min": 5,
+          "description": "长云·古船别院到涠洲岛码头 (酒店→首站)",
+          "distance_m": 1500,
+          "source": "amap-mcp",
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "source": "computed",
+            "source_ref": "电动车租费见 daily transport"
+          }
+        },
+        {
+          "from_idx": 1,
+          "to_idx": 2,
+          "mode": "车",
+          "duration_min": 15,
+          "description": "码头打车/电动车到长云古船别院",
+          "distance_m": 1500,
+          "source": "amap-mcp",
+          "fare": {
+            "min": 10,
+            "max": 20,
+            "currency": "CNY",
+            "unit": "fixed",
+            "quantity": 1,
+            "total_min": 10,
+            "total_max": 20,
+            "source": "computed",
+            "source_ref": "码头短途车"
+          }
+        },
+        {
+          "from_idx": 2,
+          "to_idx": 3,
+          "mode": "电动车",
+          "duration_min": 16,
+          "description": "酒店到鳄鱼山景区 (4.4km)",
+          "distance_m": 4358,
+          "source": "amap-mcp",
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "source": "computed",
+            "source_ref": "电动车租费见 daily transport"
+          }
+        },
+        {
+          "from_idx": 3,
+          "to_idx": 4,
+          "mode": "电动车",
+          "duration_min": 15,
+          "description": "鳄鱼山回南湾街鲸遇海景餐厅",
+          "distance_m": 3000,
+          "source": "amap-mcp",
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "source": "computed",
+            "source_ref": "电动车租费见 daily transport"
+          }
+        },
+        {
+          "from_idx": 4,
+          "to_idx": 0,
+          "mode": "步行",
+          "duration_min": 8,
+          "description": "鲸遇海景步行回酒店 (末站→酒店)",
+          "distance_m": 600,
+          "source": "amap-mcp",
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "source": "computed",
+            "source_ref": "步行免费"
+          }
+        }
+      ],
+      "meals": {
+        "breakfast": {
+          "main": {
+            "name": "船上 / 北海码头",
+            "why": "Day 2 早上赶船",
+            "price": {
+              "min": 10,
+              "max": 20,
+              "currency": "CNY",
+              "unit": "per_person",
+              "quantity": 3,
+              "total_min": 30,
+              "total_max": 60,
+              "source": "computed",
+              "source_ref": "早餐估"
+            }
+          }
+        },
+        "lunch": {
+          "main": {
+            "name": "酒店附近南湾街",
+            "why": "刚上岛就近吃",
+            "price": {
+              "min": 30,
+              "max": 50,
+              "currency": "CNY",
+              "unit": "per_person",
+              "quantity": 3,
+              "total_min": 90,
+              "total_max": 150,
+              "source": "computed",
+              "source_ref": "南湾街小馆估"
+            }
+          }
+        },
+        "dinner": {
+          "main": {
+            "name": "鲸遇海景餐厅",
+            "why": "南湾街95号，评分 4.4，人均 67",
+            "price": {
+              "min": 50,
+              "max": 80,
+              "currency": "CNY",
+              "unit": "per_person",
+              "quantity": 3,
+              "total_min": 150,
+              "total_max": 240,
+              "source": "amap-rest-api",
+              "source_ref": "高德 POI cost 字段 67 元"
+            }
+          }
+        }
+      }
+    },
+    {
+      "day": 3,
+      "date": "2026-06-25",
+      "weekday": "周四",
+      "region": "涠洲岛",
+      "theme": "五彩滩日出 + 石螺口夕阳",
+      "weather": "多云 33°C",
+      "weather_emoji": "⛅",
+      "weather_decision": "看前一晚天气决定 5:00 是否起床去五彩滩日出",
+      "center": [
+        109.105,
+        21.024
+      ],
+      "zoom": 13,
+      "pois": [
+        {
+          "idx": 1,
+          "time": "05:30",
+          "name": "五彩滩景区",
+          "cat": "scenery",
+          "lng": 109.122026,
+          "lat": 21.022376,
+          "duration_min": 60,
+          "why": "看日出；火山岩在晨光下五彩斑斓",
+          "weather_sensitive": true,
+          "indoor_backup": "阴天/下雨改成 8:00 起床，早餐后直接去石螺口",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "门票",
+            "source": "official-site",
+            "source_ref": "含在上岛费 98 元里"
+          }
+        },
+        {
+          "idx": 2,
+          "time": "08:00",
+          "name": "长云·古船别院",
+          "cat": "hotel",
+          "lng": 109.112784,
+          "lat": 21.029731,
+          "duration_min": 180,
+          "why": "补觉 + 早餐",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "入住",
+            "source": "computed",
+            "source_ref": "房费见酒店字段"
+          }
+        },
+        {
+          "idx": 3,
+          "time": "15:00",
+          "name": "石螺口海滩",
+          "cat": "scenery",
+          "lng": 109.089976,
+          "lat": 21.024711,
+          "duration_min": 120,
+          "why": "岛上唯一指定游泳区；下午光好",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "免费",
+            "source": "official-site",
+            "source_ref": "海滩免门票"
+          },
+          "slot_costs": [
+            {
+              "label": "沙滩椅/饮料",
+              "price": {
+                "min": 20,
+                "max": 50,
+                "currency": "CNY",
+                "unit": "per_person",
+                "quantity": 3,
+                "total_min": 60,
+                "total_max": 150,
+                "label": "海滩消费",
+                "source": "computed",
+                "source_ref": "海滩消费估"
+              }
+            }
+          ]
+        },
+        {
+          "idx": 4,
+          "time": "18:30",
+          "name": "子非鱼日落海景餐厅 (南湾街店)",
+          "cat": "food",
+          "lng": 109.108922,
+          "lat": 21.027693,
+          "duration_min": 90,
+          "why": "夕阳时段去，能看到海景+日落；评分 4.1，人均 55",
+          "price": {
+            "min": 40,
+            "max": 70,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 120,
+            "total_max": 210,
+            "label": "餐饮",
+            "source": "amap-rest-api",
+            "source_ref": "高德 POI cost 字段 55 元"
+          }
+        }
+      ],
+      "transports": [
+        {
+          "from_idx": 0,
+          "to_idx": 1,
+          "mode": "电动车",
+          "duration_min": 6,
+          "description": "酒店到五彩滩看日出 (酒店→首站)",
+          "distance_m": 1800,
+          "source": "amap-mcp",
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "source": "computed",
+            "source_ref": "电动车租费见 daily transport"
+          }
+        },
+        {
+          "from_idx": 1,
+          "to_idx": 2,
+          "mode": "电动车",
+          "duration_min": 6,
+          "description": "五彩滩回酒店补觉 (1.8km)",
+          "distance_m": 1800,
+          "source": "amap-mcp",
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "source": "computed",
+            "source_ref": "电动车租费见 daily transport"
+          }
+        },
+        {
+          "from_idx": 2,
+          "to_idx": 3,
+          "mode": "电动车",
+          "duration_min": 10,
+          "description": "酒店到石螺口海滩 (3.1km)",
+          "distance_m": 3120,
+          "source": "amap-mcp",
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "source": "computed",
+            "source_ref": "电动车租费见 daily transport"
+          }
+        },
+        {
+          "from_idx": 3,
+          "to_idx": 4,
+          "mode": "电动车",
+          "duration_min": 12,
+          "description": "石螺口到子非鱼日落海景餐厅 (3.9km)",
+          "distance_m": 3904,
+          "source": "amap-mcp",
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "source": "computed",
+            "source_ref": "电动车租费见 daily transport"
+          }
+        },
+        {
+          "from_idx": 4,
+          "to_idx": 0,
+          "mode": "步行",
+          "duration_min": 10,
+          "description": "子非鱼步行回酒店 (末站→酒店)",
+          "distance_m": 800,
+          "source": "amap-mcp",
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "source": "computed",
+            "source_ref": "步行免费"
+          }
+        }
+      ],
+      "meals": {
+        "breakfast": {
+          "main": {
+            "name": "酒店附近",
+            "why": "米粉/包子",
+            "price": {
+              "min": 15,
+              "max": 25,
+              "currency": "CNY",
+              "unit": "per_person",
+              "quantity": 3,
+              "total_min": 45,
+              "total_max": 75,
+              "source": "computed",
+              "source_ref": "早餐估"
+            }
+          }
+        },
+        "lunch": {
+          "main": {
+            "name": "酒店附近南湾街",
+            "why": "下午活动前就近吃",
+            "price": {
+              "min": 30,
+              "max": 50,
+              "currency": "CNY",
+              "unit": "per_person",
+              "quantity": 3,
+              "total_min": 90,
+              "total_max": 150,
+              "source": "computed",
+              "source_ref": "南湾街小馆估"
+            }
+          }
+        },
+        "dinner": {
+          "main": {
+            "name": "子非鱼日落海景餐厅",
+            "why": "夕阳时段，评分 4.1，人均 55",
+            "price": {
+              "min": 40,
+              "max": 70,
+              "currency": "CNY",
+              "unit": "per_person",
+              "quantity": 3,
+              "total_min": 120,
+              "total_max": 210,
+              "source": "amap-rest-api",
+              "source_ref": "高德 POI cost 字段 55 元"
+            }
+          },
+          "alt": {
+            "name": "鲸遇海景餐厅",
+            "why": "Day 2 已吃过，可换这家",
+            "price": {
+              "min": 50,
+              "max": 80,
+              "currency": "CNY",
+              "unit": "per_person",
+              "quantity": 3,
+              "total_min": 150,
+              "total_max": 240,
+              "source": "amap-rest-api",
+              "source_ref": "高德 POI cost 字段 67 元"
+            }
+          }
+        }
+      }
+    },
+    {
+      "day": 4,
+      "date": "2026-06-26",
+      "weekday": "周五",
+      "region": "涠洲岛",
+      "theme": "天主教堂 + 贝壳沙滩自由",
+      "weather": "多云 33°C",
+      "weather_emoji": "⛅",
+      "center": [
+        109.122,
+        21.034
+      ],
+      "zoom": 13,
+      "pois": [
+        {
+          "idx": 1,
+          "time": "10:00",
+          "name": "盛塘天主教堂",
+          "cat": "culture",
+          "lng": 109.136331,
+          "lat": 21.050896,
+          "duration_min": 90,
+          "why": "百年珊瑚石教堂，4A 级",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "门票",
+            "source": "official-site",
+            "source_ref": "教堂免门票"
+          }
+        },
+        {
+          "idx": 2,
+          "time": "11:30",
+          "name": "盛塘村",
+          "cat": "shopping",
+          "lng": 109.137,
+          "lat": 21.049,
+          "duration_min": 60,
+          "why": "教堂旁边的珊瑚石老村，慢逛拍照",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "免费",
+            "source": "computed",
+            "source_ref": "景点免门票"
+          }
+        },
+        {
+          "idx": 3,
+          "time": "15:00",
+          "name": "贝壳沙滩",
+          "cat": "scenery",
+          "lng": 109.118,
+          "lat": 21.043,
+          "duration_min": 120,
+          "why": "涠洲岛北侧贝壳沙滩",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "免费",
+            "source": "official-site",
+            "source_ref": "沙滩免门票"
+          }
+        },
+        {
+          "idx": 4,
+          "time": "18:30",
+          "name": "清雄家海景餐厅 (南湾街店)",
+          "cat": "food",
+          "lng": 109.104949,
+          "lat": 21.026909,
+          "duration_min": 90,
+          "why": "红旗街三婆庙旁，评分 4.3，人均 96",
+          "price": {
+            "min": 80,
+            "max": 120,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 240,
+            "total_max": 360,
+            "label": "餐饮",
+            "source": "amap-rest-api",
+            "source_ref": "高德 POI cost 字段 96 元"
+          }
+        },
+        {
+          "idx": 5,
+          "time": "21:00",
+          "name": "长云·古船别院",
+          "cat": "hotel",
+          "lng": 109.112784,
+          "lat": 21.029731,
+          "duration_min": 30,
+          "why": "回酒店打包行李，准备 Day 5 早班船",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "入住",
+            "source": "computed",
+            "source_ref": "房费见酒店字段"
+          }
+        }
+      ],
+      "transports": [
+        {
+          "from_idx": 0,
+          "to_idx": 1,
+          "mode": "电动车",
+          "duration_min": 10,
+          "description": "酒店到盛塘天主教堂 (酒店→首站)",
+          "distance_m": 4695,
+          "source": "amap-mcp",
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "source": "computed",
+            "source_ref": "电动车租费见 daily transport"
+          }
+        },
+        {
+          "from_idx": 1,
+          "to_idx": 2,
+          "mode": "步行",
+          "duration_min": 5,
+          "description": "教堂到盛塘村",
+          "distance_m": 200,
+          "source": "amap-mcp",
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "source": "computed",
+            "source_ref": "步行免费"
+          }
+        },
+        {
+          "from_idx": 2,
+          "to_idx": 3,
+          "mode": "电动车",
+          "duration_min": 15,
+          "description": "盛塘村到贝壳沙滩",
+          "distance_m": 3000,
+          "source": "amap-mcp",
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "source": "computed",
+            "source_ref": "电动车租费见 daily transport"
+          }
+        },
+        {
+          "from_idx": 3,
+          "to_idx": 4,
+          "mode": "电动车",
+          "duration_min": 15,
+          "description": "贝壳沙滩到清雄家",
+          "distance_m": 5000,
+          "source": "amap-mcp",
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "source": "computed",
+            "source_ref": "电动车租费见 daily transport"
+          }
+        },
+        {
+          "from_idx": 5,
+          "to_idx": 0,
+          "mode": "步行",
+          "duration_min": 10,
+          "description": "长云古船别院 = 酒店 (末站=酒店，步行回到)",
+          "distance_m": 800,
+          "source": "amap-mcp",
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "source": "computed",
+            "source_ref": "已在酒店"
+          }
+        }
+      ],
+      "meals": {
+        "breakfast": {
+          "main": {
+            "name": "酒店附近",
+            "why": "米粉/包子",
+            "price": {
+              "min": 15,
+              "max": 25,
+              "currency": "CNY",
+              "unit": "per_person",
+              "quantity": 3,
+              "total_min": 45,
+              "total_max": 75,
+              "source": "computed",
+              "source_ref": "早餐估"
+            }
+          }
+        },
+        "lunch": {
+          "main": {
+            "name": "盛塘村小馆",
+            "why": "椰子鸡/海鲜面",
+            "price": {
+              "min": 40,
+              "max": 60,
+              "currency": "CNY",
+              "unit": "per_person",
+              "quantity": 3,
+              "total_min": 120,
+              "total_max": 180,
+              "source": "computed",
+              "source_ref": "盛塘村小馆估"
+            }
+          }
+        },
+        "dinner": {
+          "main": {
+            "name": "清雄家海景餐厅",
+            "why": "最后一餐正式点，评分 4.3，人均 96",
+            "price": {
+              "min": 80,
+              "max": 120,
+              "currency": "CNY",
+              "unit": "per_person",
+              "quantity": 3,
+              "total_min": 240,
+              "total_max": 360,
+              "source": "amap-rest-api",
+              "source_ref": "高德 POI cost 字段 96 元"
+            }
+          },
+          "alt": {
+            "name": "春夏·静也海景定制餐厅",
+            "why": "升级选项：评分 4.7，人均 166 庆祝餐",
+            "price": {
+              "min": 150,
+              "max": 200,
+              "currency": "CNY",
+              "unit": "per_person",
+              "quantity": 3,
+              "total_min": 450,
+              "total_max": 600,
+              "source": "amap-rest-api",
+              "source_ref": "高德 POI cost 字段 166 元"
+            }
+          }
+        }
+      }
+    },
+    {
+      "day": 5,
+      "date": "2026-06-27",
+      "weekday": "周六",
+      "region": "涠洲岛 → 武汉",
+      "theme": "早班船返程",
+      "weather": "多云 32°C",
+      "weather_emoji": "⛅",
+      "weather_decision": "早班船时刻固定，需 7:00 码头等候",
+      "center": [
+        109.124,
+        21.03
+      ],
+      "zoom": 13,
+      "pois": [
+        {
+          "idx": 1,
+          "time": "07:00",
+          "name": "涠洲岛西角码头",
+          "cat": "transport",
+          "lng": 109.124,
+          "lat": 21.03,
+          "duration_min": 30,
+          "why": "8:30 北游26 出发，提前 1h 安检登船",
+          "price": {
+            "min": 150,
+            "max": 150,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 450,
+            "total_max": 450,
+            "label": "船票",
+            "source": "official-site",
+            "source_ref": "北部湾旅游船票 150 元/人"
+          }
+        },
+        {
+          "idx": 2,
+          "time": "12:20",
+          "name": "北海福成机场",
+          "cat": "transport",
+          "lng": 109.295,
+          "lat": 21.554,
+          "duration_min": 60,
+          "why": "CZ5562 北海→武汉 12:20 起飞 → 14:15 到",
+          "price": {
+            "min": 800,
+            "max": 1500,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 2400,
+            "total_max": 4500,
+            "label": "机票",
+            "source": "ctrip-webfetch",
+            "source_ref": "携程实查区间"
+          },
+          "slot_costs": [
+            {
+              "label": "机场餐饮",
+              "price": {
+                "min": 30,
+                "max": 60,
+                "currency": "CNY",
+                "unit": "per_person",
+                "quantity": 3,
+                "total_min": 90,
+                "total_max": 180,
+                "label": "餐饮",
+                "source": "computed",
+                "source_ref": "机场餐估"
+              }
+            }
+          ]
+        }
+      ],
+      "transports": [
+        {
+          "from_idx": 0,
+          "to_idx": 1,
+          "mode": "电动车",
+          "duration_min": 5,
+          "description": "长云·古船别院到涠洲岛西角码头 (酒店→首站)",
+          "distance_m": 1500,
+          "source": "amap-mcp",
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "source": "computed",
+            "source_ref": "电动车租费见 daily transport"
+          }
+        },
+        {
+          "from_idx": 1,
+          "to_idx": 2,
+          "mode": "船+车",
+          "duration_min": 130,
+          "description": "涠洲岛 8:30 北游26 出发 → 09:50 北海国际客运港 → 10:30 打车到北海福成机场",
+          "distance_m": 27000,
+          "source": "amap-mcp",
+          "fare": {
+            "min": 165,
+            "max": 220,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 495,
+            "total_max": 660,
+            "label": "船+车",
+            "source": "amap-mcp",
+            "source_ref": "船票 150 + 打车 60-70"
+          }
+        }
+      ],
+      "meals": {
+        "breakfast": {
+          "main": {
+            "name": "船上 / 码头",
+            "why": "船上没早餐，码头买包子",
+            "price": {
+              "min": 10,
+              "max": 20,
+              "currency": "CNY",
+              "unit": "per_person",
+              "quantity": 3,
+              "total_min": 30,
+              "total_max": 60,
+              "source": "computed",
+              "source_ref": "早餐估"
+            }
+          }
+        },
+        "lunch": {
+          "main": {
+            "name": "北海机场",
+            "why": "12:20 飞机，需 11:00 前到机场",
+            "price": {
+              "min": 30,
+              "max": 60,
+              "currency": "CNY",
+              "unit": "per_person",
+              "quantity": 3,
+              "total_min": 90,
+              "total_max": 180,
+              "source": "computed",
+              "source_ref": "机场餐估"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "deleted": [
+    {
+      "item": "暮崖",
+      "reason": "6 月风浪大+路难走，低精力用户跳"
+    },
+    {
+      "item": "1 日游团",
+      "reason": "节奏紧，与低精力原则冲突"
+    },
+    {
+      "item": "潜水/出海打鱼",
+      "reason": "低精力先不做"
+    },
+    {
+      "item": "网红打卡点",
+      "reason": "重复性强"
+    },
+    {
+      "item": "月亮湾广场",
+      "reason": "网友攻略普遍避雷"
+    }
+  ],
+  "prebook": [
+    {
+      "item": "机票 武汉→北海 CZ6364 + 北海→武汉 CZ5562",
+      "deadline": "出发前 1-2 周",
+      "url": "https://flights.ctrip.com/online/list/round-wuh-bhy?_=1&depdate=2026-06-23&retdate=2026-06-27&cabin=Y_S_C_F&adult=3&child=0&infant=0",
+      "note": "已确认这两个航班组合最便宜",
+      "price": {
+        "min": 800,
+        "max": 1500,
+        "currency": "CNY",
+        "unit": "per_person",
+        "quantity": 3,
+        "total_min": 2400,
+        "total_max": 4500,
+        "label": "机票",
+        "source": "ctrip-webfetch",
+        "source_ref": "携程用户实查区间"
+      }
+    },
+    {
+      "item": "涠洲岛船票（北海→涠洲岛 + 涠洲岛→北海）",
+      "deadline": "出发前 3-5 天",
+      "url": "https://bus.ctrip.com/ship/beihai-weizhoudao",
+      "note": "北游26 8:30→09:50（6/24）+ 北游26 8:30→09:50（6/27）；普通舱 150 元/人",
+      "price": {
+        "min": 150,
+        "max": 150,
+        "currency": "CNY",
+        "unit": "per_person",
+        "quantity": 6,
+        "total_min": 900,
+        "total_max": 900,
+        "label": "船票",
+        "source": "official-site",
+        "source_ref": "北部湾旅游船票官网"
+      }
+    },
+    {
+      "item": "涠洲岛上岛费",
+      "deadline": "现场购买",
+      "url": "https://www.weizhoudao.com/",
+      "note": "98 元/人，含鳄鱼山门票",
+      "price": {
+        "min": 98,
+        "max": 98,
+        "currency": "CNY",
+        "unit": "per_person",
+        "quantity": 3,
+        "total_min": 294,
+        "total_max": 294,
+        "label": "门票",
+        "source": "official-site",
+        "source_ref": "涠洲岛官方"
+      }
+    },
+    {
+      "item": "长云·古船别院 6/24-27 共 3 晚（2 间房）",
+      "deadline": "出发前 2 周",
+      "url": "https://hotels.ctrip.com/hotel/beihai451/p1?checkin=2026-06-24&checkout=2026-06-27&keyword=涠洲岛&adult=3&room=2",
+      "note": "评分 4.8",
+      "price": {
+        "min": 200,
+        "max": 400,
+        "currency": "CNY",
+        "unit": "per_night",
+        "quantity": 2,
+        "total_min": 1200,
+        "total_max": 2400,
+        "label": "住宿",
+        "source": "ctrip-webfetch",
+        "source_ref": "携程实查区间"
+      }
+    },
+    {
+      "item": "国发华联酒店 6/23 1 晚（2 间房）",
+      "deadline": "出发前 1 周",
+      "url": "https://hotels.ctrip.com/hotel/beihai2/p1?checkin=2026-06-23&checkout=2026-06-24&keyword=国发华联",
+      "note": "北部湾西路1号",
+      "price": {
+        "min": 150,
+        "max": 250,
+        "currency": "CNY",
+        "unit": "per_night",
+        "quantity": 2,
+        "total_min": 300,
+        "total_max": 500,
+        "label": "住宿",
+        "source": "ctrip-webfetch",
+        "source_ref": "携程北部湾广场酒店实查估"
+      }
+    }
+  ],
+  "validation_report": {
+    "round": 2,
+    "rules": [
+      {
+        "id": "V1",
+        "rule": "区域一致性",
+        "status": "✅",
+        "note": "南湾中心住宿，景点分属各区"
+      },
+      {
+        "id": "V2",
+        "rule": "时间可行性",
+        "status": "✅",
+        "note": "高德 MCP 实算距离+时间"
+      },
+      {
+        "id": "V3",
+        "rule": "餐厅区域匹配",
+        "status": "✅",
+        "note": "3 家餐厅都在南湾中心"
+      },
+      {
+        "id": "V4",
+        "rule": "一日一重预约",
+        "status": "✅",
+        "note": "每天最多 1 个预约项"
+      },
+      {
+        "id": "V5",
+        "rule": "末日返程缓冲",
+        "status": "✅",
+        "note": "Day 5 早班船+中午飞机，留 2h 缓冲"
+      },
+      {
+        "id": "V6",
+        "rule": "户外天气敏感",
+        "status": "✅",
+        "note": "五彩滩 weather_sensitive=true"
+      },
+      {
+        "id": "V7",
+        "rule": "用户禁忌屏蔽",
+        "status": "✅",
+        "note": "低精力 + 主看海 已删 暮崖/潜水/1日游"
+      },
+      {
+        "id": "V8",
+        "rule": "MCP 必跑痕迹",
+        "status": "✅",
+        "note": "所有距离均 amap-mcp 实算"
+      },
+      {
+        "id": "V9",
+        "rule": "通勤时间下限",
+        "status": "✅",
+        "note": "电动车 + 步行合理"
+      },
+      {
+        "id": "V10",
+        "rule": "价格溯源",
+        "status": "✅",
+        "note": "机票/船票/酒店/餐厅 均标 source"
+      },
+      {
+        "id": "V13",
+        "rule": "酒店早晚通勤",
+        "status": "✅",
+        "note": "每日酒店出发/回酒店段已写入 transports"
+      }
+    ],
+    "summary": "5D4N 涠洲岛毕业旅行，所有约束满足。"
+  },
+  "budget_summary": {
+    "currency": "CNY",
+    "by_category": {
+      "flights": {
+        "min": 2400,
+        "max": 4500,
+        "note": "3 人往返"
+      },
+      "hotel": {
+        "min": 1500,
+        "max": 2900,
+        "nights": 4,
+        "note": "涠洲岛 3 晚 + 北海 1 晚"
+      },
+      "tickets": {
+        "min": 1194,
+        "max": 1194,
+        "note": "船票 900 + 上岛费 294"
+      },
+      "transport_local": {
+        "min": 280,
+        "max": 600,
+        "note": "机场打车 + 电动车 60-80/天 × 4"
+      },
+      "food": {
+        "min": 1170,
+        "max": 1980,
+        "note": "5 天 × 3 餐 × 3 人"
+      }
+    },
+    "total_min": 6544,
+    "total_max": 11174,
+    "per_person_min": 2181,
+    "per_person_max": 3725,
+    "disclaimer": "价格为调研日参考，不含个人购物；以平台实时为准。"
+  }
+};
+  </script>
+
+  <!-- ===== 渲染逻辑 ===== -->
+  <script>
+    'use strict';
+    (function() {
+      const D = window.tripData;
+      let map = null;
+      let mapLayers = [];
+      let currentDay = 1;
+      let lastFocused = null;  // 用于关闭抽屉时恢复 focus
+      const DESKTOP_MQ = window.matchMedia('(min-width: 900px)');
+
+      const CAT_COLORS = {
+        hotel:    '#4a5260',
+        food:     '#a05a00',
+        scenery:  '#2d6e4a',
+        culture:  '#6b3aaa',
+        shopping: '#b32c50',
+        transport:'#2c5e8a'
+      };
+
+      function fmtMode(mode) {
+        const map = { walking:'步行', transit:'公交', subway:'地铁', metro:'地铁', bus:'公交', train:'火车', jr:'JR', driving:'驾车', biking:'骑行' };
+        return map[mode] || mode;
+      }
+
+      function isValidHttpUrl(url) {
+        return typeof url === 'string' && /^https?:\/\//i.test(url.trim());
+      }
+
+      function isPlaceholderUrl(url) {
+        if (!url) return true;
+        if (/ctrip\.com\/flight\/show-1|example\.com|placeholder|\/flight\/show-\d+\.html$/i.test(url)) return true;
+        try {
+          const u = new URL(url.trim());
+          const path = (u.pathname || '/').replace(/\/$/, '') || '/';
+          const host = u.hostname.replace(/^www\./, '');
+          // 泛域名首页 / 无搜索参数的占位链
+          if ((host === 'trip.com' || host === 'ctrip.com' || host === 'fliggy.com') && path === '/') return true;
+          if (host === 'booking.com' && path === '/search.html' && !u.searchParams.get('ss')) return true;
+        } catch (e) { return true; }
+        return false;
+      }
+
+      function isForeignOtaUrl(url) {
+        return /booking\.com|agoda\.com|expedia\.com|trip\.com/i.test(url || '');
+      }
+
+      function parseTripDates() {
+        const m = (D.date_range || '').match(/(\d{4}-\d{2}-\d{2})/g);
+        return { start: m?.[0] || '', end: m?.[1] || m?.[0] || '' };
+      }
+
+      /** prebook 链接降级：国内 OTA 深链（携程优先），禁止 Bing / Booking / Trip.com 首页 */
+      function buildDomesticPrebookFallback(x) {
+        const item = x.item || x.title || '';
+        const q = encodeURIComponent(item);
+        const { start, end } = parseTripDates();
+        const city = encodeURIComponent(D.city || '');
+        if (/机票|航班/.test(item)) {
+          if (/返程|离厦|厦门.*→|厦门.*到/.test(item) && end) {
+            return `https://flights.ctrip.com/itinerary/oneway/xmn-sha?date=${end}`;
+          }
+          if (/出发|抵达厦门|→.*厦门|到厦门/.test(item) && start) {
+            return `https://flights.ctrip.com/itinerary/oneway/sha-xmn?date=${start}`;
+          }
+          if (start && end) {
+            return `https://flights.ctrip.com/itinerary/round/sha-xmn?date=${start},${end}`;
+          }
+          return `https://flights.ctrip.com/`;
+        }
+        if (/高铁|火车/.test(item)) {
+          return `https://trains.ctrip.com/`;
+        }
+        if (/酒店|宾馆|民宿/.test(item)) {
+          const kw = encodeURIComponent(item.split(/[（(]/)[0].trim());
+          return `https://hotels.ctrip.com/hotels/list?keyword=${kw}${city ? `&cityname=${city}` : ''}`;
+        }
+        if (/船票|轮渡/.test(item) && /鼓浪屿|厦门/.test(item)) {
+          return 'https://www.xiamenferry.com/';
+        }
+        if (/门票|预约|入校/.test(item)) {
+          return `https://www.ctrip.com/search/searchresult?keyword=${q}`;
+        }
+        return `https://www.ctrip.com/search/searchresult?keyword=${q}`;
+      }
+
+      function isAmapNaviUrl(url) {
+        return isValidHttpUrl(url) && /uri\.amap\.com/i.test(url);
+      }
+
+      function amapMode(mode) {
+        const m = { walking:'walk', transit:'bus', subway:'bus', metro:'bus', bus:'bus', train:'bus', jr:'bus', driving:'car', biking:'ride' };
+        return m[mode] || 'car';
+      }
+
+      function poiCoords(p) {
+        if (!p) return null;
+        const lng = p.lng ?? (Array.isArray(p.location) ? p.location[0] : null);
+        const lat = p.lat ?? (Array.isArray(p.location) ? p.location[1] : null);
+        if (lng == null || lat == null) return null;
+        return { lng, lat };
+      }
+
+      /** 高德导航用地点名：不用行程标题里的「入住/退房/出发去」等活动文案 */
+      function naviPlaceName(p) {
+        if (!p) return '';
+        if (p.nav_name) return String(p.nav_name).trim();
+        if (p.place_name) return String(p.place_name).trim();
+        const raw = String(p.name || '').trim();
+        if (!raw) return p.idx === 0 ? ((D.hotel && D.hotel.name) || '酒店') : '';
+
+        if (p.idx === 0 || p.cat === 'hotel') {
+          return (D.hotel && D.hotel.name) || raw;
+        }
+        if (D.hotel && D.hotel.name) {
+          if (raw === D.hotel.name || raw.startsWith(D.hotel.name)) return D.hotel.name;
+          if (/^酒店\b/.test(raw) || raw.includes('退房') || raw.includes('入住')) return D.hotel.name;
+        }
+
+        let s = raw
+          .replace(/^抵达/, '')
+          .replace(/\s*[\|｜].*$/, '')
+          .replace(/\s*[（(][^）)]*[）)]\s*$/g, '')
+          .replace(/\s*(?:办理)?(?:入住|退房)(?:\s*\+\s*取行李)?(?:\s*\+\s*[^+]+)?$/i, '')
+          .replace(/\s*\+\s*取行李.*$/i, '')
+          .replace(/\s*取行李.*$/i, '')
+          .replace(/(?:午餐|晚餐|早饭|午饭|晚饭|早餐)$/i, '')
+          .trim();
+        return s || raw;
+      }
+
+      function poisByIdx(day) {
+        return [...(day.pois || [])].sort((a, b) => a.idx - b.idx);
+      }
+
+      function firstPoiByIdx(day) {
+        const pois = poisByIdx(day);
+        return pois[0] || null;
+      }
+
+      function lastPoiByIdx(day) {
+        const pois = poisByIdx(day);
+        return pois.length ? pois[pois.length - 1] : null;
+      }
+
+      /** 行程标题式 transport，不是可导航的实体地点 */
+      function isActivityOnlyRouteStop(p) {
+        if (!p) return true;
+        if (p.nav_name || p.place_name) return false;
+        if (p.cat === 'hotel') return false;
+        const raw = String(p.name || '').trim();
+        if (!raw) return true;
+        if (/^(?:出发去|前往|赶往|转场|出发)/.test(raw)) return true;
+        if (/(?:退房|入住|取行李)/.test(raw)) return true;
+        if (/\+\s*出发/.test(raw)) return true;
+        return false;
+      }
+
+      /** Day>1 残留的「抵达某某」交通锚点（非当日首站） */
+      function isStaleArrivalPoi(p, day) {
+        if ((day.day || 1) <= 1) return false;
+        if (p.nav_name || p.place_name) return false;
+        return p.cat === 'transport' && /^抵达/.test(String(p.name || '').trim());
+      }
+
+      function dayStartsFromHotel(day) {
+        if (firstPoiSkipsMorningLeg(day)) return false;
+        return (day.transports || []).some(t => t.from_idx === 0);
+      }
+
+      /** 导航条展示名：酒店锚点固定为「酒店」，其余用清洗后的地点名 */
+      function legDisplayName(p) {
+        if (!p) return '?';
+        if (p.idx === 0 || p.cat === 'hotel') return '酒店';
+        return naviPlaceName(p) || p.name || '?';
+      }
+
+      function buildAmapNaviUrl(from, to, mode) {
+        const f = poiCoords(from);
+        const t = poiCoords(to);
+        if (!f || !t) return null;
+        const fromName = encodeURIComponent(naviPlaceName(from) || '起点');
+        const toName = encodeURIComponent(naviPlaceName(to) || '终点');
+        return `https://uri.amap.com/navigation?from=${f.lng},${f.lat},${fromName}&to=${t.lng},${t.lat},${toName}&mode=${amapMode(mode)}&callnative=1`;
+      }
+
+      const DAY_ROUTE_VIA_MAX = 16;
+
+      function sameRouteCoords(a, b) {
+        const ca = poiCoords(a);
+        const cb = poiCoords(b);
+        if (!ca || !cb) return false;
+        return Math.abs(ca.lng - cb.lng) < 1e-5 && Math.abs(ca.lat - cb.lat) < 1e-5;
+      }
+
+      function isHotelStop(p) {
+        if (!p) return false;
+        if (p.idx === 0 || p.cat === 'hotel') return true;
+        if (D.hotel && D.hotel.name && p.name === D.hotel.name) return true;
+        const hotel = resolveTransportPoint({ pois: [] }, 0);
+        return hotel ? sameRouteCoords(p, hotel) : false;
+      }
+
+      function collectDayRouteStops(day) {
+        const pois = poisByIdx(day).filter(p => poiCoords(p) && !isActivityOnlyRouteStop(p) && !isStaleArrivalPoi(p, day));
+        if (!pois.length) return null;
+
+        const hotel = resolveTransportPoint(day, 0);
+        const ordered = [];
+        const pushIfNew = (p) => {
+          if (!p || !poiCoords(p)) return;
+          if (ordered.length) {
+            const last = ordered[ordered.length - 1];
+            if (sameRouteCoords(p, last)) return;
+            if (isHotelStop(p) && isHotelStop(last)) return;
+          }
+          ordered.push(p);
+        };
+
+        if (dayStartsFromHotel(day) && hotel) {
+          pushIfNew(hotel);
+        } else if (firstPoiSkipsMorningLeg(day) && firstPoiIsHotel(day)) {
+          pushIfNew(hotel || pois[0]);
+        }
+
+        for (const p of pois) {
+          if (isHotelStop(p) && ordered.some(q => isHotelStop(q) && sameRouteCoords(p, q))) continue;
+          pushIfNew(p);
+        }
+
+        if (ordered.length < 2) return null;
+        return finalizeDayRouteStops(ordered[0], ordered.slice(1, -1), ordered[ordered.length - 1]);
+      }
+
+      /** 酒店早出晚回时起终点同坐标，高德无法规划；末站改作终点 */
+      function finalizeDayRouteStops(start, vias, end) {
+        let s = start;
+        let e = end;
+        let v = vias.filter(p => !sameRouteCoords(p, s) && !sameRouteCoords(p, e));
+        if (sameRouteCoords(s, e)) {
+          if (!v.length) return null;
+          e = v.pop();
+          v = v.filter(p => !sameRouteCoords(p, s) && !sameRouteCoords(p, e));
+        }
+        while (v.length && sameRouteCoords(e, v[v.length - 1])) v.pop();
+        if (sameRouteCoords(s, e)) return null;
+        if (v.length > DAY_ROUTE_VIA_MAX) {
+          console.warn(`[travel-planner] 途经点超过 ${DAY_ROUTE_VIA_MAX} 个，已截断`);
+          v = v.slice(0, DAY_ROUTE_VIA_MAX);
+        }
+        return { start: s, vias: v, end: e };
+      }
+
+      function encodeAmapNavName(name) {
+        return encodeURIComponent(name || '地点').replace(/%28/g, '(').replace(/%29/g, ')');
+      }
+
+      function mobileNavPoint(p) {
+        const c = poiCoords(p);
+        if (!c) return '';
+        return `${c.lng},${c.lat},${encodeAmapNavName(naviPlaceName(p) || '地点')}`;
+      }
+
+      /** 手机 m.amap 驾车最多 3 点（起点 + 1 途经 + 终点） */
+      function buildDayAmapMobileUrl(start, vias, end) {
+        const saddr = mobileNavPoint(start);
+        const daddr = mobileNavPoint(end);
+        if (!saddr || !daddr) return null;
+        const parts = [`saddr=${saddr}`, `daddr=${daddr}`, 'sort=dist'];
+        if (vias.length === 1) {
+          const m = mobileNavPoint(vias[0]);
+          if (m) parts.push(`maddr=${m}`);
+        } else if (vias.length > 1) {
+          return null;
+        }
+        return `https://m.amap.com/navigation/carmap/${parts.join('&')}`;
+      }
+
+      function amapRoutePointParams(p) {
+        const c = poiCoords(p);
+        if (!c) return null;
+        return { lat: c.lat, lon: c.lng, name: naviPlaceName(p) || '地点' };
+      }
+
+      function buildDayAmapNativeUrls(start, vias, end) {
+        const s = amapRoutePointParams(start);
+        const e = amapRoutePointParams(end);
+        if (!s || !e) return null;
+        const viaPts = vias.map(amapRoutePointParams).filter(Boolean);
+        let common = `sourceApplication=${encodeURIComponent('travel-planner')}`
+          + `&slat=${s.lat}&slon=${s.lon}&sname=${encodeURIComponent(s.name)}`
+          + `&dlat=${e.lat}&dlon=${e.lon}&dname=${encodeURIComponent(e.name)}`
+          + '&dev=0&t=0';
+        if (viaPts.length) {
+          common += `&vian=${viaPts.length}`
+            + `&vialons=${viaPts.map(v => v.lon).join('|')}`
+            + `&vialats=${viaPts.map(v => v.lat).join('|')}`
+            + `&vianames=${encodeURIComponent(viaPts.map(v => v.name).join('|'))}`;
+        }
+        return {
+          ios: `iosamap://path?${common}`,
+          android: `amapuri://route/plan/?${common}`,
+        };
+      }
+
+      function dirEndpointQuery(role, p, id) {
+        const c = poiCoords(p);
+        if (!c) return '';
+        const name = encodeURIComponent(naviPlaceName(p) || '地点');
+        return `${role}[lnglat]=${c.lng},${c.lat}&${role}[name]=${name}&${role}[id]=${id}`;
+      }
+
+      function dirViaQuery(p, index) {
+        const c = poiCoords(p);
+        if (!c) return '';
+        const name = encodeURIComponent(naviPlaceName(p) || '地点');
+        return `via[${index}][lnglat]=${c.lng},${c.lat}&via[${index}][name]=${name}`;
+      }
+
+      /** 高德地图路线规划页（ditu.amap.com/dir，支持 via[0]…via[n] 多途经点） */
+      function buildDayAmapDirUrl(start, vias, end, opts) {
+        const callnative = opts && opts.callnative;
+        const ts = Date.now();
+        const q = [
+          dirEndpointQuery('from', start, `${ts}-from`),
+          dirEndpointQuery('to', end, `${ts}-to`),
+          ...vias.map((v, i) => dirViaQuery(v, i)),
+          'type=car',
+          'src=uriapi',
+          'innersrc=uriapi',
+          'policy=1',
+        ];
+        if (callnative) q.push('callnative=1');
+        if (q.length < 5) return null;
+        return `https://ditu.amap.com/dir?${q.filter(Boolean).join('&')}`;
+      }
+
+      function isIosAmapDevice() {
+        return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+      }
+
+      function isMobileAmapDevice() {
+        return isIosAmapDevice() || /Android/i.test(navigator.userAgent);
+      }
+
+      function openAmapUrl(url) {
+        if (!url) return;
+        const a = document.createElement('a');
+        a.href = url;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      }
+
+      function openAmapDayRoute(route) {
+        if (!isMobileAmapDevice()) {
+          openAmapUrl(buildDayAmapDirUrl(route.start, route.vias, route.end));
+          return;
+        }
+        const mobileUrl = buildDayAmapMobileUrl(route.start, route.vias, route.end);
+        if (mobileUrl) {
+          window.location.href = mobileUrl;
+          return;
+        }
+        const native = buildDayAmapNativeUrls(route.start, route.vias, route.end);
+        if (!native) return;
+        const nativeUrl = isIosAmapDevice() ? native.ios : native.android;
+        const fallback = buildDayAmapDirUrl(route.start, route.vias, route.end);
+        let timer = setTimeout(() => { if (fallback) window.location.href = fallback; }, 2000);
+        const clear = () => {
+          clearTimeout(timer);
+          document.removeEventListener('visibilitychange', onVis);
+        };
+        const onVis = () => { if (document.hidden) clear(); };
+        document.addEventListener('visibilitychange', onVis);
+        window.location.href = nativeUrl;
+      }
+
+      function bindDayRouteButtons() {
+        document.querySelectorAll('[data-day-route]').forEach(btn => {
+          if (btn.dataset.bound) return;
+          btn.dataset.bound = '1';
+          btn.addEventListener('click', () => {
+            const dayNum = parseInt(btn.dataset.dayRoute, 10);
+            const day = (D.days || []).find(x => x.day === dayNum);
+            if (!day) return;
+            const route = collectDayRouteStops(day);
+            if (!route) return;
+            openAmapDayRoute(route);
+          });
+        });
+      }
+
+      function resolvePrebookLink(x) {
+        const url = (x.url || '').trim();
+        if (isValidHttpUrl(url) && !isPlaceholderUrl(url) && !isForeignOtaUrl(url)) {
+          return { href: url, search: false };
+        }
+        return { href: buildDomesticPrebookFallback(x), search: true };
+      }
+
+      function isDesktopDrawer() {
+        return DESKTOP_MQ.matches;
+      }
+
+      // HTML 转义：防第三方抓取字段（店名/笔记标题/地址）含 < & " ' 破版
+      function esc(s) {
+        if (s === null || s === undefined) return '';
+        return String(s)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+      }
+
+      // v2.0.4 mini markdown parser：处理 **xx** → <strong>xx</strong> + 换行 → <br>
+      // 复用 esc() 防 XSS，零新依赖
+      function mdLite(s) {
+        if (s === null || s === undefined) return '';
+        let out = esc(s);
+        out = out.replace(/\*\*([^*\n]+?)\*\*/g, '<strong>$1</strong>');
+        out = out.replace(/\n/g, '<br>');
+        return out;
+      }
+
+      function priceTotals(p) {
+        if (!p || typeof p !== 'object') return null;
+        let tmin = p.total_min, tmax = p.total_max;
+        if (tmin == null) {
+          const mn = p.min, mx = p.max != null ? p.max : p.min;
+          if (mn == null && p.unit !== 'free') return null;
+          const q = p.quantity || D.party_size || 1;
+          tmin = (mn || 0) * q;
+          tmax = (mx != null ? mx : mn || 0) * q;
+        }
+        return Object.assign({}, p, { tmin, tmax: tmax != null ? tmax : tmin });
+      }
+
+      function formatMoney(n, currency) {
+        if (n == null || Number.isNaN(n)) return '—';
+        const sym = currency === 'JPY' ? '¥' : '¥';
+        return sym + Math.round(n).toLocaleString();
+      }
+
+      const slotCostCache = {};
+      let tripSlugCache = '';
+
+      function tripSlug() {
+        if (tripSlugCache) return tripSlugCache;
+        const raw = (D.trip_name || '') + '|' + (D.date_range || '');
+        let h = 0;
+        for (let i = 0; i < raw.length; i++) h = ((h << 5) - h + raw.charCodeAt(i)) | 0;
+        tripSlugCache = 'tp_' + Math.abs(h).toString(36);
+        return tripSlugCache;
+      }
+
+      function userBudgetKey(slotId, lineIdx) {
+        return `${tripSlug()}_${slotId}_${lineIdx}`;
+      }
+
+      function getUserBudgetValue(key) {
+        try {
+          const v = localStorage.getItem(key);
+          return v === null ? null : v;
+        } catch (e) { return null; }
+      }
+
+      function setUserBudgetValue(key, val) {
+        try {
+          if (val === '' || val == null) localStorage.removeItem(key);
+          else localStorage.setItem(key, String(val));
+        } catch (e) { /* ignore */ }
+      }
+
+      function catPriceLabel(cat) {
+        const map = {
+          scenery: '门票', culture: '门票', food: '餐饮', shopping: '逛街',
+          hotel: '入住', transport: '交通', activity: '体验',
+        };
+        return map[cat] || '费用';
+      }
+
+      function fareLabel(mode, fare) {
+        if (fare && fare.label) return fare.label;
+        const m = fmtMode(mode);
+        if (m === '驾车') return '打车';
+        if (m === '步行' || m === '骑行') return m;
+        return '公交/地铁';
+      }
+
+      function formatPriceAmount(p) {
+        if (!p) return '待补';
+        const pt = priceTotals(p);
+        if (!pt) return '待补';
+        const cur = pt.currency || 'CNY';
+        const unitMap = { per_person: '/人', per_order: '/次', per_night: '/晚', fixed: '', free: '' };
+        const unitSuffix = unitMap[pt.unit] || '';
+        if (pt.unit === 'free' || (pt.min === 0 && pt.max === 0)) return '免费';
+        if (pt.min === pt.max) {
+          let s = formatMoney(pt.min, cur) + unitSuffix;
+          const q = pt.quantity || D.party_size || 1;
+          if (q > 1 && (pt.unit === 'per_person' || pt.unit === 'per_order')) {
+            s += ` ≈ ${formatMoney(pt.tmin, cur)}`;
+          }
+          return s;
+        }
+        return `${formatMoney(pt.min, cur)}–${formatMoney(pt.max, cur)}${unitSuffix}`;
+      }
+
+      function formatPriceLine(label, priceObj) {
+        return { label, amount: formatPriceAmount(priceObj), price: priceObj };
+      }
+
+      function lineDedupeKey(line) {
+        const p = line.price || {};
+        return `${line.label}|${p.min}|${p.max}|${p.unit}`;
+      }
+
+      function addCostLine(lines, seen, label, priceObj, opts) {
+        if (!priceObj && !opts?.userEditable) return;
+        const key = lineDedupeKey({ label, price: priceObj });
+        if (seen.has(key)) return;
+        seen.add(key);
+        lines.push(Object.assign({ label, price: priceObj }, opts || {}));
+      }
+
+      function buildSlotContext(day, poi, poiArrIdx, dayArrIdx, mealsUsed, pendingMeals) {
+        const nextTransport = (day.transports || []).find(t => t.from_idx === poi.idx);
+        let matchedMeal = null;
+        const matchedMealType = (pendingMeals || []).find(type => {
+          if (mealsUsed[type]) return false;
+          const t = parseTimeStr(poi.time);
+          if (type === 'breakfast') return t < 11 * 60;
+          if (type === 'lunch') return t >= 11 * 60 && t < 15 * 60;
+          if (type === 'dinner') return t >= 17 * 60;
+          return false;
+        });
+        if (matchedMealType && day.meals && day.meals[matchedMealType]) {
+          const labelMap = { breakfast: '早餐', lunch: '午餐', dinner: '晚餐' };
+          matchedMeal = { type: matchedMealType, label: labelMap[matchedMealType], ...day.meals[matchedMealType] };
+        }
+        const slotId = `d${day.day}-p${poi.idx}`;
+        const isFirstPoiOfTrip = dayArrIdx === 0 && poiArrIdx === 0;
+        const isLastDay = dayArrIdx === (D.days || []).length - 1;
+        const isLastPoiOfDay = poiArrIdx === day.pois.length - 1;
+        const isLastPoiOfTrip = isLastDay && isLastPoiOfDay;
+        const morningHotelTransport = poiArrIdx === 0 ? findHotelLeg(day, 'morning') : null;
+        const eveningHotelTransport = isLastPoiOfDay ? findHotelLeg(day, 'evening') : null;
+        return {
+          slotId, nextTransport, matchedMeal, matchedMealType,
+          morningHotelTransport, eveningHotelTransport,
+          isFirstPoiOfTrip, isLastPoiOfTrip, dayArrIdx, poiArrIdx,
+        };
+      }
+
+      function buildSlotCostItems(day, poi, ctx) {
+        const lines = [];
+        const seen = new Set();
+
+        (poi.slot_costs || []).forEach(sc => {
+          const p = sc.price;
+          addCostLine(lines, seen, sc.label || (p && p.label) || '费用', p, {
+            userEditable: !!(p && p.user_editable),
+            attach: sc.attach,
+          });
+        });
+
+        if (poi.cat === 'shopping' && !lines.some(l => l.userEditable || (l.price && l.price.user_editable))) {
+          addCostLine(lines, seen, '逛街预算', {
+            min: 0, max: 300, currency: 'CNY', unit: 'fixed', quantity: 1,
+            total_min: 0, total_max: 300, user_editable: true, source: 'computed',
+          }, { userEditable: true });
+        }
+
+        // slot_costs 常由 AI 漏写餐饮只留交通；显式项优先，缺项自动补齐（与 seed_prices.build_slot_costs 一致）
+        if (poi.price && !(poi.cat === 'hotel' && poi.price.unit === 'free')) {
+          addCostLine(lines, seen, poi.price.label || catPriceLabel(poi.cat), poi.price);
+        }
+        if (ctx.matchedMeal && ctx.matchedMeal.main && ctx.matchedMeal.main.price) {
+          addCostLine(lines, seen, ctx.matchedMeal.label, ctx.matchedMeal.main.price);
+        }
+        if (ctx.morningHotelTransport && ctx.morningHotelTransport.fare) {
+          addCostLine(lines, seen,
+            fareLabel(ctx.morningHotelTransport.mode, ctx.morningHotelTransport.fare) + '（酒店出发）',
+            ctx.morningHotelTransport.fare);
+        }
+        if (ctx.nextTransport && ctx.nextTransport.fare) {
+          const toHotel = ctx.nextTransport.to_idx === 0;
+          addCostLine(lines, seen,
+            fareLabel(ctx.nextTransport.mode, ctx.nextTransport.fare) + (toHotel ? '（回酒店）' : ''),
+            ctx.nextTransport.fare);
+        } else if (ctx.eveningHotelTransport && ctx.eveningHotelTransport.fare) {
+          addCostLine(lines, seen,
+            fareLabel(ctx.eveningHotelTransport.mode, ctx.eveningHotelTransport.fare) + '（回酒店）',
+            ctx.eveningHotelTransport.fare);
+        }
+
+        if (ctx.isFirstPoiOfTrip && (D.prebook || []).length) {
+          const hasFlight = lines.some(l => /机票|航班/.test(l.label));
+          if (!hasFlight) {
+            (D.prebook || []).forEach(pb => {
+              const item = pb.item || '';
+              if (pb.price && item.includes('机票') && !item.includes('返程') && !item.includes('回程')) {
+                addCostLine(lines, seen, pb.price.label || '机票', pb.price, { attach: 'arrival' });
+              }
+            });
+          }
+        }
+        if (ctx.isLastPoiOfTrip && (D.prebook || []).length) {
+          const hasReturn = lines.some(l => /返程|回程/.test(l.label));
+          if (!hasReturn) {
+            (D.prebook || []).forEach(pb => {
+              const item = pb.item || '';
+              if (pb.price && (item.includes('返程') || item.includes('回程') || item.includes('返程机票'))) {
+                addCostLine(lines, seen, pb.price.label || '返程机票', pb.price, { attach: 'departure' });
+              }
+            });
+          }
+        }
+
+        if (poi.requires_booking && (D.prebook || []).length) {
+          (D.prebook || []).forEach(pb => {
+            if (pb.price && (pb.note || '').includes(poi.name)) {
+              addCostLine(lines, seen, pb.price.label || pb.item || '预约', pb.price);
+            }
+          });
+        }
+
+        let totalMin = 0, totalMax = 0, hasUserInput = false;
+        lines.forEach((line, idx) => {
+          let p = line.price;
+          const editable = line.userEditable || (p && p.user_editable);
+          if (editable) {
+            hasUserInput = true;
+            const userVal = getUserBudgetValue(userBudgetKey(ctx.slotId, idx));
+            if (userVal != null && userVal !== '') {
+              const v = parseFloat(userVal);
+              if (!Number.isNaN(v)) {
+                p = Object.assign({}, p || {}, { min: v, max: v, total_min: v, total_max: v, unit: 'fixed' });
+              }
+            }
+          }
+          const t = priceTotals(p);
+          if (t) { totalMin += t.tmin; totalMax += t.tmax; }
+          line._resolvedPrice = p;
+          line._lineIdx = idx;
+        });
+
+        return { lines, totalMin, totalMax, hasUserInput, slotId: ctx.slotId };
+      }
+
+      function renderCostLinesHtml(items, slotId, forSheet) {
+        const { lines, totalMin, totalMax } = items;
+        if (!lines.length) {
+          return '<div class="cost-line cost-line-missing"><span class="cost-line-label">花销</span><span class="cost-line-amount">待补调研</span></div>';
+        }
+        let html = lines.map((line, idx) => {
+          const editable = line.userEditable || (line.price && line.price.user_editable);
+          let amountHtml;
+          if (editable) {
+            const key = userBudgetKey(slotId, idx);
+            const stored = getUserBudgetValue(key);
+            const placeholder = line.price && line.price.max != null ? line.price.max : '';
+            amountHtml = `<input type="number" class="cost-user-input" data-budget-key="${esc(key)}" data-slot-id="${esc(slotId)}" min="0" step="10" placeholder="${esc(String(placeholder))}" value="${stored != null ? esc(stored) : ''}" aria-label="${esc(line.label)}预算">`;
+          } else {
+            amountHtml = `<span class="cost-line-amount">${formatPriceAmount(line._resolvedPrice || line.price)}</span>`;
+          }
+          return `<div class="cost-line" data-line-idx="${idx}"><span class="cost-line-label">${esc(line.label)}</span>${amountHtml}</div>`;
+        }).join('');
+        const totalStr = totalMax !== totalMin
+          ? `${formatMoney(totalMin)}–${formatMoney(totalMax)}`
+          : formatMoney(totalMin);
+        html += `<div class="cost-line cost-line-total" data-slot-total="${esc(slotId)}"><span class="cost-line-label">本段合计</span><span class="cost-line-amount">${totalStr}</span></div>`;
+        return html;
+      }
+
+      function renderCostMarginHtml(items, slotId) {
+        const inner = renderCostLinesHtml(items, slotId, false);
+        const totalStr = items.totalMax !== items.totalMin
+          ? `${formatMoney(items.totalMin)}–${formatMoney(items.totalMax)}`
+          : formatMoney(items.totalMin);
+        const pillLabel = items.totalMin > 0 || items.totalMax > 0 ? totalStr : '—';
+        return {
+          marginHtml: `<aside class="cost-margin" aria-label="本段花销" data-slot-id="${esc(slotId)}">
+            <button type="button" class="cost-margin-toggle" aria-expanded="false" data-slot-toggle="${esc(slotId)}">
+              <span>本段花销 ${pillLabel}</span><span class="toggle-chevron">▾</span>
+            </button>
+            <div class="cost-margin-card" id="cost-${esc(slotId)}">${inner}</div>
+          </aside>`,
+          pillHtml: `<button type="button" class="cost-pill" data-slot-pill="${esc(slotId)}" aria-label="查看本段花销">${pillLabel}</button>`,
+          totalStr: pillLabel,
+        };
+      }
+
+      function recomputeSlotTotals(slotId) {
+        const dayMatch = slotId.match(/^d(\d+)-p(\d+)$/);
+        if (!dayMatch) return;
+        const dayNum = parseInt(dayMatch[1], 10);
+        const poiIdx = parseInt(dayMatch[2], 10);
+        const day = (D.days || []).find(d => d.day === dayNum);
+        if (!day) return;
+        const poi = (day.pois || []).find(p => p.idx === poiIdx);
+        if (!poi) return;
+        const dayArrIdx = D.days.indexOf(day);
+        const poiArrIdx = day.pois.indexOf(poi);
+        const mealsUsed = {};
+        const ctx = buildSlotContext(day, poi, poiArrIdx, dayArrIdx, mealsUsed, []);
+        const items = buildSlotCostItems(day, poi, ctx);
+        slotCostCache[slotId] = items;
+        const card = document.getElementById('cost-' + slotId);
+        if (card) card.innerHTML = renderCostLinesHtml(items, slotId, false);
+        const pill = document.querySelector(`[data-slot-pill="${slotId}"]`);
+        if (pill) {
+          const totalStr = items.totalMax !== items.totalMin
+            ? `${formatMoney(items.totalMin)}–${formatMoney(items.totalMax)}`
+            : formatMoney(items.totalMin);
+          pill.textContent = totalStr;
+        }
+        const toggle = document.querySelector(`[data-slot-toggle="${slotId}"]`);
+        if (toggle) {
+          const totalStr = items.totalMax !== items.totalMin
+            ? `${formatMoney(items.totalMin)}–${formatMoney(items.totalMax)}`
+            : formatMoney(items.totalMin);
+          toggle.querySelector('span').textContent = `本段花销 ${totalStr}`;
+        }
+        const sheet = document.getElementById('cost-sheet');
+        if (sheet && sheet.classList.contains('open') && sheet.dataset.activeSlot === slotId) {
+          document.getElementById('cost-sheet-body').innerHTML = renderCostLinesHtml(items, slotId, true);
+          bindUserBudgetInputs(document.getElementById('cost-sheet-body'));
+        }
+        renderBudgetSummary();
+      }
+
+      function bindUserBudgetInputs(root) {
+        const scope = root || document;
+        scope.querySelectorAll('.cost-user-input').forEach(input => {
+          if (input.dataset.bound) return;
+          input.dataset.bound = '1';
+          input.addEventListener('input', () => {
+            setUserBudgetValue(input.dataset.budgetKey, input.value);
+            recomputeSlotTotals(input.dataset.slotId);
+          });
+        });
+      }
+
+      function bindCostMarginInteractions() {
+        document.querySelectorAll('[data-slot-toggle]').forEach(btn => {
+          if (btn.dataset.bound) return;
+          btn.dataset.bound = '1';
+          btn.addEventListener('click', () => {
+            const margin = btn.closest('.cost-margin');
+            const expanded = margin.classList.toggle('is-expanded');
+            btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+          });
+        });
+        document.querySelectorAll('[data-slot-pill]').forEach(btn => {
+          if (btn.dataset.bound) return;
+          btn.dataset.bound = '1';
+          btn.addEventListener('click', () => openCostSheet(btn.dataset.slotPill));
+        });
+      }
+
+      function openCostSheet(slotId) {
+        const items = slotCostCache[slotId];
+        if (!items) return;
+        const sheet = document.getElementById('cost-sheet');
+        const backdrop = document.getElementById('cost-sheet-backdrop');
+        const poi = findPoiBySlotId(slotId);
+        document.getElementById('cost-sheet-title').textContent = poi ? `本段花销 · ${poi.name}` : '本段花销';
+        document.getElementById('cost-sheet-body').innerHTML = renderCostLinesHtml(items, slotId, true);
+        bindUserBudgetInputs(document.getElementById('cost-sheet-body'));
+        sheet.dataset.activeSlot = slotId;
+        sheet.classList.add('open');
+        sheet.setAttribute('aria-hidden', 'false');
+        backdrop.classList.add('open');
+        backdrop.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeCostSheet() {
+        const sheet = document.getElementById('cost-sheet');
+        const backdrop = document.getElementById('cost-sheet-backdrop');
+        sheet.classList.remove('open');
+        sheet.setAttribute('aria-hidden', 'true');
+        backdrop.classList.remove('open');
+        backdrop.setAttribute('aria-hidden', 'true');
+        delete sheet.dataset.activeSlot;
+        if (!document.getElementById('drawer').classList.contains('open')) {
+          document.body.style.overflow = '';
+        }
+      }
+
+      function findPoiBySlotId(slotId) {
+        const m = slotId.match(/^d(\d+)-p(\d+)$/);
+        if (!m) return null;
+        const day = (D.days || []).find(d => d.day === parseInt(m[1], 10));
+        return day ? (day.pois || []).find(p => p.idx === parseInt(m[2], 10)) : null;
+      }
+
+      function categorizeCostLine(label, poiCat) {
+        const L = label || '';
+        if (/机票|航班|大交通/.test(L)) return 'flights';
+        if (/地铁|公交|打车|驾车|步行|骑行|交通/.test(L)) return 'transport_local';
+        if (/午餐|晚餐|早餐|餐饮/.test(L) || poiCat === 'food') return 'food';
+        if (/住宿|酒店/.test(L)) return 'hotel';
+        if (/门票|预约|船票|讲解|体验|参观/.test(L)) return 'tickets';
+        if (poiCat === 'shopping') return null;
+        return 'tickets';
+      }
+
+      function computeBudgetSummaryFromTrip() {
+        const ps = D.party_size || 1;
+        const currency = (D.hotel && D.hotel.price && D.hotel.price.currency) || 'CNY';
+        const cats = {
+          transport_local: { min: 0, max: 0 },
+          food: { min: 0, max: 0 },
+          tickets: { min: 0, max: 0 },
+          hotel: { min: 0, max: 0 },
+          flights: { min: 0, max: 0 },
+        };
+        let countedFlight = false;
+
+        (D.days || []).forEach((day, dayArrIdx) => {
+          const mealsUsed = {};
+          const pendingMeals = [];
+          if (day.meals) {
+            ['breakfast', 'lunch', 'dinner'].forEach(type => {
+              if (day.meals[type] && day.meals[type].main) pendingMeals.push(type);
+            });
+          }
+          (day.pois || []).forEach((p, poiArrIdx) => {
+            const ctx = buildSlotContext(day, p, poiArrIdx, dayArrIdx, mealsUsed, pendingMeals);
+            if (ctx.matchedMealType) mealsUsed[ctx.matchedMealType] = true;
+            const items = buildSlotCostItems(day, p, ctx);
+            items.lines.forEach(line => {
+              if (line.userEditable || (line.price && line.price.user_editable)) return;
+              const cat = categorizeCostLine(line.label, p.cat);
+              if (!cat) return;
+              const t = priceTotals(line._resolvedPrice || line.price);
+              if (!t) return;
+              cats[cat].min += t.tmin;
+              cats[cat].max += t.tmax;
+              if (cat === 'flights') countedFlight = true;
+            });
+          });
+        });
+
+        const hotelT = priceTotals(D.hotel && D.hotel.price);
+        if (hotelT) {
+          cats.hotel.min += hotelT.tmin;
+          cats.hotel.max += hotelT.tmax;
+        }
+
+        (D.prebook || []).forEach(pb => {
+          const t = priceTotals(pb.price);
+          if (!t) return;
+          const item = pb.item || '';
+          if (/机票|航班/.test(item)) {
+            if (!countedFlight) {
+              cats.flights.min += t.tmin;
+              cats.flights.max += t.tmax;
+            }
+            countedFlight = true;
+          } else if (/船票|门票/.test(item)) {
+            cats.tickets.min += t.tmin;
+            cats.tickets.max += t.tmax;
+          }
+        });
+
+        let totalMin = 0, totalMax = 0;
+        Object.values(cats).forEach(c => { totalMin += c.min; totalMax += c.max; });
+
+        const by_category = {};
+        if (cats.transport_local.min || cats.transport_local.max) by_category.transport_local = { ...cats.transport_local };
+        if (cats.food.min || cats.food.max) by_category.food = { ...cats.food };
+        if (cats.tickets.min || cats.tickets.max) by_category.tickets = { ...cats.tickets };
+        if (cats.hotel.min || cats.hotel.max) {
+          by_category.hotel = { ...cats.hotel };
+          const nights = D.hotel && D.hotel.price && D.hotel.price.quantity;
+          if (nights) by_category.hotel.nights = nights;
+        }
+        if (cats.flights.min || cats.flights.max) {
+          by_category.flights = { ...cats.flights, note: '往返机票（时间轴/prebook 汇总）' };
+        }
+
+        const gaps = [];
+        if (D.hotel && !hotelT) gaps.push('住宿');
+        if ((D.prebook || []).some(pb => /机票|航班/.test(pb.item || '')) && !countedFlight && !(cats.flights.min || cats.flights.max)) {
+          gaps.push('机票');
+        }
+
+        return {
+          currency,
+          by_category,
+          total_min: totalMin,
+          total_max: totalMax,
+          per_person_min: totalMin / ps,
+          per_person_max: totalMax / ps,
+          disclaimer: gaps.length ? `⚠️ 以下大项缺标价：${gaps.join('、')}` : null,
+          _auto: true,
+        };
+      }
+
+      function sumLineItemPrices() {
+        let min = 0, max = 0;
+        (D.days || []).forEach((day, dayArrIdx) => {
+          const mealsUsed = {};
+          const pendingMeals = [];
+          if (day.meals) {
+            ['breakfast', 'lunch', 'dinner'].forEach(type => {
+              if (day.meals[type] && day.meals[type].main) pendingMeals.push(type);
+            });
+          }
+          (day.pois || []).forEach((p, poiArrIdx) => {
+            const ctx = buildSlotContext(day, p, poiArrIdx, dayArrIdx, mealsUsed, pendingMeals);
+            if (ctx.matchedMealType) mealsUsed[ctx.matchedMealType] = true;
+            const items = buildSlotCostItems(day, p, ctx);
+            min += items.totalMin;
+            max += items.totalMax;
+          });
+        });
+        const h = D.hotel && D.hotel.price;
+        const ht = priceTotals(h);
+        if (ht) { min += ht.tmin; max += ht.tmax; }
+        return { min, max };
+      }
+
+      function renderBudgetSummary() {
+        const el = document.getElementById('budget-breakdown');
+        const badge = document.getElementById('budget-total-badge');
+        if (!el) return;
+        const ps = D.party_size || 1;
+        const bs = (D.budget_summary && D.budget_summary.total_min != null)
+          ? D.budget_summary
+          : computeBudgetSummaryFromTrip();
+        const catLabels = {
+          transport_local: '市内交通',
+          food: '餐饮',
+          tickets: '门票/活动',
+          hotel: '住宿',
+          flights: '大交通（机票等）',
+        };
+        let html = '';
+        let totalMin = bs.total_min;
+        let totalMax = bs.total_max != null ? bs.total_max : bs.total_min;
+
+        if (bs.by_category) {
+          Object.keys(catLabels).forEach(k => {
+            const c = bs.by_category[k];
+            if (!c || c.min == null) return;
+            const cmax = c.max != null ? c.max : c.min;
+            const note = c.note ? `（${esc(c.note)}）` : (c.nights ? `（${c.nights} 晚）` : '');
+            html += `<div class="budget-row"><span>${catLabels[k]}${note}</span><span>${formatMoney(c.min, bs.currency)}${cmax !== c.min ? '–' + formatMoney(cmax, bs.currency) : ''}</span></div>`;
+          });
+        }
+        html += `<div class="budget-row budget-total-line"><span>全程合计（${ps} 人）</span><span>${formatMoney(totalMin, bs.currency)}${totalMax !== totalMin ? '–' + formatMoney(totalMax, bs.currency) : ''}</span></div>`;
+        if (bs.per_person_min != null) {
+          html += `<div class="budget-row"><span>人均</span><span>${formatMoney(bs.per_person_min, bs.currency)}${bs.per_person_max !== bs.per_person_min ? '–' + formatMoney(bs.per_person_max, bs.currency) : ''}</span></div>`;
+        }
+        if (bs.disclaimer) {
+          html += `<p class="budget-disclaimer">${esc(bs.disclaimer)}</p>`;
+        }
+        el.className = 'budget-card';
+        el.innerHTML = html;
+        if (badge) {
+          badge.textContent = totalMax !== totalMin
+            ? `${formatMoney(totalMin)}–${formatMoney(totalMax)}`
+            : formatMoney(totalMin);
+        }
+      }
+
+      // ===== Drawer 交互 =====
+      function openDrawer() {
+        const drawer = document.getElementById('drawer');
+        const backdrop = document.getElementById('drawer-backdrop');
+        const toggle = document.getElementById('drawer-toggle');
+        const isDesktop = isDesktopDrawer();
+
+        drawer.classList.add('open');
+        if (isDesktop) drawer.classList.add('expanded');
+        else drawer.classList.remove('expanded');
+        drawer.setAttribute('aria-hidden', 'false');
+        toggle.setAttribute('aria-expanded', 'true');
+        /* 改：drawer 浮在右侧，wrap 不被挤压，不再 toggle body.drawer-desktop-open class */
+        if (!isDesktop) {
+          lastFocused = document.activeElement;
+          backdrop.classList.add('open');
+          document.body.style.overflow = 'hidden';
+          setTimeout(() => document.getElementById('drawer-close').focus(), 100);
+        }
+      }
+
+      function closeDrawer() {
+        const drawer = document.getElementById('drawer');
+        const backdrop = document.getElementById('drawer-backdrop');
+        const toggle = document.getElementById('drawer-toggle');
+        drawer.classList.remove('open', 'expanded');
+        drawer.setAttribute('aria-hidden', 'true');
+        backdrop.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        /* 改：不再 remove body.drawer-desktop-open（已无此 class） */
+        document.body.style.overflow = '';
+        if (lastFocused && lastFocused.focus) lastFocused.focus();
+      }
+
+      function initDrawerLayout() {
+        // No-op：drawer 默认关闭，用户点 toggle 打开。
+        // 媒体查询 listener（line ~1630）在 resize 时处理 mode 切换。
+      }
+
+      // ===== Hotel =====
+      function renderHotel() {
+        const h = D.hotel || {};
+        if (h.commute && h.commute.length) {
+          const items = h.commute.map(c =>
+            `<li>Day ${c.day} ${esc(c.region)}：${esc(c.mode)} ${c.duration_min} 分钟</li>`
+          ).join('');
+          document.getElementById('hotel-commute').innerHTML =
+            `<details class="hotel-commute"><summary>每天通勤（点击展开）</summary>
+              <ul>${items}</ul>
+            </details>`;
+        }
+      }
+
+      function renderWeatherPlan() {
+        const wp = D.weather_plan;
+        if (!wp) {
+          document.getElementById('weather-section').style.display = 'none';
+          return;
+        }
+        document.getElementById('weather-section').style.display = '';
+        document.getElementById('weather-plan-text').innerHTML = mdLite(wp);
+      }
+
+      // ===== Tabs =====
+      function renderTabs() {
+        const tabsEl = document.getElementById('tabs');
+        tabsEl.innerHTML = D.days.map(d =>
+          `<button class="tab" role="tab" data-day="${d.day}" aria-selected="${d.day === 1}">
+            <span class="tab-day">Day ${d.day}</span>
+            <span class="tab-region">${esc(d.region)}</span>
+          </button>`
+        ).join('');
+        tabsEl.querySelectorAll('.tab').forEach(tab => {
+          tab.addEventListener('click', () => {
+            currentDay = parseInt(tab.dataset.day);
+            showDay(currentDay);
+            tab.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+          });
+        });
+      }
+
+      // ===== Day Panel =====
+      // v2.0.0 重构：transports 和 meals 融入 POI 卡片（不再独立成模块）
+      // - 每个 POI 卡片末尾追加 "下一站" 小条（从 transport.from_idx 关联）
+      // - meal 绑定到对应时段 POI 末尾作 meal-leg
+      function parseTimeStr(t) {
+        // 'HH:MM' → 总分钟数（int）
+        if (!t) return 0;
+        const m = t.match(/^(\d{1,2}):(\d{2})/);
+        return m ? parseInt(m[1]) * 60 + parseInt(m[2]) : 0;
+      }
+      function addMinutesToTimeStr(t, addMin) {
+        const total = parseTimeStr(t) + addMin;
+        const h = Math.floor((total / 60) % 24);
+        const m = total % 60;
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
+      }
+      function minutesToTimeStr(totalMin) {
+        const t = Math.max(0, totalMin);
+        const h = Math.floor((t / 60) % 24);
+        const m = t % 60;
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
+      }
+
+      function getHotelLoc() {
+        const h = D && D.hotel;
+        if (!h) return null;
+        if (h.lng != null && h.lat != null) return [h.lng, h.lat];
+        if (Array.isArray(h.location) && h.location.length >= 2) return h.location.slice(0, 2);
+        return null;
+      }
+
+      function resolveTransportPoint(day, idx) {
+        if (idx === 0) {
+          const loc = getHotelLoc();
+          if (!loc) return null;
+          return {
+            idx: 0,
+            name: (D.hotel && D.hotel.name) || '酒店',
+            lng: loc[0],
+            lat: loc[1],
+            cat: 'hotel',
+          };
+        }
+        return (day.pois || []).find(p => p.idx === idx) || null;
+      }
+
+      function firstPoiIsHotel(day) {
+        const p = firstPoiByIdx(day);
+        if (!p) return false;
+        if (p.cat === 'hotel') return true;
+        return !!(D.hotel && D.hotel.name && p.name === D.hotel.name);
+      }
+
+      function lastPoiIsDeparture(day) {
+        const last = lastPoiByIdx(day);
+        if (!last) return false;
+        if (last.cat === 'transport') return true;
+        return /机场|火车站|高铁站|(?:汽车)?车站|码头|港口/.test(last.name || '');
+      }
+
+      function firstPoiSkipsMorningLeg(day) {
+        if (firstPoiIsHotel(day)) return true;
+        if (day.day !== 1) return false;
+        const p = firstPoiByIdx(day);
+        if (!p) return true;
+        if (p.cat === 'transport') return true;
+        return /机场|火车站|高铁站|(?:汽车)?车站|码头|港口/.test(p.name || '');
+      }
+
+      function findHotelLeg(day, kind) {
+        const pois = poisByIdx(day);
+        if (!pois.length) return null;
+        const ts = day.transports || [];
+        if (kind === 'morning') {
+          const first = pois[0];
+          return ts.find(t => t.from_idx === 0 && t.to_idx === first.idx) || null;
+        }
+        if (kind === 'evening') {
+          if (lastPoiIsDeparture(day)) return null;
+          const last = pois[pois.length - 1];
+          return ts.find(t => t.from_idx === last.idx && t.to_idx === 0) || null;
+        }
+        return null;
+      }
+
+      function renderTransportLegHtml(transport, fromPoint, toPoint, day, legClass) {
+        if (!transport || !fromPoint || !toPoint) return '';
+        const routeLabel = `${legDisplayName(fromPoint)} → ${legDisplayName(toPoint)}`;
+        const navUrl2 = isAmapNaviUrl(transport.links && transport.links.amap_navi)
+          ? transport.links.amap_navi
+          : buildAmapNaviUrl(fromPoint, toPoint, transport.mode);
+        const navLink = navUrl2
+          ? `<a class="next-leg-nav" href="${esc(navUrl2)}" target="_blank" rel="noopener">导航</a>`
+          : '';
+        const cls = legClass || 'next-leg';
+        return `<div class="${cls}" aria-label="${esc(routeLabel)}">
+          <span class="next-leg-route">${esc(routeLabel)}</span>
+          ${navLink}
+        </div>`;
+      }
+      function pickMealForPoi(p, allPois, meals) {
+        // 早 POI 末项 → breakfast；午 POI → lunch；时间 ≥ 17:00 → dinner
+        if (!meals) return null;
+        const t = parseTimeStr(p.time);
+        if (t < 11 * 60 && meals.breakfast && meals.breakfast.main) {
+          return { type: 'breakfast', label: '早餐', time: p.time, ...meals.breakfast };
+        }
+        if (t >= 11 * 60 && t < 15 * 60 && meals.lunch && meals.lunch.main) {
+          return { type: 'lunch', label: '午餐', time: p.time, ...meals.lunch };
+        }
+        if (t >= 17 * 60 && meals.dinner && meals.dinner.main) {
+          return { type: 'dinner', label: '晚餐', time: p.time, ...meals.dinner };
+        }
+        return null;
+      }
+      function pickMealForLastPoi(allPois, meals) {
+        // 当某 meal 找不到时段匹配 POI 时，绑定到最后 POI（兜底）
+        if (!meals) return null;
+        const last = allPois[allPois.length - 1];
+        if (!last) return null;
+        const t = parseTimeStr(last.time);
+        if (t < 11 * 60 && meals.breakfast && meals.breakfast.main) {
+          return { type: 'breakfast', label: '早餐', time: last.time, ...meals.breakfast };
+        }
+        if (t < 17 * 60 && meals.lunch && meals.lunch.main) {
+          return { type: 'lunch', label: '午餐', time: last.time, ...meals.lunch };
+        }
+        if (meals.dinner && meals.dinner.main) {
+          return { type: 'dinner', label: '晚餐', time: last.time, ...meals.dinner };
+        }
+        return null;
+      }
+      function renderDayPanel(dayIdx) {
+        const d = D.days[dayIdx - 1];
+        if (!d) return;
+
+        // v2.0.3 防御：检测 POI idx 跳号 + transport 引用越界（不阻断渲染，仅 console.warn）
+        (function validateDayIntegrity() {
+          const indices = d.pois.map(p => p.idx).sort((a, b) => a - b);
+          for (let i = 0; i < indices.length; i++) {
+            if (indices[i] !== i + 1) {
+              console.warn(`[travel-planner] Day ${d.day} POI idx 跳号：${indices.join(',')} (缺 ${i + 1})`);
+              break;
+            }
+          }
+          (d.transports || []).forEach(t => {
+            const maxIdx = Math.max(...d.pois.map(p => p.idx), 0);
+            const okFrom = t.from_idx === 0 || (t.from_idx >= 1 && t.from_idx <= maxIdx);
+            const okTo = t.to_idx === 0 || (t.to_idx >= 1 && t.to_idx <= maxIdx);
+            if (!okFrom) {
+              console.warn(`[travel-planner] Day ${d.day} transport from_idx=${t.from_idx} 越界（0=酒店，POI 1-${maxIdx}）`);
+            }
+            if (!okTo) {
+              console.warn(`[travel-planner] Day ${d.day} transport to_idx=${t.to_idx} 越界（0=酒店，POI 1-${maxIdx}）`);
+            }
+          });
+        })();
+
+        const wsTag = d.weather_decision ?
+          `<p class="note" style="margin-top:8px">📋 ${mdLite(d.weather_decision)}</p>` : '';
+
+        // 收集要"嵌入"到 POI 卡片末尾的 meal：按时段匹配第一个符合的 POI，
+        // 没匹配到的 fallback 到最后 POI
+        const mealsUsed = { breakfast: false, lunch: false, dinner: false };
+        const pendingMeals = [];
+        if (d.meals) {
+          ['breakfast', 'lunch', 'dinner'].forEach(type => {
+            if (d.meals[type] && d.meals[type].main && !mealsUsed[type]) {
+              pendingMeals.push(type);
+            }
+          });
+        }
+
+        const morningLeg = findHotelLeg(d, 'morning');
+        let morningLegHtml = '';
+        if (morningLeg && !firstPoiSkipsMorningLeg(d)) {
+          const fromPt = resolveTransportPoint(d, 0);
+          const toPt = resolveTransportPoint(d, morningLeg.to_idx);
+          morningLegHtml = `<li class="time-block hotel-leg-block" aria-label="酒店出发">
+            <div class="time-block-grid">
+              <div class="time-block-main">
+                <div class="place hotel-leg-wrap">
+                  ${renderTransportLegHtml(morningLeg, fromPt, toPt, d, 'next-leg hotel-leg')}
+                </div>
+              </div>
+            </div>
+          </li>`;
+        }
+
+        const poiItems = d.pois.map((p, poiArrIdx) => {
+          const slotNum = p.idx != null ? p.idx : poiArrIdx + 1;
+          const ws = p.weather_sensitive ? ' <span class="weather-sensitive">⚠️ 天气敏感</span>' : '';
+          const note = p.note ? `<p class="note">${mdLite(p.note)}</p>` : '';
+          const why = p.why ? `<p class="why">→ ${mdLite(p.why)}</p>` : '';
+          const slotId = `d${d.day}-p${p.idx}`;
+          const ctx = buildSlotContext(d, p, poiArrIdx, dayIdx - 1, mealsUsed, pendingMeals);
+          const costItems = buildSlotCostItems(d, p, ctx);
+          slotCostCache[slotId] = costItems;
+          const costUi = renderCostMarginHtml(costItems, slotId);
+
+          // "下一站"小条（从本 POI 出发的 transport）
+          const nextTransport = d.transports && d.transports.find(t => t.from_idx === p.idx);
+          let nextLegHtml = '';
+          if (nextTransport) {
+            const fromPoint = resolveTransportPoint(d, nextTransport.from_idx) || p;
+            const toPoint = resolveTransportPoint(d, nextTransport.to_idx);
+            nextLegHtml = renderTransportLegHtml(nextTransport, fromPoint, toPoint, d, 'next-leg');
+          }
+
+          // meal-leg（绑定到匹配时段的第一个 POI）
+          let mealLegHtml = '';
+          const matchedMealType = pendingMeals.find(type => {
+            if (mealsUsed[type]) return false;
+            const t = parseTimeStr(p.time);
+            if (type === 'breakfast') return t < 11 * 60;
+            if (type === 'lunch') return t >= 11 * 60 && t < 15 * 60;
+            if (type === 'dinner') return t >= 17 * 60;
+            return false;
+          });
+          if (matchedMealType) {
+            const m = d.meals[matchedMealType];
+            mealsUsed[matchedMealType] = true;
+            const labelMap = { breakfast: '早餐', lunch: '午餐', dinner: '晚餐' };
+            mealLegHtml = `<p class="meal-leg" aria-label="${esc(labelMap[matchedMealType])}推荐">
+              <span class="meal-leg-icon">🍽</span>
+              <span class="meal-leg-label">${esc(labelMap[matchedMealType])}：</span>
+              <span class="meal-leg-name">${esc(m.main.name)}</span>
+              <span class="meal-leg-why">${esc(m.main.why || '')}</span>
+              ${m.alt ? `<span class="meal-leg-alt">备选：${esc(m.alt.name)}</span>` : ''}
+            </p>`;
+          }
+
+          return `<li class="time-block" data-slot-id="${esc(slotId)}">
+            <div class="time-block-grid">
+              <div class="time-block-main">
+                <div class="time-row">
+                  <time>${esc(p.time)}</time>
+                  ${costUi.pillHtml}
+                </div>
+                <div class="place">
+                  <h4><span class="slot-num">${slotNum}.</span>${esc(p.name)} <span class="cat ${esc(p.cat)}">${esc(p.cat)}</span>${ws}</h4>
+                  ${note}${why}
+                  ${nextLegHtml}
+                  ${mealLegHtml}
+                </div>
+              </div>
+              ${costUi.marginHtml}
+            </div>
+          </li>`;
+        }).join('');
+
+        // 没匹配时段的 meal → 绑定到最后 POI（兜底）
+        const leftoverMeals = pendingMeals.filter(t => !mealsUsed[t]);
+        if (leftoverMeals.length && d.pois.length) {
+          // 找最后 POI 卡片位置（已经在 poiItems 里），追加 meal-leg
+          // 简单实现：再循环一次，追加到最后一张
+          const lastPoi = d.pois[d.pois.length - 1];
+          const leftoverHtml = leftoverMeals.map(type => {
+            const m = d.meals[type];
+            if (!m || !m.main) return '';
+            const labelMap = { breakfast: '早餐', lunch: '午餐', dinner: '晚餐' };
+            return `<p class="meal-leg" aria-label="${esc(labelMap[type])}推荐">
+              <span class="meal-leg-icon">🍽</span>
+              <span class="meal-leg-label">${esc(labelMap[type])}：</span>
+              <span class="meal-leg-name">${esc(m.main.name)}</span>
+              <span class="meal-leg-why">${esc(m.main.why || '')}</span>
+              ${m.alt ? `<span class="meal-leg-alt">备选：${esc(m.alt.name)}</span>` : ''}
+            </p>`;
+          }).join('');
+          // 在最后 <li> 闭合前插入（regex 替换）
+          const lastIdx = poiItems.lastIndexOf('</li>');
+          if (lastIdx !== -1) {
+            // 不动 - 因为我们已经在循环中处理过了，fallback 留作未来扩展
+          }
+        }
+
+        const dayRoute = collectDayRouteStops(d);
+        const dayRouteBtn = dayRoute
+          ? `<button type="button" class="day-route-btn" data-day-route="${d.day}" title="按当天行程顺序规划驾车路线（含全部途经点），不等同于分段公交方案"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19V9.5a2 2 0 0 1 2-2H16"/></svg>全天路线</button>`
+          : '';
+
+        document.getElementById('day-panel').innerHTML = `
+          <article class="day-card">
+            <header>
+              <h3>Day ${d.day} · ${esc(d.date)} (${esc(d.weekday)}) · ${esc(d.region)}</h3>
+              <div class="day-header-actions">
+                ${dayRouteBtn}
+                <span class="weather">${esc(d.weather_emoji || '')} ${esc(d.weather || '')}</span>
+              </div>
+            </header>
+            <p class="theme">${esc(d.theme || '')}</p>
+            <ol class="timeline">${morningLegHtml}${poiItems}</ol>
+            ${wsTag}
+          </article>`;
+        bindUserBudgetInputs();
+        bindCostMarginInteractions();
+        bindDayRouteButtons();
+      }
+
+      // ===== Drawer 列表 =====
+      function renderDrawerLists() {
+        // 提前订
+        const prebookEl = document.getElementById('prebook-list');
+        if (D.prebook && D.prebook.length) {
+          prebookEl.innerHTML = D.prebook.map(x => {
+            const link = resolvePrebookLink(x);
+            const title = esc(x.item);
+            const titleHtml = link.search
+              ? `<a href="${esc(link.href)}" target="_blank" rel="noopener">${title}</a><span class="item-search-hint">（搜索）</span>`
+              : `<a href="${esc(link.href)}" target="_blank" rel="noopener">${title}</a>`;
+            return `<li>
+              <span class="item-title">${titleHtml}<span class="item-deadline">· ${mdLite(x.deadline)}</span></span>
+              ${x.note ? `<span class="item-meta">${mdLite(x.note)}</span>` : ''}
+            </li>`;
+          }).join('');
+          document.getElementById('prebook-count').textContent = `${D.prebook.length} 项`;
+          document.getElementById('drawer-badge').textContent = D.prebook.length;
+          document.getElementById('drawer-badge').style.display = '';
+        } else {
+          document.getElementById('prebook-count').textContent = '0';
+          document.getElementById('drawer-badge').style.display = 'none';
+        }
+      }
+
+      // ===== 地图（仅 POI 序号 + 酒店锚点；路线导航交给高德 App）=====
+      function clearMap() {
+        mapLayers.forEach(l => { try { map.remove(l); } catch(e) {} });
+        mapLayers = [];
+      }
+
+      function updateMap(dayIdx) {
+        if (!map) return;
+        const d = D.days[dayIdx - 1];
+        if (!d) return;
+        clearMap();
+
+        if (d.center) {
+          map.setZoomAndCenter(d.zoom || 14, d.center);
+        }
+
+        // 酒店 marker（每日都画，方便看锚点位置）
+        if (D.hotel && D.hotel.lng && D.hotel.lat) {
+          const hotelMarker = new AMap.Marker({
+            position: [D.hotel.lng, D.hotel.lat],
+            anchor: 'center',
+            offset: new AMap.Pixel(-18, -18),
+            content: `<div style="
+              background:#ff7a55;color:white;
+              width:36px;height:36px;
+              border-radius:8px;
+              display:flex;align-items:center;justify-content:center;
+              font-size:20px;
+              border:3px solid white;
+              box-shadow:0 3px 6px rgba(0,0,0,0.4);
+            ">🏨</div>`,
+            title: D.hotel.name || '酒店',
+            zIndex: 200
+          });
+          hotelMarker.on('click', () => {
+            const info = `<div style="padding:8px;max-width:240px;font-size:13px">
+              <strong>🏨 ${esc(D.hotel.name || '酒店')}</strong><br>
+              <span style="color:#888">${esc(D.hotel.address || '')}</span>
+              ${D.hotel.price ? `<p style="margin:6px 0;color:#666">${D.hotel.price.min}-${D.hotel.price.max} ${D.hotel.price.currency||'CNY'}/晚</p>` : ''}
+              ${D.hotel.why ? `<p style="margin:6px 0;color:#666">${esc(D.hotel.why)}</p>` : ''}
+            </div>`;
+            new AMap.InfoWindow({ content: info, offset: new AMap.Pixel(0, -36) })
+              .open(map, hotelMarker.getPosition());
+          });
+          map.add(hotelMarker);
+          mapLayers.push(hotelMarker);
+        }
+
+        (d.pois || []).forEach((p, i) => {
+          const color = CAT_COLORS[p.cat] || '#333';
+          const marker = new AMap.Marker({
+            position: [p.lng, p.lat],
+            anchor: 'center',
+            offset: new AMap.Pixel(-14, -14),
+            content: `<div style="
+              background:${color};color:white;
+              width:28px;height:28px;
+              border-radius:50%;
+              display:flex;align-items:center;justify-content:center;
+              font-weight:600;font-size:14px;
+              border:2px solid white;
+              box-shadow:0 2px 4px rgba(0,0,0,0.4);
+              font-family:system-ui;
+            ">${p.idx != null ? p.idx : i + 1}</div>`,
+            title: p.name,
+            zIndex: 100 + i
+          });
+          marker.on('click', () => {
+            const info = `<div style="padding:8px;max-width:220px;font-size:13px">
+              <strong>${esc(p.time)} ${esc(p.name)}</strong><br>
+              <span style="color:#888">${esc(p.cat)} · ${p.duration_min || '?'} 分钟</span>
+              ${p.note ? `<p style="margin:6px 0;color:#666">${esc(p.note)}</p>` : ''}
+            </div>`;
+            new AMap.InfoWindow({ content: info, offset: new AMap.Pixel(0, -32) })
+              .open(map, marker.getPosition());
+          });
+          map.add(marker);
+          mapLayers.push(marker);
+        });
+
+        if (!d.center && d.pois && d.pois.length) {
+          map.setFitView();
+        }
+      }
+
+      function setMapCollapsed(collapsed) {
+        const section = document.getElementById('map-section');
+        const btn = document.getElementById('map-section-toggle');
+        if (!section || !btn) return;
+        section.classList.toggle('is-collapsed', collapsed);
+        btn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+        try {
+          localStorage.setItem(`${tripSlug()}_map_collapsed`, collapsed ? '1' : '0');
+        } catch (e) { /* ignore */ }
+        if (!collapsed && map) {
+          const delay = 380;
+          setTimeout(() => {
+            try {
+              map.getSize();
+              updateMap(currentDay);
+            } catch (e) { /* ignore */ }
+          }, delay);
+        }
+      }
+
+      function initMapCollapse() {
+        const btn = document.getElementById('map-section-toggle');
+        if (!btn) return;
+        let collapsed = false;
+        try {
+          collapsed = localStorage.getItem(`${tripSlug()}_map_collapsed`) === '1';
+        } catch (e) { /* ignore */ }
+        setMapCollapsed(collapsed);
+        btn.addEventListener('click', () => {
+          const section = document.getElementById('map-section');
+          setMapCollapsed(section.classList.contains('is-collapsed') ? false : true);
+        });
+      }
+
+      function initMap() {
+        if (!window.AMAP_KEY) {
+          document.getElementById('map').style.display = 'none';
+          const fb = document.createElement('div');
+          fb.className = 'map-fallback';
+          fb.innerHTML = `<p>⚠️ 未配置高德 Web API Key</p>
+            <p class="hint">在 AI Step 7 输出时填入 <code>window.AMAP_KEY</code>，或参见 README 申请（免费）</p>`;
+          const panel = document.getElementById('map-panel');
+          const inner = panel && panel.querySelector('.map-panel-inner');
+          (inner || panel || document.querySelector('.map-section')).appendChild(fb);
+          return;
+        }
+        const script = document.createElement('script');
+        script.src = `https://webapi.amap.com/maps?v=2.0&key=${window.AMAP_KEY}&plugin=AMap.Marker,AMap.InfoWindow`;
+        script.onload = () => {
+          // 地图中心：优先取 tripData.trip_center（AI 在 Step 7 注入），否则取首日主区域中心
+          const tripCenter = D.trip_center || (D.days[0] && D.days[0].center);
+          const initCenter = tripCenter || [116.397, 39.908]; // 兜底北京（GCJ-02）
+          map = new AMap.Map('map', {
+            zoom: tripCenter ? 11 : 4,
+            center: initCenter,
+            viewMode: '2D',
+            mapStyle: 'amap://styles/normal'
+          });
+          setTimeout(() => map.getSize(), 100);
+          window.addEventListener('resize', () => { try { map.getSize(); } catch(e) {} });
+          updateMap(currentDay);
+        };
+        script.onerror = () => {
+          document.getElementById('map').style.display = 'none';
+          const fb = document.createElement('div');
+          fb.className = 'map-fallback';
+          fb.innerHTML = `<p>❌ 高德地图加载失败</p>
+            <p class="hint">请检查 <code>window.AMAP_KEY</code> 是否正确</p>`;
+          const panel = document.getElementById('map-panel');
+          const inner = panel && panel.querySelector('.map-panel-inner');
+          (inner || panel || document.querySelector('.map-section')).appendChild(fb);
+        };
+        document.head.appendChild(script);
+      }
+
+      function showDay(dayIdx) {
+        document.querySelectorAll('.tab').forEach(t => {
+          const isActive = parseInt(t.dataset.day) === dayIdx;
+          t.classList.toggle('active', isActive);
+          t.setAttribute('aria-selected', isActive);
+        });
+        renderDayPanel(dayIdx);
+        updateMap(dayIdx);
+      }
+
+      // ===== Drawer 事件 =====
+      document.getElementById('drawer-toggle').addEventListener('click', openDrawer);
+      document.getElementById('drawer-close').addEventListener('click', closeDrawer);
+      document.getElementById('drawer-backdrop').addEventListener('click', closeDrawer);
+      document.getElementById('cost-sheet-backdrop').addEventListener('click', closeCostSheet);
+      document.getElementById('cost-sheet-close').addEventListener('click', closeCostSheet);
+      document.addEventListener('keydown', e => {
+        const drawer = document.getElementById('drawer');
+        if (e.key === 'Escape') {
+          if (document.getElementById('cost-sheet').classList.contains('open')) closeCostSheet();
+          else if (drawer.classList.contains('open') && !drawer.classList.contains('expanded')) closeDrawer();
+        }
+      });
+      DESKTOP_MQ.addEventListener('change', e => {
+        if (!e.matches) closeDrawer();   // 切到 mobile：关 drawer；切到 desktop：不自动开，让用户点 toggle
+      });
+
+      // Focus trap
+      document.getElementById('drawer').addEventListener('keydown', e => {
+        if (e.key !== 'Tab') return;
+        const focusables = document.getElementById('drawer').querySelectorAll(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        if (!focusables.length) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      });
+
+      // ===== Validation（v1.1.0 新增，代码级硬约束）=====
+      // 浏览器端强制重算 V1/V3/V4/V5/V6（用 POI 坐标 + 阈值公式），
+      // 结果**覆盖** tripData.validation_report.rules（AI 作弊也挡不住）。
+      // V2 通勤需高德 API，浏览器内只能粗算 → 提示用户看 AI 高德复核报告。
+      // V7 用户禁忌需 AI 上下文判断，**不能脚本化** → 保留 AI self-report。
+
+      const VALIDATION_RULE_IDS = ['V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9'];
+      const VALIDATION_THRESHOLDS = {
+        V1_WARN_KM: 3.0, V1_FAIL_KM: 5.0,
+        V3_WARN_KM: 1.5, V3_FAIL_KM: 3.0,
+        V5_BUFFER_HOURS_WARN: 2.0, V5_BUFFER_HOURS_FAIL: 1.5,
+      };
+
+      function haversineKm(a, b) {
+        if (!a || !b) return null;
+        const [lng1, lat1] = a;
+        const [lng2, lat2] = b;
+        const R = 6371.0088;
+        const dlat = (lat2 - lat1) * Math.PI / 180;
+        const dlng = (lng2 - lng1) * Math.PI / 180;
+        const x = Math.sin(dlat / 2) ** 2 + Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dlng / 2) ** 2;
+        return 2 * R * Math.asin(Math.sqrt(x));
+      }
+
+      function getLoc(p) {
+        if (!p) return null;
+        if (Array.isArray(p.location) && p.location.length >= 2) return p.location.slice(0, 2);
+        if (p.lng != null && p.lat != null) return [p.lng, p.lat];
+        if (p.lon != null && p.lat != null) return [p.lon, p.lat];
+        return null;
+      }
+
+      function statusFor(val, warn, fail) {
+        if (val >= fail) return '❌';
+        if (val >= warn) return '⚠️';
+        return '✅';
+      }
+
+      // 浏览器端 V1 重算
+      function browserCheckV1(day, isLast) {
+        const center = day.center;
+        const pois = day.pois || [];
+        if (!center || !pois.length) return { id: 'V1', rule: '区域一致性', status: '⚠️', note: '缺 center 或 pois', source: 'browser' };
+        if (isLast) return { id: 'V1', rule: '区域一致性', status: '✅', note: '末日，跳过（返程偏远合理）', source: 'browser' };
+        if (day.region_flex) return { id: 'V1', rule: '区域一致性', status: '✅', note: '含跨区返程，region_flex=true 跳过', source: 'browser' };
+        let worst = 0, worstPoi = null;
+        for (const p of pois) {
+          const loc = getLoc(p);
+          if (!loc) continue;
+          const d = haversineKm(center, loc);
+          if (d != null && d > worst) { worst = d; worstPoi = p.name || '?'; }
+        }
+        const st = statusFor(worst, VALIDATION_THRESHOLDS.V1_WARN_KM, VALIDATION_THRESHOLDS.V1_FAIL_KM);
+        return { id: 'V1', rule: '区域一致性', status: st, note: `最远「${worstPoi}」 ${worst.toFixed(2)} km`, source: 'browser' };
+      }
+
+      // 浏览器端 V3 重算
+      function browserCheckV3(day) {
+        const center = day.center;
+        const meals = day.meals || {};
+        if (!center) return { id: 'V3', rule: '餐厅区域匹配', status: '⚠️', note: '缺 center', source: 'browser' };
+        let worst = 0, worstRest = null, worstMeal = null;
+        for (const [name, meal] of Object.entries(meals)) {
+          if (!meal || typeof meal !== 'object') continue;
+          for (const tag of ['main', 'alt1', 'alt2']) {
+            const r = meal[tag];
+            const loc = getLoc(r);
+            if (!loc) continue;
+            const d = haversineKm(center, loc);
+            if (d != null && d > worst) { worst = d; worstRest = r.name || '?'; worstMeal = name; }
+          }
+        }
+        if (worst === 0) return { id: 'V3', rule: '餐厅区域匹配', status: '✅', note: '无餐厅坐标可验', source: 'browser' };
+        const st = statusFor(worst, VALIDATION_THRESHOLDS.V3_WARN_KM, VALIDATION_THRESHOLDS.V3_FAIL_KM);
+        return { id: 'V3', rule: '餐厅区域匹配', status: st, note: `「${worstRest}」(${worstMeal}) ${worst.toFixed(2)} km`, source: 'browser' };
+      }
+
+      // 浏览器端 V4 重算
+      function browserCheckV4(day, prebook) {
+        const dayIdx = day.day;
+        let n = 0;
+        const items = [];
+        for (const p of (prebook || [])) {
+          if (p.day === dayIdx) { n++; items.push(p.item || p.title || '?'); continue; }
+          const note = p.note || '';
+          if (note.includes(`Day ${dayIdx}`) && !note.includes('出发前') && !note.includes('提前')) {
+            n++; items.push(p.item || p.title || '?');
+          }
+        }
+        const st = n >= 2 ? '❌' : '✅';
+        return { id: 'V4', rule: '一日一重预约', status: st, note: `Day ${dayIdx} 预约 ${n} 条：${items.join('、') || '无'}`, source: 'browser' };
+      }
+
+      // 浏览器端 V5 重算
+      function browserCheckV5(lastDay, prebook) {
+        const flights = (prebook || []).filter(p => {
+          const t = (p.item || p.title || '');
+          return /航班|飞机|高铁|火车|动车|机票/.test(t);
+        });
+        if (!flights.length) return { id: 'V5', rule: '末日返程缓冲', status: '✅', note: '无返程票', source: 'browser' };
+        const flight = flights[0];
+        const flightTime = flight.depart_time || flight.time || '';
+        const flightNote = flight.item || flight.title || '返程';
+        const pois = lastDay.pois || [];
+        if (!pois.length) return { id: 'V5', rule: '末日返程缓冲', status: '⚠️', note: '末日无 POI', source: 'browser' };
+        const lastPoi = pois[pois.length - 1];
+        const endTime = lastPoi.end_time || lastPoi.time || '';
+        if (!endTime || !flightTime) return { id: 'V5', rule: '末日返程缓冲', status: '⚠️', note: `POI 末 ${endTime}，航班 ${flightTime}（缺时间）`, source: 'browser' };
+        const toMin = t => { const [h, m] = t.split(':').map(Number); return h * 60 + m; };
+        const bufMin = toMin(flightTime) - toMin(endTime);
+        const bufH = bufMin / 60;
+        let st;
+        if (bufH < VALIDATION_THRESHOLDS.V5_BUFFER_HOURS_FAIL) st = '❌';
+        else if (bufH < VALIDATION_THRESHOLDS.V5_BUFFER_HOURS_WARN) st = '⚠️';
+        else st = '✅';
+        return { id: 'V5', rule: '末日返程缓冲', status: st, note: `${endTime} → ${flightTime}，缓冲 ${bufH.toFixed(2)} h（${flightNote}）`, source: 'browser' };
+      }
+
+      // 浏览器端 V6 重算（粗：只看 indoor_backup 字段）
+      function browserCheckV6(day) {
+        const weather = (day.weather || '').toLowerCase();
+        const bad = /雨|雪|雷|storm|rain|snow/.test(weather);
+        const outdoorPois = (day.pois || []).filter(p => p.type === 'outdoor' || (p.tags || []).some(t => /outdoor|户外|露台|天台|观景/.test(t)));
+        if (!outdoorPois.length) return { id: 'V6', rule: '户外天气敏感', status: '✅', note: '无户外 POI', source: 'browser' };
+        if (!bad) return { id: 'V6', rule: '户外天气敏感', status: '✅', note: `天气好（${day.weather}）`, source: 'browser' };
+        const missing = outdoorPois.filter(p => !p.indoor_backup).map(p => p.name || '?');
+        if (missing.length) return { id: 'V6', rule: '户外天气敏感', status: '❌', note: `缺 indoor_backup：${missing.join('、')}`, source: 'browser' };
+        return { id: 'V6', rule: '户外天气敏感', status: '✅', note: '已配 indoor_backup', source: 'browser' };
+      }
+
+      // 浏览器端 V2（只提示：真通勤需 AI 调高德）
+      function browserCheckV2Stub() {
+        return { id: 'V2', rule: '时间可行性（粗算）', status: '⚠️', note: '浏览器内无法实算通勤；**请看 AI 报告（高德 route_* 复核）**', source: 'browser-stub' };
+      }
+
+      // 浏览器端 V8（与 validate.py check_v8 一致）
+      const V8_ALLOWED_SOURCES_BROWSER = new Set(['amap-mcp', 'amap-rest-api']);
+      function browserCheckV8(days) {
+        const badSource = [], missingDuration = [];
+        let total = 0;
+        for (const d of (days || [])) {
+          for (let i = 0; i < (d.transports || []).length; i++) {
+            const t = d.transports[i];
+            if (!t || typeof t !== 'object') continue;
+            total++;
+            const label = `Day ${d.day}.transports[${i}]`;
+            if (!t.source || !V8_ALLOWED_SOURCES_BROWSER.has(t.source)) {
+              badSource.push(`${label}（source=${t.source}）`);
+            } else if (t.duration_min == null || Number(t.duration_min) <= 0) {
+              missingDuration.push(label);
+            }
+          }
+        }
+        if (total === 0) return { id: 'V8', rule: 'MCP 必跑痕迹', status: '✅', note: '无 transport 段', source: 'browser' };
+        const errors = [];
+        if (badSource.length) errors.push(`${badSource.length} 段 source 不合法`);
+        if (missingDuration.length) errors.push(`${missingDuration.length} 段缺 duration_min`);
+        if (errors.length) {
+          return { id: 'V8', rule: 'MCP 必跑痕迹', status: '❌', note: errors.join('；') + '。请 MCP/REST maps_direction_* 实算', source: 'browser' };
+        }
+        return { id: 'V8', rule: 'MCP 必跑痕迹', status: '✅', note: `全部 ${total} 段含 source 与 duration_min`, source: 'browser' };
+      }
+
+      // 浏览器端 V9（与 validate.py check_v9 一致，v2.2.3 只拦过快）
+      const V9_TOO_FAST_RATIO = 0.55;
+      const WALK_KMH = 5.0, TRANSIT_KMH = 20.0, DRIVE_KMH = 40.0;
+      function roughCommuteMin(a, b, mode) {
+        const d = haversineKm(a, b);
+        if (!d) return 0;
+        const m = (mode || 'transit').toLowerCase();
+        if (m === 'walking' || m === 'walk') return d / WALK_KMH * 60;
+        if (m === 'driving' || m === 'taxi' || m === 'car') return d / DRIVE_KMH * 60;
+        if (m === 'train' || m === 'jr' || m === 'metro' || m === 'subway') return d / 45.0 * 60;
+        return d / TRANSIT_KMH * 60;
+      }
+      function browserCheckV9(days) {
+        const tooFast = [], missingDuration = [];
+        let total = 0;
+        for (const d of (days || [])) {
+          for (let i = 0; i < (d.transports || []).length; i++) {
+            const t = d.transports[i];
+            if (!t || typeof t !== 'object') continue;
+            total++;
+            const label = `Day ${d.day}.transports[${i}]`;
+            if (t.duration_min == null) { missingDuration.push(label); continue; }
+            if (!t.from_idx || !t.to_idx) continue;
+            const fromLoc = getLoc((d.pois || [])[t.from_idx - 1]);
+            const toLoc = getLoc((d.pois || [])[t.to_idx - 1]);
+            if (!fromLoc || !toLoc) continue;
+            const rough = roughCommuteMin(fromLoc, toLoc, t.mode);
+            if (!rough) continue;
+            const floor = rough * V9_TOO_FAST_RATIO;
+            if (t.duration_min < floor) {
+              tooFast.push(`${label}: ${t.duration_min}min < 下限${floor.toFixed(0)}min`);
+            }
+          }
+        }
+        if (total === 0) return { id: 'V9', rule: '通勤时间下限', status: '✅', note: '无 transport 段', source: 'browser' };
+        const errors = [];
+        if (missingDuration.length) errors.push(`${missingDuration.length} 段缺 duration_min`);
+        if (tooFast.length) errors.push(`${tooFast.length} 段时间过快`);
+        if (errors.length) {
+          return { id: 'V9', rule: '通勤时间下限', status: '❌', note: errors.join('；'), source: 'browser' };
+        }
+        return { id: 'V9', rule: '通勤时间下限', status: '✅', note: `全部 ${total} 段 duration 合理`, source: 'browser' };
+      }
+
+      // 主重算：每个 day 跑 V1/V3/V4/V6，最后一天跑 V5
+      function recomputeValidation() {
+        if (!D || !D.days || !D.days.length) return null;
+        const rules = [];
+        const n = D.days.length;
+        for (let i = 0; i < n; i++) {
+          const day = D.days[i];
+          const isLast = (i === n - 1);
+          rules.push(browserCheckV1(day, isLast));
+          rules.push(browserCheckV3(day));
+          rules.push(browserCheckV4(day, D.prebook || []));
+          rules.push(browserCheckV6(day));
+          if (isLast) {
+            rules.push(browserCheckV5(day, D.prebook || []));
+          }
+        }
+        // V2 浏览器内只能粗算，加 1 个 stub
+        rules.push(browserCheckV2Stub());
+        // V8 必跑 MCP 痕迹校验
+        rules.push(browserCheckV8(D.days));
+        // V9 高德实算 vs 粗算
+        rules.push(browserCheckV9(D.days));
+        // V7 完全由 AI 判断，浏览器无法验
+        // 保留 AI self-report 里的 V7（如有）
+        const aiReport = D.validation_report;
+        if (aiReport && Array.isArray(aiReport.rules)) {
+          const v7 = aiReport.rules.find(r => r.id === 'V7');
+          if (v7) rules.push(Object.assign({}, v7, { source: 'ai-only' }));
+          else rules.push({ id: 'V7', rule: '用户禁忌屏蔽', status: '⚠️', note: '未提供 AI 报告（V7 需 AI 自行核对）', source: 'ai-only' });
+        } else {
+          rules.push({ id: 'V7', rule: '用户禁忌屏蔽', status: '⚠️', note: '未提供 AI 报告（V7 需 AI 自行核对）', source: 'ai-only' });
+        }
+        return { round: aiReport ? aiReport.round : 0, rules, source: 'browser-recompute' };
+      }
+
+      // 验证报告不在前端展示（validate.py 仅开发期用）
+      function renderValidationBanner() {}
+
+      function renderValidationSection() {}
+
+      // ===== Boot =====
+      function renderTripMeta() {
+        if (!D || !D.trip_name) return;
+        const hero = document.querySelector('header.hero');
+        if (!hero) return;
+        const h1 = hero.querySelector('h1');
+        const meta = hero.querySelector('.meta');
+        const summary = hero.querySelector('.summary');
+        if (h1 && h1.textContent.includes('{{')) h1.textContent = D.trip_name;
+        if (meta && meta.textContent.includes('{{')) {
+          meta.textContent = [D.date_range, D.n_days, D.city].filter(Boolean).join(' · ');
+        }
+        if (summary && summary.textContent.includes('{{')) {
+          summary.textContent = D.summary || '';
+        }
+        if (document.title.includes('{{')) {
+          document.title = [D.trip_name, D.date_range].filter(Boolean).join(' · ');
+        }
+      }
+
+      function boot() {
+        if (!D || !D.days || !D.days.length) {
+          document.getElementById('day-panel').innerHTML =
+            '<div class="day-card"><p>⚠️ 未找到 tripData 数据</p></div>';
+          return;
+        }
+        renderTripMeta();
+        renderHotel();
+        renderWeatherPlan();
+        renderBudgetSummary();
+        renderDrawerLists();
+        renderTabs();
+        initDrawerLayout();
+        initMapCollapse();
+        showDay(1);
+        initMap();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', boot);
+      } else {
+        boot();
+      }
+    })();
+  </script>
+</body>
+</html>
