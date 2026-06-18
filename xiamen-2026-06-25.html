@@ -1554,6 +1554,22 @@
                 "source": "computed",
                 "source_ref": "零元交通"
               }
+            },
+            {
+              "label": "逛街预算",
+              "price": {
+                "min": 0,
+                "max": 300,
+                "currency": "CNY",
+                "unit": "fixed",
+                "quantity": 1,
+                "total_min": 0,
+                "total_max": 300,
+                "label": "逛街预算",
+                "source": "computed",
+                "source_ref": "用户自填参考区间",
+                "user_editable": true
+              }
             }
           ]
         },
@@ -3926,6 +3942,22 @@
                 "label": "餐饮",
                 "source": "amap-mcp",
                 "source_ref": "maps_search_detail cost"
+              }
+            },
+            {
+              "label": "逛街预算",
+              "price": {
+                "min": 0,
+                "max": 300,
+                "currency": "CNY",
+                "unit": "fixed",
+                "quantity": 1,
+                "total_min": 0,
+                "total_max": 300,
+                "label": "逛街预算",
+                "source": "computed",
+                "source_ref": "用户自填参考区间",
+                "user_editable": true
               }
             }
           ]
@@ -7341,6 +7373,22 @@
                 "source": "amap-mcp",
                 "source_ref": "maps_direction_driving taxi_cost 估"
               }
+            },
+            {
+              "label": "逛街预算",
+              "price": {
+                "min": 0,
+                "max": 300,
+                "currency": "CNY",
+                "unit": "fixed",
+                "quantity": 1,
+                "total_min": 0,
+                "total_max": 300,
+                "label": "逛街预算",
+                "source": "computed",
+                "source_ref": "用户自填参考区间",
+                "user_editable": true
+              }
             }
           ]
         },
@@ -9705,6 +9753,22 @@
                 "label": "打车",
                 "source": "amap-mcp",
                 "source_ref": "maps_direction_driving taxi_cost 估"
+              }
+            },
+            {
+              "label": "逛街预算",
+              "price": {
+                "min": 0,
+                "max": 300,
+                "currency": "CNY",
+                "unit": "fixed",
+                "quantity": 1,
+                "total_min": 0,
+                "total_max": 300,
+                "label": "逛街预算",
+                "source": "computed",
+                "source_ref": "用户自填参考区间",
+                "user_editable": true
               }
             }
           ]
@@ -12224,14 +12288,16 @@
           });
         });
 
+        if (poi.cat === 'shopping' && !lines.some(l => l.userEditable || (l.price && l.price.user_editable))) {
+          addCostLine(lines, seen, '逛街预算', {
+            min: 0, max: 300, currency: 'CNY', unit: 'fixed', quantity: 1,
+            total_min: 0, total_max: 300, user_editable: true, source: 'computed',
+          }, { userEditable: true });
+        }
+
         if (!hasSlotCosts) {
           if (poi.price && !(poi.cat === 'hotel' && poi.price.unit === 'free')) {
             addCostLine(lines, seen, poi.price.label || catPriceLabel(poi.cat), poi.price);
-          } else if (poi.cat === 'shopping') {
-            addCostLine(lines, seen, '逛街预算', {
-              min: 0, max: 300, currency: 'CNY', unit: 'fixed', quantity: 1,
-              total_min: 0, total_max: 300, user_editable: true, source: 'computed',
-            }, { userEditable: true });
           }
           if (ctx.matchedMeal && ctx.matchedMeal.main && ctx.matchedMeal.main.price) {
             addCostLine(lines, seen, ctx.matchedMeal.label, ctx.matchedMeal.main.price);

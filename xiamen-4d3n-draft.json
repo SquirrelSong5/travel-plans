@@ -222,6 +222,22 @@
                 "source": "computed",
                 "source_ref": "零元交通"
               }
+            },
+            {
+              "label": "逛街预算",
+              "price": {
+                "min": 0,
+                "max": 300,
+                "currency": "CNY",
+                "unit": "fixed",
+                "quantity": 1,
+                "total_min": 0,
+                "total_max": 300,
+                "label": "逛街预算",
+                "source": "computed",
+                "source_ref": "用户自填参考区间",
+                "user_editable": true
+              }
             }
           ]
         },
@@ -2594,6 +2610,22 @@
                 "label": "餐饮",
                 "source": "amap-mcp",
                 "source_ref": "maps_search_detail cost"
+              }
+            },
+            {
+              "label": "逛街预算",
+              "price": {
+                "min": 0,
+                "max": 300,
+                "currency": "CNY",
+                "unit": "fixed",
+                "quantity": 1,
+                "total_min": 0,
+                "total_max": 300,
+                "label": "逛街预算",
+                "source": "computed",
+                "source_ref": "用户自填参考区间",
+                "user_editable": true
               }
             }
           ]
@@ -6009,6 +6041,22 @@
                 "source": "amap-mcp",
                 "source_ref": "maps_direction_driving taxi_cost 估"
               }
+            },
+            {
+              "label": "逛街预算",
+              "price": {
+                "min": 0,
+                "max": 300,
+                "currency": "CNY",
+                "unit": "fixed",
+                "quantity": 1,
+                "total_min": 0,
+                "total_max": 300,
+                "label": "逛街预算",
+                "source": "computed",
+                "source_ref": "用户自填参考区间",
+                "user_editable": true
+              }
             }
           ]
         },
@@ -8373,6 +8421,22 @@
                 "label": "打车",
                 "source": "amap-mcp",
                 "source_ref": "maps_direction_driving taxi_cost 估"
+              }
+            },
+            {
+              "label": "逛街预算",
+              "price": {
+                "min": 0,
+                "max": 300,
+                "currency": "CNY",
+                "unit": "fixed",
+                "quantity": 1,
+                "total_min": 0,
+                "total_max": 300,
+                "label": "逛街预算",
+                "source": "computed",
+                "source_ref": "用户自填参考区间",
+                "user_editable": true
               }
             }
           ]
