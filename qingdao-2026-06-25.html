@@ -813,6 +813,14 @@
     }
 
     /* ===== Next-leg & meal-leg inside POI card（v2.0.0 融合时间轴）===== */
+    ol.timeline li.time-block .hotel-leg-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin: 0 0 6px;
+    }
+    ol.timeline li.hotel-leg-block .time-block-main { padding-top: 4px; }
+    ol.timeline li.time-block .next-leg.hotel-leg { opacity: 1; }
     ol.timeline li.time-block .next-leg {
       display: flex;
       align-items: center;
@@ -1475,7 +1483,7 @@
           "lng": 120.31707,
           "lat": 36.063599,
           "duration_min": 45,
-          "note": "3 人订双床房，提前 1-2 周携程比价",
+          "note": "3 人订 2 间房（情侣 1 间 + 闺蜜 1 间），提前 1-2 周携程比价",
           "why": "Day 1 落地休整；酒店即锚点",
           "weather_sensitive": false,
           "links": {
@@ -3742,7 +3750,7 @@
       "item": "汉庭酒店(青岛栈桥火车站店)",
       "deadline": "2026-06-20 23:59",
       "url": "https://hotels.ctrip.com/hotel/qingdao317070",
-      "note": "3 晚双床房，200-280/晚"
+      "note": "2 间房 × 3 晚，200-280/晚/间（情侣 1 间 + 闺蜜 1 间）"
     }
   ],
   "budget_summary": {
@@ -4071,8 +4079,11 @@
         const isLastDay = dayArrIdx === (D.days || []).length - 1;
         const isLastPoiOfDay = poiArrIdx === day.pois.length - 1;
         const isLastPoiOfTrip = isLastDay && isLastPoiOfDay;
+        const morningHotelTransport = poiArrIdx === 0 ? findHotelLeg(day, 'morning') : null;
+        const eveningHotelTransport = isLastPoiOfDay ? findHotelLeg(day, 'evening') : null;
         return {
           slotId, nextTransport, matchedMeal, matchedMealType,
+          morningHotelTransport, eveningHotelTransport,
           isFirstPoiOfTrip, isLastPoiOfTrip, dayArrIdx, poiArrIdx,
         };
       }
@@ -4103,10 +4114,20 @@
         if (ctx.matchedMeal && ctx.matchedMeal.main && ctx.matchedMeal.main.price) {
           addCostLine(lines, seen, ctx.matchedMeal.label, ctx.matchedMeal.main.price);
         }
-        if (ctx.nextTransport && ctx.nextTransport.fare) {
+        if (ctx.morningHotelTransport && ctx.morningHotelTransport.fare) {
           addCostLine(lines, seen,
-            fareLabel(ctx.nextTransport.mode, ctx.nextTransport.fare),
+            fareLabel(ctx.morningHotelTransport.mode, ctx.morningHotelTransport.fare) + '（酒店出发）',
+            ctx.morningHotelTransport.fare);
+        }
+        if (ctx.nextTransport && ctx.nextTransport.fare) {
+          const toHotel = ctx.nextTransport.to_idx === 0;
+          addCostLine(lines, seen,
+            fareLabel(ctx.nextTransport.mode, ctx.nextTransport.fare) + (toHotel ? '（回酒店）' : ''),
             ctx.nextTransport.fare);
+        } else if (ctx.eveningHotelTransport && ctx.eveningHotelTransport.fare) {
+          addCostLine(lines, seen,
+            fareLabel(ctx.eveningHotelTransport.mode, ctx.eveningHotelTransport.fare) + '（回酒店）',
+            ctx.eveningHotelTransport.fare);
         }
 
         if (ctx.isFirstPoiOfTrip && (D.prebook || []).length) {
@@ -4580,13 +4601,106 @@
         const m = total % 60;
         return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
       }
-      function inferLegTime(transport, allPois) {
-        // 优先用 transport.time（新字段，旧数据缺）
+      function minutesToTimeStr(totalMin) {
+        const t = Math.max(0, totalMin);
+        const h = Math.floor((t / 60) % 24);
+        const m = t % 60;
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
+      }
+
+      function getHotelLoc() {
+        const h = D && D.hotel;
+        if (!h) return null;
+        if (h.lng != null && h.lat != null) return [h.lng, h.lat];
+        if (Array.isArray(h.location) && h.location.length >= 2) return h.location.slice(0, 2);
+        return null;
+      }
+
+      function resolveTransportPoint(day, idx) {
+        if (idx === 0) {
+          const loc = getHotelLoc();
+          if (!loc) return null;
+          return {
+            idx: 0,
+            name: (D.hotel && D.hotel.name) || '酒店',
+            lng: loc[0],
+            lat: loc[1],
+            cat: 'hotel',
+          };
+        }
+        return (day.pois || []).find(p => p.idx === idx) || null;
+      }
+
+      function firstPoiIsHotel(day) {
+        const p = (day.pois || [])[0];
+        if (!p) return false;
+        if (p.cat === 'hotel') return true;
+        return !!(D.hotel && D.hotel.name && p.name === D.hotel.name);
+      }
+
+      function lastPoiIsDeparture(day) {
+        const pois = day.pois || [];
+        const last = pois[pois.length - 1];
+        if (!last) return false;
+        if (last.cat === 'transport') return true;
+        return /机场|火车站|高铁站|(?:汽车)?车站|码头|港口/.test(last.name || '');
+      }
+
+      function findHotelLeg(day, kind) {
+        const pois = day.pois || [];
+        if (!pois.length) return null;
+        const ts = day.transports || [];
+        if (kind === 'morning') {
+          const first = pois[0];
+          return ts.find(t => t.from_idx === 0 && t.to_idx === first.idx) || null;
+        }
+        if (kind === 'evening') {
+          if (lastPoiIsDeparture(day)) return null;
+          const last = pois[pois.length - 1];
+          return ts.find(t => t.from_idx === last.idx && t.to_idx === 0) || null;
+        }
+        return null;
+      }
+
+      function inferLegTime(transport, day) {
         if (transport.time) return transport.time;
-        // fallback: 用 from_idx POI 的 time + duration_min
-        const fromPoi = allPois[transport.from_idx - 1];
+        if (transport.from_idx === 0) {
+          const toPoi = resolveTransportPoint(day, transport.to_idx);
+          if (toPoi && toPoi.time) {
+            return minutesToTimeStr(parseTimeStr(toPoi.time) - (transport.duration_min || 15));
+          }
+          return '';
+        }
+        const fromPoi = resolveTransportPoint(day, transport.from_idx)
+          || (day.pois || [])[transport.from_idx - 1];
         if (!fromPoi || !fromPoi.time) return '';
         return addMinutesToTimeStr(fromPoi.time, transport.duration_min || 5);
+      }
+
+      function renderTransportLegHtml(transport, fromPoint, toPoint, day, legClass) {
+        if (!transport || !fromPoint || !toPoint) return '';
+        const fromName = fromPoint.name || '?';
+        const toName = toPoint.name || '?';
+        const desc = transport.description || `${fmtMode(transport.mode)} ${transport.duration_min} 分钟`;
+        const legTime = inferLegTime(transport, day);
+        const navUrl2 = isAmapNaviUrl(transport.links && transport.links.amap_navi)
+          ? transport.links.amap_navi
+          : buildAmapNaviUrl(fromPoint, toPoint, transport.mode);
+        const navLink = navUrl2
+          ? `<a class="next-leg-nav" href="${esc(navUrl2)}" target="_blank" rel="noopener">导航</a>`
+          : '';
+        const ariaLabel = `从 ${fromName} 到 ${toName}，${desc}`;
+        const icon = fmtMode(transport.mode) === '驾车' ? '🚗'
+          : (fmtMode(transport.mode) === '骑行' ? '🚴'
+            : (fmtMode(transport.mode) === '公交' || fmtMode(transport.mode) === '地铁'
+              || fmtMode(transport.mode) === '火车' || fmtMode(transport.mode) === 'JR' ? '🚌' : '🚶'));
+        const cls = legClass || 'next-leg';
+        return `<div class="${cls}" data-mode="${esc(transport.mode)}" aria-label="${esc(ariaLabel)}">
+          <span class="next-leg-icon">${icon}</span>
+          <span class="next-leg-text">${esc(desc)} · ${esc(toName)}</span>
+          <span class="leg-time">${esc(legTime)}</span>
+          ${navLink}
+        </div>`;
       }
       function pickMealForPoi(p, allPois, meals) {
         // 早 POI 末项 → breakfast；午 POI → lunch；时间 ≥ 17:00 → dinner
@@ -4634,11 +4748,14 @@
             }
           }
           (d.transports || []).forEach(t => {
-            if (t.from_idx < 1 || t.from_idx > d.pois.length) {
-              console.warn(`[travel-planner] Day ${d.day} transport from_idx=${t.from_idx} 越界（POI 范围 1-${d.pois.length}）`);
+            const maxIdx = Math.max(...d.pois.map(p => p.idx), 0);
+            const okFrom = t.from_idx === 0 || (t.from_idx >= 1 && t.from_idx <= maxIdx);
+            const okTo = t.to_idx === 0 || (t.to_idx >= 1 && t.to_idx <= maxIdx);
+            if (!okFrom) {
+              console.warn(`[travel-planner] Day ${d.day} transport from_idx=${t.from_idx} 越界（0=酒店，POI 1-${maxIdx}）`);
             }
-            if (t.to_idx < 1 || t.to_idx > d.pois.length) {
-              console.warn(`[travel-planner] Day ${d.day} transport to_idx=${t.to_idx} 越界（POI 范围 1-${d.pois.length}）`);
+            if (!okTo) {
+              console.warn(`[travel-planner] Day ${d.day} transport to_idx=${t.to_idx} 越界（0=酒店，POI 1-${maxIdx}）`);
             }
           });
         })();
@@ -4656,6 +4773,23 @@
               pendingMeals.push(type);
             }
           });
+        }
+
+        const morningLeg = findHotelLeg(d, 'morning');
+        let morningLegHtml = '';
+        if (morningLeg && !firstPoiIsHotel(d)) {
+          const fromPt = resolveTransportPoint(d, 0);
+          const toPt = resolveTransportPoint(d, morningLeg.to_idx);
+          morningLegHtml = `<li class="time-block hotel-leg-block" aria-label="酒店出发">
+            <div class="time-block-grid">
+              <div class="time-block-main">
+                <div class="place hotel-leg-wrap">
+                  <p class="hotel-leg-label">🏨 酒店出发</p>
+                  ${renderTransportLegHtml(morningLeg, fromPt, toPt, d, 'next-leg hotel-leg')}
+                </div>
+              </div>
+            </div>
+          </li>`;
         }
 
         const poiItems = d.pois.map((p, poiArrIdx) => {
@@ -4679,24 +4813,9 @@
           const nextTransport = d.transports && d.transports.find(t => t.from_idx === p.idx);
           let nextLegHtml = '';
           if (nextTransport) {
-            const toPoi = d.pois.find(pp => pp.idx === nextTransport.to_idx);
-            const fromName = p.name || '?';
-            const toName = toPoi ? toPoi.name : '?';
-            const desc = nextTransport.description || `${fmtMode(nextTransport.mode)} ${nextTransport.duration_min} 分钟`;
-            const legTime = inferLegTime(nextTransport, d.pois);
-            const navUrl2 = isAmapNaviUrl(nextTransport.links && nextTransport.links.amap_navi)
-              ? nextTransport.links.amap_navi
-              : buildAmapNaviUrl(p, toPoi, nextTransport.mode);
-            const navLink = navUrl2
-              ? `<a class="next-leg-nav" href="${esc(navUrl2)}" target="_blank" rel="noopener">导航</a>`
-              : '';
-            const ariaLabel = `从 ${fromName} 到 ${toName}，${desc}`;
-            nextLegHtml = `<div class="next-leg" data-mode="${esc(nextTransport.mode)}" aria-label="${esc(ariaLabel)}">
-              <span class="next-leg-icon">${fmtMode(nextTransport.mode) === '驾车' ? '🚗' : (fmtMode(nextTransport.mode) === '骑行' ? '🚴' : (fmtMode(nextTransport.mode) === '公交' || fmtMode(nextTransport.mode) === '地铁' || fmtMode(nextTransport.mode) === '火车' || fmtMode(nextTransport.mode) === 'JR' ? '🚌' : '🚶'))}</span>
-              <span class="next-leg-text">${esc(desc)} · ${esc(toName)}</span>
-              <span class="leg-time">${esc(legTime)}</span>
-              ${navLink}
-            </div>`;
+            const fromPoint = resolveTransportPoint(d, nextTransport.from_idx) || p;
+            const toPoint = resolveTransportPoint(d, nextTransport.to_idx);
+            nextLegHtml = renderTransportLegHtml(nextTransport, fromPoint, toPoint, d, 'next-leg');
           }
 
           // meal-leg（绑定到匹配时段的第一个 POI）
@@ -4773,7 +4892,7 @@
               <span class="weather">${esc(d.weather_emoji || '')} ${esc(d.weather || '')}</span>
             </header>
             <p class="theme">${esc(d.theme || '')}</p>
-            <ol class="timeline">${poiItems}</ol>
+            <ol class="timeline">${morningLegHtml}${poiItems}</ol>
             ${wsTag}
           </article>`;
         bindUserBudgetInputs();
@@ -4898,8 +5017,8 @@
         if (showRoute && d.transports) {
           const outlineColor = getCss('--bg-elevated') || '#ffffff';
           d.transports.forEach(t => {
-            const from = (d.pois || []).find(p => p.idx === t.from_idx);
-            const to = (d.pois || []).find(p => p.idx === t.to_idx);
+            const from = resolveTransportPoint(d, t.from_idx);
+            const to = resolveTransportPoint(d, t.to_idx);
             if (!from || !to) return;
             const pathCoords = (Array.isArray(t.path) && t.path.length >= 2)
               ? t.path.map(coord => [coord[0], coord[1]])

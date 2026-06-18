@@ -143,7 +143,7 @@
           "lng": 120.31707,
           "lat": 36.063599,
           "duration_min": 45,
-          "note": "3 人订双床房，提前 1-2 周携程比价",
+          "note": "3 人订 2 间房（情侣 1 间 + 闺蜜 1 间），提前 1-2 周携程比价",
           "why": "Day 1 落地休整；酒店即锚点",
           "weather_sensitive": false,
           "links": {
@@ -2410,7 +2410,7 @@
       "item": "汉庭酒店(青岛栈桥火车站店)",
       "deadline": "2026-06-20 23:59",
       "url": "https://hotels.ctrip.com/hotel/qingdao317070",
-      "note": "3 晚双床房，200-280/晚"
+      "note": "2 间房 × 3 晚，200-280/晚/间（情侣 1 间 + 闺蜜 1 间）"
     }
   ],
   "budget_summary": {
