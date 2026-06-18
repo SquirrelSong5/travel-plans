@@ -1162,9 +1162,9 @@
     <div id="validation-banner" role="status" aria-live="polite"></div>
 
     <header class="hero">
-      <h1>{{TRIP_NAME}}</h1>
-      <p class="meta">{{DATE_RANGE}} · {{N_DAYS}} · {{CITY}}</p>
-      <p class="summary">{{SUMMARY}}</p>
+      <h1>厦门 4 天 3 晚</h1>
+      <p class="meta">2026-06-25 ~ 2026-06-28（暂估，以机票最便宜日为准） · 3 泊 4 日 · 厦门</p>
+      <p class="summary">厦门 4 天 3 晚。酒店选鹭江道如忆（中山路+八市+邮轮中心步行可达），4 天不换酒店。</p>
     </header>
 
     <button class="drawer-toggle" id="drawer-toggle" aria-label="打开行程信息" aria-expanded="false" aria-controls="drawer">
@@ -13458,12 +13458,32 @@
       }
 
       // ===== Boot =====
+      function renderTripMeta() {
+        if (!D || !D.trip_name) return;
+        const hero = document.querySelector('header.hero');
+        if (!hero) return;
+        const h1 = hero.querySelector('h1');
+        const meta = hero.querySelector('.meta');
+        const summary = hero.querySelector('.summary');
+        if (h1 && h1.textContent.includes('{{')) h1.textContent = D.trip_name;
+        if (meta && meta.textContent.includes('{{')) {
+          meta.textContent = [D.date_range, D.n_days, D.city].filter(Boolean).join(' · ');
+        }
+        if (summary && summary.textContent.includes('{{')) {
+          summary.textContent = D.summary || '';
+        }
+        if (document.title.includes('{{')) {
+          document.title = [D.trip_name, D.date_range].filter(Boolean).join(' · ');
+        }
+      }
+
       function boot() {
         if (!D || !D.days || !D.days.length) {
           document.getElementById('day-panel').innerHTML =
             '<div class="day-card"><p>⚠️ 未找到 tripData 数据</p></div>';
           return;
         }
+        renderTripMeta();
         // v1.1.0: 验证报告**先**于其他渲染（banner 是顶部最显眼的元素）
         renderValidationBanner();
         renderValidationSection();
