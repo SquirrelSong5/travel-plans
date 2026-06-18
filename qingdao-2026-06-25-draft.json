@@ -3,7 +3,7 @@
   "date_range": "2026-06-25 ~ 2026-06-28",
   "n_days": "3 泊 4 日",
   "city": "青岛",
-  "summary": "青岛 4 天 3 晚毕业游。酒店选汉庭栈桥火车站店（市南区，离地铁G口100米），4 天不换酒店，全程节奏松散，每天 ≤ 3 个 POI。",
+  "summary": "青岛 4 天 3 晚毕业游（对齐 Step 1.5 攻略）。住栈桥火车站汉庭；老城步行+地铁；栈桥清晨、啤酒博物馆、八大关、五四广场；避雷栈桥周边海鲜大排档，海鲜可营口路自购加工。",
   "weather_plan": "6 月底青岛气温 21-28°C，多云为主，海边紫外线强；雨天改方案：啤酒博物馆（室内）/ 大学路咖啡（半室内）。",
   "party_size": 2,
   "trip_center": [
@@ -157,7 +157,7 @@
           "lng": 120.31707,
           "lat": 36.063599,
           "duration_min": 45,
-          "note": "3 人订 2 间房（情侣 1 间 + 闺蜜 1 间），提前 1-2 周携程比价",
+          "note": "3 人订 2 间房（情侣 1 间 + 闺蜜 1 间），提前 1-2 周携程比价 攻略：清晨退潮西侧礁石区赶海更出片；避开 10 点后旅行团高峰。",
           "why": "Day 1 落地休整；酒店即锚点",
           "weather_sensitive": false,
           "links": {
@@ -1730,7 +1730,7 @@
           "lng": 120.384576,
           "lat": 36.06274,
           "duration_min": 90,
-          "note": "地标'五月的风'，奥帆中心隔壁；地铁3号线直达",
+          "note": "地标'五月的风'，奥帆中心隔壁；地铁3号线直达 若体力允许 16:00 后步行/打车至小麦岛看日落（攻略高频，约 2km）。",
           "why": "地铁 34 分钟；下午阳光不晒，看城市海岸线",
           "weather_sensitive": false,
           "links": {
@@ -1788,7 +1788,7 @@
           "lng": 120.387,
           "lat": 36.065,
           "duration_min": 90,
-          "note": "五四广场附近；主打青岛本地海鲜+创意菜；人均 120-150",
+          "note": "五四广场附近；主打青岛本地海鲜+创意菜；人均 120-150 海鲜先问清斤两价再点；云霄路优于栈桥边大排档。",
           "why": "Day 2 海鲜正餐；地铁3号线回酒店前吃",
           "weather_sensitive": false,
           "links": {
@@ -4445,7 +4445,7 @@
           "lng": 120.350903,
           "lat": 36.053625,
           "duration_min": 180,
-          "note": "万国建筑博览，免费；公主楼/花石楼/第二海水浴场；午餐可在景区内简餐",
+          "note": "万国建筑博览，免费；公主楼/花石楼/第二海水浴场；午餐可在景区内简餐 花石楼露台看海性价比高；新人拍照多，上午光线柔和。",
           "why": "公交219路 33 分钟；下午时光最美",
           "weather_sensitive": true,
           "indoor_backup": "缩短为 1 小时，第二海水浴场可跳过",
@@ -7891,9 +7891,9 @@
         "max": 900,
         "currency": "CNY",
         "unit": "per_person",
-        "quantity": 2,
-        "total_min": 1200,
-        "total_max": 1800,
+        "quantity": 3,
+        "total_min": 1800,
+        "total_max": 2700,
         "label": "机票",
         "source": "ctrip-webfetch",
         "source_ref": "携程机票实查区间"
@@ -7909,9 +7909,9 @@
         "max": 900,
         "currency": "CNY",
         "unit": "per_person",
-        "quantity": 2,
-        "total_min": 1200,
-        "total_max": 1800,
+        "quantity": 3,
+        "total_min": 1800,
+        "total_max": 2700,
         "label": "机票",
         "source": "ctrip-webfetch",
         "source_ref": "携程机票实查区间"
@@ -7940,17 +7940,17 @@
     "currency": "CNY",
     "by_category": {
       "transport_local": {
-        "min": 630,
-        "max": 1143,
+        "min": 774,
+        "max": 1413,
         "note": "市内交通（时间轴交通费加总估）"
       },
       "food": {
-        "min": 1836,
-        "max": 2896
+        "min": 2256,
+        "max": 3580
       },
       "tickets": {
-        "min": 787,
-        "max": 1372
+        "min": 967,
+        "max": 1696
       },
       "hotel": {
         "min": 1200,
@@ -7958,15 +7958,15 @@
         "nights": 6
       },
       "flights": {
-        "min": 2400.0,
-        "max": 3600.0,
+        "min": 3600.0,
+        "max": 5400.0,
         "note": "携程往返估"
       }
     },
-    "total_min": 5247,
-    "total_max": 7620,
-    "per_person_min": 2624,
-    "per_person_max": 3810,
+    "total_min": 6447,
+    "total_max": 9420,
+    "per_person_min": 3224,
+    "per_person_max": 4710,
     "disclaimer": "价格为调研日参考，不含个人购物；机票/酒店以平台实时为准"
   },
   "deleted": [
@@ -7982,5 +7982,74 @@
       "item": "方特/极地海洋世界",
       "reason": "主题公园，排队久；不符合低精力"
     }
-  ]
+  ],
+  "xhs_destination_brief": {
+    "city": "青岛",
+    "keywords_searched": [
+      "青岛 4天 毕业旅行",
+      "青岛 避雷",
+      "青岛 小麦岛"
+    ],
+    "source": "webfetch-degraded",
+    "degraded": true,
+    "must_visit": [
+      {
+        "name": "栈桥",
+        "why": "地标；清晨退潮赶海/喂海鸥优于正午桥上拥挤"
+      },
+      {
+        "name": "信号山 / 大学路",
+        "why": "老城全景+文艺街区；步行顺路"
+      },
+      {
+        "name": "青岛啤酒博物馆",
+        "why": "毕业游高频；须预约早场"
+      },
+      {
+        "name": "八大关",
+        "why": "万国建筑+第二海水浴场"
+      },
+      {
+        "name": "五四广场 / 奥帆",
+        "why": "夜景地标；可延伸小麦岛日落"
+      }
+    ],
+    "skip_or_caution": [
+      {
+        "name": "栈桥/景区海鲜大排档",
+        "why": "多篇避雷宰客；勿点流动摊贩低价海鲜"
+      },
+      {
+        "name": "信号山旋转观景台",
+        "why": "攻略称山顶 360° 台性价比一般，外景即可"
+      },
+      {
+        "name": "景区散装特产",
+        "why": "正品去超市/商超"
+      }
+    ],
+    "region_layout": [
+      "Day1：抵达 · 栈桥海边 · 啤酒街晚餐",
+      "Day2：信号山 · 大学路 · 五四广场（可延伸小麦岛日落）",
+      "Day3：啤酒博物馆 · 八大关 · 奥帆晚餐",
+      "Day4：栈桥告别 · 返程"
+    ],
+    "pace_hints": "每天 ≤4 POI；老城坡多穿运动鞋；海边日落放下午",
+    "weather_hints": "6 月底紫外线强+海风凉；备 SPF50+ 薄外套",
+    "source_notes": [
+      {
+        "title": "青岛旅游避坑大实话（2026）",
+        "url": "https://zhuanlan.zhihu.com/p/2032546114658883144"
+      },
+      {
+        "title": "青岛4天3晚经典行程避坑",
+        "url": "https://m.cncn.net/blog/1290495"
+      },
+      {
+        "title": "青岛4日游省钱避雷",
+        "url": "https://www.163.com/dy/article/KQ8TUGF10556JHRB.html"
+      }
+    ],
+    "web_search_supplement": "啤酒博物馆微信公众号预约；小麦岛无门票，建议 16:00 后看日落（距五四广场约 2km）；海鲜自购推荐营口路市场加工。"
+  }
 }
