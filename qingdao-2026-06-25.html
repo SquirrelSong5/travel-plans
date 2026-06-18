@@ -4080,10 +4080,8 @@
       function buildSlotCostItems(day, poi, ctx) {
         const lines = [];
         const seen = new Set();
-        const slotCosts = poi.slot_costs || [];
-        const hasSlotCosts = slotCosts.length > 0;
 
-        slotCosts.forEach(sc => {
+        (poi.slot_costs || []).forEach(sc => {
           const p = sc.price;
           addCostLine(lines, seen, sc.label || (p && p.label) || '费用', p, {
             userEditable: !!(p && p.user_editable),
@@ -4098,18 +4096,17 @@
           }, { userEditable: true });
         }
 
-        if (!hasSlotCosts) {
-          if (poi.price && !(poi.cat === 'hotel' && poi.price.unit === 'free')) {
-            addCostLine(lines, seen, poi.price.label || catPriceLabel(poi.cat), poi.price);
-          }
-          if (ctx.matchedMeal && ctx.matchedMeal.main && ctx.matchedMeal.main.price) {
-            addCostLine(lines, seen, ctx.matchedMeal.label, ctx.matchedMeal.main.price);
-          }
-          if (ctx.nextTransport && ctx.nextTransport.fare) {
-            addCostLine(lines, seen,
-              fareLabel(ctx.nextTransport.mode, ctx.nextTransport.fare),
-              ctx.nextTransport.fare);
-          }
+        // slot_costs 常由 AI 漏写餐饮只留交通；显式项优先，缺项自动补齐（与 seed_prices.build_slot_costs 一致）
+        if (poi.price && !(poi.cat === 'hotel' && poi.price.unit === 'free')) {
+          addCostLine(lines, seen, poi.price.label || catPriceLabel(poi.cat), poi.price);
+        }
+        if (ctx.matchedMeal && ctx.matchedMeal.main && ctx.matchedMeal.main.price) {
+          addCostLine(lines, seen, ctx.matchedMeal.label, ctx.matchedMeal.main.price);
+        }
+        if (ctx.nextTransport && ctx.nextTransport.fare) {
+          addCostLine(lines, seen,
+            fareLabel(ctx.nextTransport.mode, ctx.nextTransport.fare),
+            ctx.nextTransport.fare);
         }
 
         if (ctx.isFirstPoiOfTrip && (D.prebook || []).length) {
@@ -4135,7 +4132,7 @@
           }
         }
 
-        if (!hasSlotCosts && poi.requires_booking && (D.prebook || []).length) {
+        if (poi.requires_booking && (D.prebook || []).length) {
           (D.prebook || []).forEach(pb => {
             if (pb.price && (pb.note || '').includes(poi.name)) {
               addCostLine(lines, seen, pb.price.label || pb.item || '预约', pb.price);
@@ -4314,6 +4311,110 @@
         return day ? (day.pois || []).find(p => p.idx === parseInt(m[2], 10)) : null;
       }
 
+      function categorizeCostLine(label, poiCat) {
+        const L = label || '';
+        if (/机票|航班|大交通/.test(L)) return 'flights';
+        if (/地铁|公交|打车|驾车|步行|骑行|交通/.test(L)) return 'transport_local';
+        if (/午餐|晚餐|早餐|餐饮/.test(L) || poiCat === 'food') return 'food';
+        if (/住宿|酒店/.test(L)) return 'hotel';
+        if (/门票|预约|船票|讲解|体验|参观/.test(L)) return 'tickets';
+        if (poiCat === 'shopping') return null;
+        return 'tickets';
+      }
+
+      function computeBudgetSummaryFromTrip() {
+        const ps = D.party_size || 1;
+        const currency = (D.hotel && D.hotel.price && D.hotel.price.currency) || 'CNY';
+        const cats = {
+          transport_local: { min: 0, max: 0 },
+          food: { min: 0, max: 0 },
+          tickets: { min: 0, max: 0 },
+          hotel: { min: 0, max: 0 },
+          flights: { min: 0, max: 0 },
+        };
+        let countedFlight = false;
+
+        (D.days || []).forEach((day, dayArrIdx) => {
+          const mealsUsed = {};
+          const pendingMeals = [];
+          if (day.meals) {
+            ['breakfast', 'lunch', 'dinner'].forEach(type => {
+              if (day.meals[type] && day.meals[type].main) pendingMeals.push(type);
+            });
+          }
+          (day.pois || []).forEach((p, poiArrIdx) => {
+            const ctx = buildSlotContext(day, p, poiArrIdx, dayArrIdx, mealsUsed, pendingMeals);
+            if (ctx.matchedMealType) mealsUsed[ctx.matchedMealType] = true;
+            const items = buildSlotCostItems(day, p, ctx);
+            items.lines.forEach(line => {
+              if (line.userEditable || (line.price && line.price.user_editable)) return;
+              const cat = categorizeCostLine(line.label, p.cat);
+              if (!cat) return;
+              const t = priceTotals(line._resolvedPrice || line.price);
+              if (!t) return;
+              cats[cat].min += t.tmin;
+              cats[cat].max += t.tmax;
+              if (cat === 'flights') countedFlight = true;
+            });
+          });
+        });
+
+        const hotelT = priceTotals(D.hotel && D.hotel.price);
+        if (hotelT) {
+          cats.hotel.min += hotelT.tmin;
+          cats.hotel.max += hotelT.tmax;
+        }
+
+        (D.prebook || []).forEach(pb => {
+          const t = priceTotals(pb.price);
+          if (!t) return;
+          const item = pb.item || '';
+          if (/机票|航班/.test(item)) {
+            if (!countedFlight) {
+              cats.flights.min += t.tmin;
+              cats.flights.max += t.tmax;
+            }
+            countedFlight = true;
+          } else if (/船票|门票/.test(item)) {
+            cats.tickets.min += t.tmin;
+            cats.tickets.max += t.tmax;
+          }
+        });
+
+        let totalMin = 0, totalMax = 0;
+        Object.values(cats).forEach(c => { totalMin += c.min; totalMax += c.max; });
+
+        const by_category = {};
+        if (cats.transport_local.min || cats.transport_local.max) by_category.transport_local = { ...cats.transport_local };
+        if (cats.food.min || cats.food.max) by_category.food = { ...cats.food };
+        if (cats.tickets.min || cats.tickets.max) by_category.tickets = { ...cats.tickets };
+        if (cats.hotel.min || cats.hotel.max) {
+          by_category.hotel = { ...cats.hotel };
+          const nights = D.hotel && D.hotel.price && D.hotel.price.quantity;
+          if (nights) by_category.hotel.nights = nights;
+        }
+        if (cats.flights.min || cats.flights.max) {
+          by_category.flights = { ...cats.flights, note: '往返机票（时间轴/prebook 汇总）' };
+        }
+
+        const gaps = [];
+        if (D.hotel && !hotelT) gaps.push('住宿');
+        if ((D.prebook || []).some(pb => /机票|航班/.test(pb.item || '')) && !countedFlight && !(cats.flights.min || cats.flights.max)) {
+          gaps.push('机票');
+        }
+
+        return {
+          currency,
+          by_category,
+          total_min: totalMin,
+          total_max: totalMax,
+          per_person_min: totalMin / ps,
+          per_person_max: totalMax / ps,
+          disclaimer: gaps.length ? `⚠️ 以下大项缺标价：${gaps.join('、')}` : null,
+          _auto: true,
+        };
+      }
+
       function sumLineItemPrices() {
         let min = 0, max = 0;
         (D.days || []).forEach((day, dayArrIdx) => {
@@ -4343,8 +4444,9 @@
         const badge = document.getElementById('budget-total-badge');
         if (!el) return;
         const ps = D.party_size || 1;
-        const bs = D.budget_summary;
-        const line = sumLineItemPrices();
+        const bs = (D.budget_summary && D.budget_summary.total_min != null)
+          ? D.budget_summary
+          : computeBudgetSummaryFromTrip();
         const catLabels = {
           transport_local: '市内交通',
           food: '餐饮',
@@ -4353,36 +4455,26 @@
           flights: '大交通（机票等）',
         };
         let html = '';
-        let totalMin, totalMax, isFallback = false;
+        let totalMin = bs.total_min;
+        let totalMax = bs.total_max != null ? bs.total_max : bs.total_min;
 
-        if (bs && bs.total_min != null) {
-          totalMin = bs.total_min;
-          totalMax = bs.total_max != null ? bs.total_max : bs.total_min;
-          if (bs.by_category) {
-            Object.keys(catLabels).forEach(k => {
-              const c = bs.by_category[k];
-              if (!c || c.min == null) return;
-              const cmax = c.max != null ? c.max : c.min;
-              const note = c.note ? `（${esc(c.note)}）` : (c.nights ? `（${c.nights} 晚）` : '');
-              html += `<div class="budget-row"><span>${catLabels[k]}${note}</span><span>${formatMoney(c.min, bs.currency)}${cmax !== c.min ? '–' + formatMoney(cmax, bs.currency) : ''}</span></div>`;
-            });
-          }
-          html += `<div class="budget-row budget-total-line"><span>全程合计（${ps} 人）</span><span>${formatMoney(totalMin, bs.currency)}${totalMax !== totalMin ? '–' + formatMoney(totalMax, bs.currency) : ''}</span></div>`;
-          if (bs.per_person_min != null) {
-            html += `<div class="budget-row"><span>人均</span><span>${formatMoney(bs.per_person_min, bs.currency)}${bs.per_person_max !== bs.per_person_min ? '–' + formatMoney(bs.per_person_max, bs.currency) : ''}</span></div>`;
-          }
-          if (bs.disclaimer) {
-            html += `<p class="budget-disclaimer">${esc(bs.disclaimer)}</p>`;
-          }
-        } else {
-          isFallback = true;
-          totalMin = line.min;
-          totalMax = line.max;
-          html += `<div class="budget-row"><span>时间轴已标价合计</span><span>${formatMoney(totalMin)}${totalMax !== totalMin ? '–' + formatMoney(totalMax) : ''}</span></div>`;
-          html += `<div class="budget-row"><span>人均（估）</span><span>${formatMoney(totalMin / ps)}${totalMax !== totalMin ? '–' + formatMoney(totalMax / ps) : ''}</span></div>`;
-          html += `<p class="budget-disclaimer">⚠️ 未校验 budget_summary；酒店/机票等大项可能未计入</p>`;
+        if (bs.by_category) {
+          Object.keys(catLabels).forEach(k => {
+            const c = bs.by_category[k];
+            if (!c || c.min == null) return;
+            const cmax = c.max != null ? c.max : c.min;
+            const note = c.note ? `（${esc(c.note)}）` : (c.nights ? `（${c.nights} 晚）` : '');
+            html += `<div class="budget-row"><span>${catLabels[k]}${note}</span><span>${formatMoney(c.min, bs.currency)}${cmax !== c.min ? '–' + formatMoney(cmax, bs.currency) : ''}</span></div>`;
+          });
         }
-        el.className = isFallback ? 'budget-card budget-fallback' : 'budget-card';
+        html += `<div class="budget-row budget-total-line"><span>全程合计（${ps} 人）</span><span>${formatMoney(totalMin, bs.currency)}${totalMax !== totalMin ? '–' + formatMoney(totalMax, bs.currency) : ''}</span></div>`;
+        if (bs.per_person_min != null) {
+          html += `<div class="budget-row"><span>人均</span><span>${formatMoney(bs.per_person_min, bs.currency)}${bs.per_person_max !== bs.per_person_min ? '–' + formatMoney(bs.per_person_max, bs.currency) : ''}</span></div>`;
+        }
+        if (bs.disclaimer) {
+          html += `<p class="budget-disclaimer">${esc(bs.disclaimer)}</p>`;
+        }
+        el.className = 'budget-card';
         el.innerHTML = html;
         if (badge) {
           badge.textContent = totalMax !== totalMin
