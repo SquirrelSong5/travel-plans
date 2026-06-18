@@ -722,6 +722,29 @@
       font-weight: 600;
       letter-spacing: -0.01em;
     }
+    .day-card > header .day-header-actions {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      flex-wrap: wrap;
+    }
+    .day-card > header .day-route-btn {
+      font-size: var(--fs-xs);
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+      padding: 4px 12px;
+      border-radius: 100px;
+      white-space: nowrap;
+      font-weight: 500;
+      cursor: pointer;
+      line-height: 1.4;
+    }
+    .day-card > header .day-route-btn:hover {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
     .day-card > header .weather {
       font-size: var(--fs-xs);
       color: var(--accent);
@@ -1209,7 +1232,7 @@
     </main>
 
     <footer class="bottom">
-      <p>由 <strong>travel-planner</strong> skill 生成 · 数据来源：高德 MCP / 小红书 MCP / 大众点评</p>
+      <p>由 <strong>travel-planner</strong> skill 生成 · 数据来源：高德 MCP / 小红书 MCP</p>
       <p>计划 = 参考坐标 · 天气 / 体力 / 饥饿均可覆盖</p>
     </footer>
 
@@ -15046,7 +15069,8 @@
       "reason": "攻略明确指出'贵且交通不便'"
     }
   ],
-  "guide_detailed": "## 详细攻略\n\n### 出发前必做 (3 件事)\n1. **订机票**：武汉→厦门 6/26 + 厦门→武汉 6/29（携程搜最低价）\n2. **订鼓浪屿船票**：「厦门轮渡」公众号，提前 1 天订 35 元/人 (三丘田码头下岛)\n3. **订日光岩+菽庄门票**：鼓浪屿官方公众号 50+30 元/人\n\n### Day 1 老城区烟火气\n**核心**：中山路/八市/沙坡尾 3 站串联，全部步行 1 公里内\n- **16:00 八市**（开禾路 44 号）：厦门最古老菜市场，阿杰五香（19 元）+ 满煎糕 + 海鲜摊\n- **18:00 中山路**：骑楼老街夜景，八婆婆烧仙草 + 黄则和花生汤\n- **19:30 沙坡尾艺术西区**：老避风坞+文创街区，看日落+拍照\n**避雷**：八市海鲜要找明码标价的摊位，不要跟拉客阿姨走\n\n### Day 2 鼓浪屿全天\n**动线**：邮轮中心(湖里区)→船 20 分钟→三丘田码头→日光岩→龙头路→菽庄花园→大德记浴场→皓月园→船回\n- **10:30 日光岩**（50 元）：早去避高峰，登顶 30 分钟+俯瞰全岛\n- **12:30 龙头路**：林氏海蛎煎（必试）+ 林锦记鱼丸\n- **14:00 菽庄花园**（30 元）：含钢琴博物馆免费，海上园林+四十四桥\n- **15:30 大德记浴场**：人少景美的礁石海岸，发呆位\n- **16:30 皓月园**（10-15 元）：郑成功巨型石雕像，落日绝佳位\n- **17:30 三丘田码头**：末班船 18:30 夏季\n**避雷**：蜡像馆/贝壳馆/风琴博物馆(套路)；龙头路麻糍/虾扯蛋 (贵)\n\n### Day 3 环岛路看海 (重点日)\n**核心**：12 公里海岸线，3 个免费海滩 + 1 个夜景\n- **10:00 白城沙滩**：厦大南门外最方便的海滩，涨潮前踩水\n- **12:00 沙坡尾午餐**：阿杰店沙茶面(大学路 162 号)，30-60 元/人\n- **14:00 椰风寨**：椰林+大海+木栈道，环岛路最美段\n- **16:00 黄厝海滩**：人最少，看夕阳发呆\n- **18:30 演武大桥观景台**：海上栈桥看鼓浪屿夜景\n**拍照**：椰风寨木栈道 / 黄厝礁石 / 演武大桥海平面\n\n### Day 4 集美学村 + 返程\n**核心**：地铁1号线跨海 (80 分钟) 或打车 46 分钟\n- **11:00 集美鳌园景区**（免费）：08:00-17:30，陈嘉庚墓+南洋楼+鳌园\n- **13:00 集美学村午餐**：石鼓路学生餐厅，30-60 元/人\n- **14:30 嘉庚公园/龙舟池**：南洋风建筑群，涨潮时更美\n- **15:30 出发机场**：28 分钟车程\n- **18:00 机场**：订 19:30 后航班，预留 90 分钟缓冲\n\n### 美食地图 (按区域)\n- **中山路**：八婆婆烧仙草/黄则和花生汤/大中沙茶面/月华沙茶面/鑫乌唐姜母鸭\n- **八市**：阿杰五香(担水巷 30 号)/欢欢沙茶面(开禾路 136 号)/福禄源海鲜加工\n- **沙坡尾**：阿杰店沙茶面(大学路 162 号)/涠霖甜品\n- **鼓浪屿**：林氏海蛎煎/林锦记鱼丸/小敏沙茶面(龙头路菜市场)\n- **集美**：集膳斑斓集美店(同安封蹄膀+沙茶锅)/学生餐厅\n\n### 天气备案\n- 雨天替换：鼓浪屿改室内 (钢琴博物馆+风琴博物馆)；环岛路改沙坡尾艺术西区\n- 高温预案：中午 12-14 点回酒店休息，下午 4 点后出门\n"
+  "guide_detailed": "## 详细攻略\n\n### 出发前必做 (3 件事)\n1. **订机票**：武汉→厦门 6/26 + 厦门→武汉 6/29（携程搜最低价）\n2. **订鼓浪屿船票**：「厦门轮渡」公众号，提前 1 天订 35 元/人 (三丘田码头下岛)\n3. **订日光岩+菽庄门票**：鼓浪屿官方公众号 50+30 元/人\n\n### Day 1 老城区烟火气\n**核心**：中山路/八市/沙坡尾 3 站串联，全部步行 1 公里内\n- **16:00 八市**（开禾路 44 号）：厦门最古老菜市场，阿杰五香（19 元）+ 满煎糕 + 海鲜摊\n- **18:00 中山路**：骑楼老街夜景，八婆婆烧仙草 + 黄则和花生汤\n- **19:30 沙坡尾艺术西区**：老避风坞+文创街区，看日落+拍照\n**避雷**：八市海鲜要找明码标价的摊位，不要跟拉客阿姨走\n\n### Day 2 鼓浪屿全天\n**动线**：邮轮中心(湖里区)→船 20 分钟→三丘田码头→日光岩→龙头路→菽庄花园→大德记浴场→皓月园→船回\n- **10:30 日光岩**（50 元）：早去避高峰，登顶 30 分钟+俯瞰全岛\n- **12:30 龙头路**：林氏海蛎煎（必试）+ 林锦记鱼丸\n- **14:00 菽庄花园**（30 元）：含钢琴博物馆免费，海上园林+四十四桥\n- **15:30 大德记浴场**：人少景美的礁石海岸，发呆位\n- **16:30 皓月园**（10-15 元）：郑成功巨型石雕像，落日绝佳位\n- **17:30 三丘田码头**：末班船 18:30 夏季\n**避雷**：蜡像馆/贝壳馆/风琴博物馆(套路)；龙头路麻糍/虾扯蛋 (贵)\n\n### Day 3 环岛路看海 (重点日)\n**核心**：12 公里海岸线，3 个免费海滩 + 1 个夜景\n- **10:00 白城沙滩**：厦大南门外最方便的海滩，涨潮前踩水\n- **12:00 沙坡尾午餐**：阿杰店沙茶面(大学路 162 号)，30-60 元/人\n- **14:00 椰风寨**：椰林+大海+木栈道，环岛路最美段\n- **16:00 黄厝海滩**：人最少，看夕阳发呆\n- **18:30 演武大桥观景台**：海上栈桥看鼓浪屿夜景\n**拍照**：椰风寨木栈道 / 黄厝礁石 / 演武大桥海平面\n\n### Day 4 集美学村 + 返程\n**核心**：地铁1号线跨海 (80 分钟) 或打车 46 分钟\n- **11:00 集美鳌园景区**（免费）：08:00-17:30，陈嘉庚墓+南洋楼+鳌园\n- **13:00 集美学村午餐**：石鼓路学生餐厅，30-60 元/人\n- **14:30 嘉庚公园/龙舟池**：南洋风建筑群，涨潮时更美\n- **15:30 出发机场**：28 分钟车程\n- **18:00 机场**：订 19:30 后航班，预留 90 分钟缓冲\n\n### 美食地图 (按区域)\n- **中山路**：八婆婆烧仙草/黄则和花生汤/大中沙茶面/月华沙茶面/鑫乌唐姜母鸭\n- **八市**：阿杰五香(担水巷 30 号)/欢欢沙茶面(开禾路 136 号)/福禄源海鲜加工\n- **沙坡尾**：阿杰店沙茶面(大学路 162 号)/涠霖甜品\n- **鼓浪屿**：林氏海蛎煎/林锦记鱼丸/小敏沙茶面(龙头路菜市场)\n- **集美**：集膳斑斓集美店(同安封蹄膀+沙茶锅)/学生餐厅\n\n### 天气备案\n- 雨天替换：鼓浪屿改室内 (钢琴博物馆+风琴博物馆)；环岛路改沙坡尾艺术西区\n- 高温预案：中午 12-14 点回酒店休息，下午 4 点后出门\n",
+  "trip_slug": "xiamen-2026-06-25"
 };
   </script>
 
@@ -15193,6 +15217,148 @@
         const fromName = encodeURIComponent(naviPlaceName(from) || '起点');
         const toName = encodeURIComponent(naviPlaceName(to) || '终点');
         return `https://uri.amap.com/navigation?from=${f.lng},${f.lat},${fromName}&to=${t.lng},${t.lat},${toName}&mode=${amapMode(mode)}&callnative=1`;
+      }
+
+      const DAY_ROUTE_VIA_MAX = 16;
+
+      function sameRouteCoords(a, b) {
+        const ca = poiCoords(a);
+        const cb = poiCoords(b);
+        if (!ca || !cb) return false;
+        return Math.abs(ca.lng - cb.lng) < 1e-5 && Math.abs(ca.lat - cb.lat) < 1e-5;
+      }
+
+      function isHotelStop(p) {
+        if (!p) return false;
+        if (p.idx === 0 || p.cat === 'hotel') return true;
+        if (D.hotel && D.hotel.name && p.name === D.hotel.name) return true;
+        const hotel = resolveTransportPoint({ pois: [] }, 0);
+        return hotel ? sameRouteCoords(p, hotel) : false;
+      }
+
+      function collectDayRouteStops(day) {
+        const pois = [...(day.pois || [])].sort((a, b) => a.idx - b.idx).filter(p => poiCoords(p));
+        if (!pois.length) return null;
+
+        const hotel = resolveTransportPoint(day, 0);
+        const ordered = [];
+        const pushIfNew = (p) => {
+          if (!p || !poiCoords(p)) return;
+          if (ordered.length && sameRouteCoords(p, ordered[ordered.length - 1])) return;
+          ordered.push(p);
+        };
+
+        if (!firstPoiSkipsMorningLeg(day) && findHotelLeg(day, 'morning') && hotel) {
+          pushIfNew(hotel);
+        } else if (firstPoiSkipsMorningLeg(day) && firstPoiIsHotel(day)) {
+          pushIfNew(hotel || pois[0]);
+        }
+
+        for (const p of pois) {
+          if (firstPoiSkipsMorningLeg(day) && firstPoiIsHotel(day) && isHotelStop(p) && ordered.length && sameRouteCoords(p, ordered[0])) {
+            continue;
+          }
+          pushIfNew(p);
+        }
+
+        if (!lastPoiIsDeparture(day) && findHotelLeg(day, 'evening') && hotel) {
+          pushIfNew(hotel);
+        }
+
+        if (ordered.length < 2) return null;
+
+        let vias = ordered.slice(1, -1);
+        if (vias.length > DAY_ROUTE_VIA_MAX) {
+          console.warn(`[travel-planner] Day ${day.day} 途经点超过 ${DAY_ROUTE_VIA_MAX} 个，已截断`);
+          vias = vias.slice(0, DAY_ROUTE_VIA_MAX);
+        }
+
+        return { start: ordered[0], vias, end: ordered[ordered.length - 1] };
+      }
+
+      function amapRoutePointParams(p) {
+        const c = poiCoords(p);
+        return {
+          lat: c.lat,
+          lon: c.lng,
+          name: encodeURIComponent(naviPlaceName(p) || '地点'),
+        };
+      }
+
+      function buildDayAmapWebFallback(start, vias, end) {
+        const s = poiCoords(start);
+        const e = poiCoords(end);
+        if (!s || !e) return null;
+        const sn = encodeURIComponent(naviPlaceName(start) || '起点');
+        const en = encodeURIComponent(naviPlaceName(end) || '终点');
+        let url = `https://uri.amap.com/navigation?from=${s.lng},${s.lat},${sn}&to=${e.lng},${e.lat},${en}&mode=car&callnative=1`;
+        if (vias.length) {
+          const v = poiCoords(vias[0]);
+          if (v) {
+            const vn = encodeURIComponent(naviPlaceName(vias[0]) || '途经');
+            url += `&via=${v.lng},${v.lat},${vn}`;
+          }
+        }
+        return url;
+      }
+
+      function buildDayAmapRouteUrls(start, vias, end) {
+        const s = amapRoutePointParams(start);
+        const e = amapRoutePointParams(end);
+        const viaPts = vias.map(amapRoutePointParams);
+        let common = `sourceApplication=${encodeURIComponent('travel-planner')}`
+          + `&slat=${s.lat}&slon=${s.lon}&sname=${s.name}`
+          + `&dlat=${e.lat}&dlon=${e.lon}&dname=${e.name}`
+          + '&dev=0&t=0';
+        if (viaPts.length) {
+          common += `&vian=${viaPts.length}`
+            + `&vialons=${viaPts.map(v => v.lon).join('|')}`
+            + `&vialats=${viaPts.map(v => v.lat).join('|')}`
+            + `&vianames=${viaPts.map(v => v.name).join('|')}`;
+        }
+        const web = buildDayAmapWebFallback(start, vias, end);
+        return {
+          ios: `iosamap://path?${common}`,
+          android: `amapuri://route/plan/?${common}`,
+          web,
+        };
+      }
+
+      function isMobileAmapDevice() {
+        return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      }
+
+      function openAmapDayRoute(iosUrl, androidUrl, webUrl) {
+        if (!webUrl) return;
+        if (!isMobileAmapDevice()) {
+          window.open(webUrl, '_blank', 'noopener');
+          return;
+        }
+        const nativeUrl = /iPhone|iPad|iPod/i.test(navigator.userAgent) ? iosUrl : androidUrl;
+        let timer = setTimeout(() => { window.location.href = webUrl; }, 2000);
+        const clear = () => {
+          clearTimeout(timer);
+          document.removeEventListener('visibilitychange', onVis);
+        };
+        const onVis = () => { if (document.hidden) clear(); };
+        document.addEventListener('visibilitychange', onVis);
+        window.location.href = nativeUrl;
+      }
+
+      function bindDayRouteButtons() {
+        document.querySelectorAll('[data-day-route]').forEach(btn => {
+          if (btn.dataset.bound) return;
+          btn.dataset.bound = '1';
+          btn.addEventListener('click', () => {
+            const dayNum = parseInt(btn.dataset.dayRoute, 10);
+            const day = (D.days || []).find(x => x.day === dayNum);
+            if (!day) return;
+            const route = collectDayRouteStops(day);
+            if (!route) return;
+            const urls = buildDayAmapRouteUrls(route.start, route.vias, route.end);
+            openAmapDayRoute(urls.ios, urls.android, urls.web);
+          });
+        });
       }
 
       function resolvePrebookLink(x) {
@@ -16050,13 +16216,6 @@
           const ws = p.weather_sensitive ? ' <span class="weather-sensitive">⚠️ 天气敏感</span>' : '';
           const note = p.note ? `<p class="note">${mdLite(p.note)}</p>` : '';
           const why = p.why ? `<p class="why">→ ${mdLite(p.why)}</p>` : '';
-          const links = p.links || {};
-          const linkParts = [];
-          // 删：POI 卡片"导航"按钮（v2.0.1 改：next-leg 卡片已自带导航，POI 卡片不再重复）
-          // 删：POI 卡片"小红书"按钮（v2.0.2 改：与 next-leg 导航重复，保留大众点评作餐厅维度的第三方参考）
-          if (links.dianping) linkParts.push(`<a href="${esc(links.dianping)}" target="_blank" rel="noopener">大众点评</a>`);
-          const linksHtml = linkParts.length ? `<div class="links">${linkParts.join('')}</div>` : '';
-
           const slotId = `d${d.day}-p${p.idx}`;
           const ctx = buildSlotContext(d, p, poiArrIdx, dayIdx - 1, mealsUsed, pendingMeals);
           const costItems = buildSlotCostItems(d, p, ctx);
@@ -16104,7 +16263,7 @@
                 </div>
                 <div class="place">
                   <h4><span class="slot-num">${slotNum}.</span>${esc(p.name)} <span class="cat ${esc(p.cat)}">${esc(p.cat)}</span>${ws}</h4>
-                  ${note}${why}${linksHtml}
+                  ${note}${why}
                   ${nextLegHtml}
                   ${mealLegHtml}
                 </div>
@@ -16139,11 +16298,19 @@
           }
         }
 
+        const dayRoute = collectDayRouteStops(d);
+        const dayRouteBtn = dayRoute
+          ? `<button type="button" class="day-route-btn" data-day-route="${d.day}" title="按行程顺序规划驾车路线，不等同于分段公交方案">全天路线</button>`
+          : '';
+
         document.getElementById('day-panel').innerHTML = `
           <article class="day-card">
             <header>
               <h3>Day ${d.day} · ${esc(d.date)} (${esc(d.weekday)}) · ${esc(d.region)}</h3>
-              <span class="weather">${esc(d.weather_emoji || '')} ${esc(d.weather || '')}</span>
+              <div class="day-header-actions">
+                ${dayRouteBtn}
+                <span class="weather">${esc(d.weather_emoji || '')} ${esc(d.weather || '')}</span>
+              </div>
             </header>
             <p class="theme">${esc(d.theme || '')}</p>
             <ol class="timeline">${morningLegHtml}${poiItems}</ol>
@@ -16151,6 +16318,7 @@
           </article>`;
         bindUserBudgetInputs();
         bindCostMarginInteractions();
+        bindDayRouteButtons();
       }
 
       // ===== Drawer 列表 =====
