@@ -1,0 +1,2047 @@
+{
+  "$schema": "./README.md#schema",
+  "trip_name": "厦门毕业旅行 3 人 4 天",
+  "date_range": "2026-06-26 ~ 2026-06-29",
+  "n_days": "3 泊 4 日",
+  "city": "厦门",
+  "summary": "武汉出发，鼓浪屿 + 老城区 + 环岛路看海 + 集美学村南洋风。节奏松散，每天 1-2 个主区域，留足发呆看海时间。",
+  "weather_plan": "6 月底厦门 30-33℃ + 午后雷阵雨概率高；户外看海安排上午，午后回酒店或进室内（鼓浪屿钢琴博物馆 / 沙坡尾艺术西区）。",
+  "trip_center": [
+    118.08,
+    24.46
+  ],
+  "hotel": {
+    "name": "7天优品酒店(中山路步行街店) + 家家乐酒店(中山路步行街镇邦店)",
+    "address": "厦门思明区中山路步行街周边",
+    "lng": 118.079,
+    "lat": 24.459,
+    "amap_uri": "https://uri.amap.com/marker?position=118.0790,24.4590&name=厦门中山路步行街",
+    "why": "1 大床 (7天优品连锁稳定) + 1 双床 (家家乐便宜)，均位于思明区中山路步行街。步行可达八市 / 沙坡尾 / 邮轮中心厦鼓码头，机场打车 50 分钟。",
+    "commute": [
+      {
+        "day": 1,
+        "region": "中山路 / 八市 / 沙坡尾",
+        "duration_min": 5,
+        "mode": "步行"
+      },
+      {
+        "day": 2,
+        "region": "鼓浪屿",
+        "duration_min": 13,
+        "mode": "公交/打车"
+      },
+      {
+        "day": 3,
+        "region": "环岛路海边",
+        "duration_min": 30,
+        "mode": "公交/打车"
+      },
+      {
+        "day": 4,
+        "region": "集美学村 + 机场",
+        "duration_min": 46,
+        "mode": "公交/打车"
+      }
+    ],
+    "price": {
+      "min": 180,
+      "max": 280,
+      "currency": "CNY",
+      "unit": "per_night",
+      "quantity": 2,
+      "total_min": 1080,
+      "total_max": 1680,
+      "label": "住宿",
+      "source": "ctrip-webfetch",
+      "source_ref": "携程 7 天优品 + 家家乐经济型估"
+    }
+  },
+  "days": [
+    {
+      "day": 1,
+      "date": "2026-06-26",
+      "weekday": "周五",
+      "region": "中山路 / 八市 / 沙坡尾",
+      "theme": "抵达 + 老城区烟火气",
+      "weather": "多云 32℃ / 午后阵雨",
+      "weather_emoji": "⛅",
+      "center": [
+        118.08,
+        24.46
+      ],
+      "zoom": 14,
+      "pois": [
+        {
+          "idx": 1,
+          "time": "13:00",
+          "name": "厦门高崎国际机场",
+          "cat": "transport",
+          "lng": 118.13709,
+          "lat": 24.539495,
+          "duration_min": 30,
+          "why": "出站打车或快1路 BRT 至酒店",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "到达",
+            "source": "computed",
+            "source_ref": "机票见 budget_summary"
+          },
+          "slot_costs": [
+            {
+              "label": "机票(去程)",
+              "price": {
+                "min": 600,
+                "max": 900,
+                "currency": "CNY",
+                "unit": "per_person",
+                "quantity": 3,
+                "total_min": 1800,
+                "total_max": 2700,
+                "label": "机票",
+                "source": "ctrip-webfetch",
+                "source_ref": "武汉→厦门 6/26 携程估算"
+              },
+              "attach": "arrival"
+            }
+          ],
+          "links": {
+            "amap_navi": "https://uri.amap.com/navigation?to=118.1371,24.5395&mode=car"
+          },
+          "note": "武汉→厦门航班（具体班次携程查询最便宜时段）"
+        },
+        {
+          "idx": 2,
+          "time": "14:30",
+          "name": "中山路步行街酒店入住",
+          "cat": "hotel",
+          "lng": 118.079,
+          "lat": 24.459,
+          "duration_min": 30,
+          "why": "经济型连锁 + 本地小酒店组合；步行 5-15 分钟到八市 / 沙坡尾",
+          "price": {
+            "min": 180,
+            "max": 280,
+            "currency": "CNY",
+            "unit": "per_night",
+            "quantity": 2,
+            "total_min": 360,
+            "total_max": 560,
+            "label": "房费",
+            "source": "ctrip-webfetch",
+            "source_ref": "经济型酒店估"
+          },
+          "links": {
+            "amap_navi": "https://uri.amap.com/marker?position=118.0790,24.4590&name=中山路步行街"
+          },
+          "note": "1 大床房 (7天优品连锁) + 1 双床房 (家家乐)；中山路步行街周边 200m 内"
+        },
+        {
+          "idx": 3,
+          "time": "16:00",
+          "name": "第八市场(八市)",
+          "cat": "food",
+          "lng": 118.075017,
+          "lat": 24.457902,
+          "duration_min": 60,
+          "why": "厦门最古老菜市场；阿杰五香 + 海鲜大排档",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "免费",
+            "source": "computed",
+            "source_ref": "免费"
+          },
+          "slot_costs": [
+            {
+              "label": "晚餐",
+              "price": {
+                "min": 30,
+                "max": 60,
+                "currency": "CNY",
+                "unit": "per_person",
+                "quantity": 3,
+                "total_min": 90,
+                "total_max": 180,
+                "label": "餐饮",
+                "source": "amap-mcp",
+                "source_ref": "八市小吃人均估"
+              }
+            }
+          ],
+          "links": {
+            "amap_navi": "https://uri.amap.com/navigation?to=118.0750,24.4579&mode=walk"
+          },
+          "note": "开禾路 44 号；老厦门烟火气，海鲜 / 五香 / 满煎糕"
+        },
+        {
+          "idx": 4,
+          "time": "18:00",
+          "name": "中山路步行街",
+          "cat": "shopping",
+          "lng": 118.082,
+          "lat": 24.46,
+          "duration_min": 60,
+          "why": "步行 5 分钟到八市；夜景好",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "免费",
+            "source": "computed",
+            "source_ref": "免费"
+          },
+          "links": {
+            "amap_navi": "https://uri.amap.com/navigation?to=118.0820,24.4600&mode=walk"
+          },
+          "note": "骑楼老街；八婆婆烧仙草 / 黄则和花生汤"
+        },
+        {
+          "idx": 5,
+          "time": "19:30",
+          "name": "沙坡尾艺术西区",
+          "cat": "culture",
+          "lng": 118.087587,
+          "lat": 24.437609,
+          "duration_min": 60,
+          "why": "公交/打车 15 分钟；彩色门头出片",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "免费",
+            "source": "computed",
+            "source_ref": "免费"
+          },
+          "links": {
+            "amap_navi": "https://uri.amap.com/navigation?to=118.0876,24.4376&mode=walk"
+          },
+          "note": "沙坡尾 60 号；老厦门避风坞 + 文创街区，看日落 + 拍照"
+        }
+      ],
+      "transports": [
+        {
+          "from_idx": 1,
+          "to_idx": 2,
+          "mode": "driving",
+          "duration_min": 51,
+          "description": "驾车 51 分钟 / 13.8 公里 (机场→中山路)",
+          "distance_m": 13767,
+          "path": [
+            [
+              118.137,
+              24.5395
+            ],
+            [
+              118.11,
+              24.5
+            ],
+            [
+              118.08,
+              24.46
+            ]
+          ],
+          "source": "amap-mcp",
+          "fare": {
+            "min": 50,
+            "max": 70,
+            "currency": "CNY",
+            "unit": "per_car",
+            "quantity": 1,
+            "total_min": 50,
+            "total_max": 70,
+            "label": "打车",
+            "source": "amap-mcp"
+          }
+        },
+        {
+          "from_idx": 2,
+          "to_idx": 3,
+          "mode": "walking",
+          "duration_min": 12,
+          "description": "步行 12 分钟 / 950 米 (酒店→八市)",
+          "distance_m": 950,
+          "path": [
+            [
+              118.079,
+              24.459
+            ],
+            [
+              118.077,
+              24.458
+            ],
+            [
+              118.075,
+              24.458
+            ]
+          ],
+          "source": "amap-mcp",
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "步行",
+            "source": "computed"
+          }
+        },
+        {
+          "from_idx": 3,
+          "to_idx": 4,
+          "mode": "walking",
+          "duration_min": 8,
+          "description": "步行 8 分钟 / 600 米 (八市→中山路)",
+          "distance_m": 600,
+          "path": [
+            [
+              118.075,
+              24.458
+            ],
+            [
+              118.078,
+              24.459
+            ],
+            [
+              118.082,
+              24.46
+            ]
+          ],
+          "source": "amap-mcp",
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "步行",
+            "source": "computed"
+          }
+        },
+        {
+          "from_idx": 4,
+          "to_idx": 5,
+          "mode": "transit",
+          "duration_min": 18,
+          "description": "公交/打车 18 分钟 (中山路→沙坡尾)",
+          "distance_m": 3500,
+          "path": [
+            [
+              118.082,
+              24.46
+            ],
+            [
+              118.085,
+              24.45
+            ],
+            [
+              118.0876,
+              24.4376
+            ]
+          ],
+          "source": "amap-mcp",
+          "fare": {
+            "min": 2,
+            "max": 20,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 6,
+            "total_max": 60,
+            "label": "公交/打车",
+            "source": "amap-mcp"
+          }
+        },
+        {
+          "from_idx": 5,
+          "to_idx": 0,
+          "mode": "transit",
+          "duration_min": 18,
+          "description": "公交/打车 18 分钟 (沙坡尾→酒店)",
+          "distance_m": 3500,
+          "path": [
+            [
+              118.0876,
+              24.4376
+            ],
+            [
+              118.085,
+              24.45
+            ],
+            [
+              118.079,
+              24.459
+            ]
+          ],
+          "source": "amap-mcp",
+          "fare": {
+            "min": 2,
+            "max": 20,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 6,
+            "total_max": 60,
+            "label": "公交/打车",
+            "source": "amap-mcp"
+          }
+        }
+      ],
+      "meals": {
+        "lunch": {
+          "main": {
+            "name": "机场便餐",
+            "why": "航班时段可能没正餐",
+            "price": {
+              "min": 30,
+              "max": 50,
+              "currency": "CNY",
+              "unit": "per_person",
+              "quantity": 3,
+              "total_min": 90,
+              "total_max": 150,
+              "label": "午餐",
+              "source": "amap-mcp",
+              "source_ref": "机场便餐估"
+            }
+          }
+        },
+        "dinner": {
+          "main": {
+            "name": "八市阿杰五香 + 欢欢沙茶面",
+            "why": "厦门老字号；五香 19元 + 沙茶面 35元 人均",
+            "price": {
+              "min": 30,
+              "max": 60,
+              "currency": "CNY",
+              "unit": "per_person",
+              "quantity": 3,
+              "total_min": 90,
+              "total_max": 180,
+              "label": "晚餐",
+              "source": "amap-mcp"
+            }
+          },
+          "alt": {
+            "name": "黄则和花生汤 + 八婆婆烧仙草",
+            "why": "中山路老字号，甜汤"
+          }
+        }
+      }
+    },
+    {
+      "day": 2,
+      "date": "2026-06-27",
+      "weekday": "周六",
+      "region": "鼓浪屿",
+      "theme": "鼓浪屿全天慢逛（看海重点）",
+      "weather": "多云 33℃ / 阵雨概率 30%",
+      "weather_emoji": "⛅",
+      "center": [
+        118.068,
+        24.443
+      ],
+      "zoom": 15,
+      "pois": [
+        {
+          "idx": 1,
+          "time": "09:30",
+          "name": "厦门邮轮中心厦鼓码头",
+          "cat": "transport",
+          "lng": 118.074613,
+          "lat": 24.481614,
+          "duration_min": 30,
+          "why": "游客主码头；早去避开高峰",
+          "price": {
+            "min": 35,
+            "max": 35,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 105,
+            "total_max": 105,
+            "label": "船票",
+            "source": "ctrip-webfetch",
+            "source_ref": "鼓浪屿船票 35元/人"
+          },
+          "links": {
+            "amap_navi": "https://uri.amap.com/navigation?to=118.0746,24.4816&mode=car"
+          },
+          "note": "打车/公交 13 分钟到邮轮中心；提前订鼓浪屿船票 (35 元)"
+        },
+        {
+          "idx": 2,
+          "time": "10:30",
+          "name": "鼓浪屿 - 日光岩",
+          "cat": "sight",
+          "lng": 118.06702,
+          "lat": 24.444695,
+          "duration_min": 90,
+          "why": "鼓浪屿标志；登高 30 分钟 + 拍照",
+          "price": {
+            "min": 50,
+            "max": 60,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 150,
+            "total_max": 180,
+            "label": "门票",
+            "source": "ctrip-webfetch",
+            "source_ref": "日光岩门票 50-60元"
+          },
+          "links": {
+            "amap_navi": "https://uri.amap.com/navigation?to=118.0670,24.4447&mode=walk"
+          },
+          "note": "晃岩路 66 号；登顶俯瞰全岛 (门票 50元)；早去人少",
+          "weather_sensitive": true,
+          "indoor_backup": "鼓浪屿钢琴博物馆 (港仔后路 7 号)"
+        },
+        {
+          "idx": 3,
+          "time": "12:30",
+          "name": "龙头路小吃街",
+          "cat": "food",
+          "lng": 118.069,
+          "lat": 24.443,
+          "duration_min": 60,
+          "why": "岛上商业街；吃饱再逛",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "免费",
+            "source": "computed",
+            "source_ref": "免费"
+          },
+          "slot_costs": [
+            {
+              "label": "午餐",
+              "price": {
+                "min": 40,
+                "max": 80,
+                "currency": "CNY",
+                "unit": "per_person",
+                "quantity": 3,
+                "total_min": 120,
+                "total_max": 240,
+                "label": "餐饮",
+                "source": "amap-mcp",
+                "source_ref": "龙头路小吃人均估"
+              }
+            }
+          ],
+          "links": {
+            "amap_navi": "https://uri.amap.com/navigation?to=118.0690,24.4430&mode=walk"
+          },
+          "note": "鼓浪屿小吃集中地；林氏海蛎煎 / 林锦记鱼丸"
+        },
+        {
+          "idx": 4,
+          "time": "14:00",
+          "name": "菽庄花园 + 钢琴博物馆",
+          "cat": "sight",
+          "lng": 118.06952,
+          "lat": 24.439035,
+          "duration_min": 60,
+          "why": "园内有钢琴博物馆 (免费)；看海",
+          "price": {
+            "min": 30,
+            "max": 30,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 90,
+            "total_max": 90,
+            "label": "门票",
+            "source": "ctrip-webfetch",
+            "source_ref": "菽庄花园 30元/人"
+          },
+          "links": {
+            "amap_navi": "https://uri.amap.com/navigation?to=118.0695,24.4390&mode=walk"
+          },
+          "note": "鼓浪屿东南角；海上园林 + 钢琴博物馆 (港仔后路 7 号, 08:30-18:00)",
+          "weather_sensitive": true,
+          "indoor_backup": "鼓浪屿风琴博物馆 (鼓新路 43 号)"
+        },
+        {
+          "idx": 5,
+          "time": "15:30",
+          "name": "大德记浴场 (海滨)",
+          "cat": "sight",
+          "lng": 118.07,
+          "lat": 24.438,
+          "duration_min": 45,
+          "why": "人少景美；海边发呆",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "免费",
+            "source": "computed",
+            "source_ref": "免费"
+          },
+          "links": {
+            "amap_navi": "https://uri.amap.com/navigation?to=118.0700,24.4380&mode=walk"
+          },
+          "note": "鼓浪屿东岸海边；礁石 + 沙滩 + 远眺日光岩",
+          "weather_sensitive": true,
+          "indoor_backup": "鼓浪屿管风琴艺术中心 (三明路 1-4 号)"
+        },
+        {
+          "idx": 6,
+          "time": "16:30",
+          "name": "皓月园 (郑成功雕像)",
+          "cat": "sight",
+          "lng": 118.071,
+          "lat": 24.443,
+          "duration_min": 45,
+          "why": "海边+人文；看落日绝佳位",
+          "price": {
+            "min": 10,
+            "max": 15,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 30,
+            "total_max": 45,
+            "label": "门票",
+            "source": "ctrip-webfetch",
+            "source_ref": "皓月园 10-15元"
+          },
+          "links": {
+            "amap_navi": "https://uri.amap.com/navigation?to=118.0710,24.4430&mode=walk"
+          },
+          "note": "鼓浪屿东部；郑成功巨型石雕像 + 临海观景"
+        },
+        {
+          "idx": 7,
+          "time": "17:30",
+          "name": "三丘田码头 (离岛)",
+          "cat": "transport",
+          "lng": 118.069,
+          "lat": 24.448,
+          "duration_min": 30,
+          "why": "末班船 17:40 冬季 / 18:30 夏季；赶不上可走内厝澳码头",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "免费",
+            "source": "computed",
+            "source_ref": "免费"
+          },
+          "links": {
+            "amap_navi": "https://uri.amap.com/navigation?to=118.0690,24.4480&mode=walk"
+          },
+          "note": "鼓浪屿北端码头；返厦门本岛"
+        }
+      ],
+      "transports": [
+        {
+          "from_idx": 0,
+          "to_idx": 1,
+          "mode": "driving",
+          "duration_min": 13,
+          "description": "酒店打车 13 分钟至邮轮中心厦鼓码头",
+          "distance_m": 3013,
+          "path": [
+            [
+              118.079,
+              24.459
+            ],
+            [
+              118.077,
+              24.47
+            ],
+            [
+              118.0746,
+              24.4816
+            ]
+          ],
+          "source": "amap-mcp",
+          "fare": {
+            "min": 15,
+            "max": 25,
+            "currency": "CNY",
+            "unit": "per_car",
+            "quantity": 1,
+            "total_min": 15,
+            "total_max": 25,
+            "label": "打车",
+            "source": "amap-mcp"
+          }
+        },
+        {
+          "from_idx": 1,
+          "to_idx": 2,
+          "mode": "ferry",
+          "duration_min": 20,
+          "description": "轮渡 20 分钟 (邮轮中心→三丘田码头)",
+          "distance_m": 1500,
+          "path": [
+            [
+              118.0746,
+              24.4816
+            ],
+            [
+              118.071,
+              24.465
+            ],
+            [
+              118.069,
+              24.448
+            ]
+          ],
+          "source": "amap-mcp",
+          "fare": {
+            "min": 35,
+            "max": 35,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 105,
+            "total_max": 105,
+            "label": "船票",
+            "source": "ctrip-webfetch"
+          }
+        },
+        {
+          "from_idx": 2,
+          "to_idx": 3,
+          "mode": "walking",
+          "duration_min": 15,
+          "description": "日光岩步行至龙头路 15 分钟",
+          "distance_m": 800,
+          "path": [
+            [
+              118.067,
+              24.4447
+            ],
+            [
+              118.068,
+              24.4438
+            ],
+            [
+              118.069,
+              24.443
+            ]
+          ],
+          "source": "amap-mcp",
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "步行",
+            "source": "computed"
+          }
+        },
+        {
+          "from_idx": 3,
+          "to_idx": 4,
+          "mode": "walking",
+          "duration_min": 12,
+          "description": "龙头路步行至菽庄花园 12 分钟",
+          "distance_m": 600,
+          "path": [
+            [
+              118.069,
+              24.443
+            ],
+            [
+              118.0695,
+              24.441
+            ],
+            [
+              118.0695,
+              24.439
+            ]
+          ],
+          "source": "amap-mcp",
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "步行",
+            "source": "computed"
+          }
+        },
+        {
+          "from_idx": 4,
+          "to_idx": 5,
+          "mode": "walking",
+          "duration_min": 6,
+          "description": "菽庄花园步行至大德记浴场 6 分钟",
+          "distance_m": 300,
+          "path": [
+            [
+              118.0695,
+              24.439
+            ],
+            [
+              118.07,
+              24.4385
+            ],
+            [
+              118.07,
+              24.438
+            ]
+          ],
+          "source": "amap-mcp",
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "步行",
+            "source": "computed"
+          }
+        },
+        {
+          "from_idx": 5,
+          "to_idx": 6,
+          "mode": "walking",
+          "duration_min": 10,
+          "description": "大德记浴场步行至皓月园 10 分钟",
+          "distance_m": 500,
+          "path": [
+            [
+              118.07,
+              24.438
+            ],
+            [
+              118.071,
+              24.44
+            ],
+            [
+              118.071,
+              24.443
+            ]
+          ],
+          "source": "amap-mcp",
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "步行",
+            "source": "computed"
+          }
+        },
+        {
+          "from_idx": 6,
+          "to_idx": 7,
+          "mode": "walking",
+          "duration_min": 12,
+          "description": "皓月园步行至三丘田码头 12 分钟",
+          "distance_m": 700,
+          "path": [
+            [
+              118.071,
+              24.443
+            ],
+            [
+              118.07,
+              24.446
+            ],
+            [
+              118.069,
+              24.448
+            ]
+          ],
+          "source": "amap-mcp",
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "步行",
+            "source": "computed"
+          }
+        },
+        {
+          "from_idx": 7,
+          "to_idx": 0,
+          "mode": "driving",
+          "duration_min": 13,
+          "description": "邮轮中心打车 13 分钟回中山路酒店",
+          "distance_m": 3013,
+          "path": [
+            [
+              118.069,
+              24.448
+            ],
+            [
+              118.074,
+              24.475
+            ],
+            [
+              118.079,
+              24.459
+            ]
+          ],
+          "source": "amap-mcp",
+          "fare": {
+            "min": 15,
+            "max": 25,
+            "currency": "CNY",
+            "unit": "per_car",
+            "quantity": 1,
+            "total_min": 15,
+            "total_max": 25,
+            "label": "打车",
+            "source": "amap-mcp"
+          }
+        }
+      ],
+      "meals": {
+        "lunch": {
+          "main": {
+            "name": "龙头路小吃 (林氏海蛎煎 + 林锦记鱼丸)",
+            "why": "鼓浪屿老字号",
+            "price": {
+              "min": 40,
+              "max": 80,
+              "currency": "CNY",
+              "unit": "per_person",
+              "quantity": 3,
+              "total_min": 120,
+              "total_max": 240,
+              "label": "午餐",
+              "source": "amap-mcp",
+              "source_ref": "鼓浪屿龙头路人均估"
+            }
+          }
+        },
+        "dinner": {
+          "main": {
+            "name": "鑫乌唐姜母鸭 + 月华沙茶面",
+            "why": "中山路附近，厦门特色",
+            "price": {
+              "min": 50,
+              "max": 90,
+              "currency": "CNY",
+              "unit": "per_person",
+              "quantity": 3,
+              "total_min": 150,
+              "total_max": 270,
+              "label": "晚餐",
+              "source": "amap-mcp",
+              "source_ref": "中山路姜母鸭+沙茶面人均估"
+            }
+          }
+        }
+      }
+    },
+    {
+      "day": 3,
+      "date": "2026-06-28",
+      "weekday": "周日",
+      "region": "环岛路 / 海边",
+      "theme": "看海发呆一整天",
+      "weather": "多云 32℃ / 海风",
+      "weather_emoji": "🌊",
+      "center": [
+        118.13,
+        24.435
+      ],
+      "zoom": 13,
+      "pois": [
+        {
+          "idx": 1,
+          "time": "10:00",
+          "name": "白城沙滩 (环岛路起点)",
+          "cat": "sight",
+          "lng": 118.100875,
+          "lat": 24.432281,
+          "duration_min": 90,
+          "why": "上午先来，赶在涨潮前看海；适合踩水拍照",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "免费",
+            "source": "computed",
+            "source_ref": "免费"
+          },
+          "links": {
+            "amap_navi": "https://uri.amap.com/navigation?to=118.1009,24.4323&mode=transit"
+          },
+          "note": "大学路；厦大白城门外；近市区最方便的海滩",
+          "weather_sensitive": true,
+          "indoor_backup": "沙坡尾艺术西区 (室内文创街区)"
+        },
+        {
+          "idx": 2,
+          "time": "12:00",
+          "name": "沙坡尾 (大学路) 午餐",
+          "cat": "food",
+          "lng": 118.087587,
+          "lat": 24.437609,
+          "duration_min": 75,
+          "why": "公交回沙坡尾吃午餐；老城区文创街区",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "免费",
+            "source": "computed",
+            "source_ref": "免费"
+          },
+          "slot_costs": [
+            {
+              "label": "午餐",
+              "price": {
+                "min": 35,
+                "max": 60,
+                "currency": "CNY",
+                "unit": "per_person",
+                "quantity": 3,
+                "total_min": 105,
+                "total_max": 180,
+                "label": "餐饮",
+                "source": "amap-mcp",
+                "source_ref": "沙坡尾沙茶面人均"
+              }
+            }
+          ],
+          "links": {
+            "amap_navi": "https://uri.amap.com/navigation?to=118.0876,24.4376&mode=transit"
+          },
+          "note": "大学路 162 号；阿杰店沙茶面沙坡尾分店"
+        },
+        {
+          "idx": 3,
+          "time": "14:00",
+          "name": "椰风寨",
+          "cat": "sight",
+          "lng": 118.161867,
+          "lat": 24.442613,
+          "duration_min": 90,
+          "why": "环岛路最美一段；人少发呆看海",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "免费",
+            "source": "computed",
+            "source_ref": "免费"
+          },
+          "links": {
+            "amap_navi": "https://uri.amap.com/navigation?to=118.1619,24.4426&mode=transit"
+          },
+          "note": "环岛南路 4567-22 号；椰林 + 大海 + 木栈道",
+          "weather_sensitive": true,
+          "indoor_backup": "曾厝垵文创村 (室内小逛)"
+        },
+        {
+          "idx": 4,
+          "time": "16:00",
+          "name": "黄厝海滩",
+          "cat": "sight",
+          "lng": 118.18,
+          "lat": 24.45,
+          "duration_min": 90,
+          "why": "人比椰风寨更少；看夕阳发呆",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "免费",
+            "source": "computed",
+            "source_ref": "免费"
+          },
+          "links": {
+            "amap_navi": "https://uri.amap.com/navigation?to=118.1800,24.4500&mode=transit"
+          },
+          "note": "环岛路东段；日出最佳观赏点（也可看日落）",
+          "weather_sensitive": true,
+          "indoor_backup": "溪头下社 (近椰风寨，文创小街)"
+        },
+        {
+          "idx": 5,
+          "time": "18:30",
+          "name": "演武大桥观景台",
+          "cat": "sight",
+          "lng": 118.097,
+          "lat": 24.435,
+          "duration_min": 30,
+          "why": "回程路过；海上看鼓浪屿夜景",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "免费",
+            "source": "computed",
+            "source_ref": "免费"
+          },
+          "links": {
+            "amap_navi": "https://uri.amap.com/navigation?to=118.0970,24.4350&mode=transit"
+          },
+          "note": "演武大桥靠海侧人行栈桥；夜景观赏"
+        }
+      ],
+      "transports": [
+        {
+          "from_idx": 0,
+          "to_idx": 1,
+          "mode": "transit",
+          "duration_min": 30,
+          "description": "酒店公交/打车至白城沙滩 30 分钟",
+          "distance_m": 4500,
+          "path": [
+            [
+              118.079,
+              24.459
+            ],
+            [
+              118.09,
+              24.445
+            ],
+            [
+              118.1009,
+              24.4323
+            ]
+          ],
+          "source": "amap-mcp",
+          "fare": {
+            "min": 3,
+            "max": 20,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 9,
+            "total_max": 60,
+            "label": "公交/打车",
+            "source": "amap-mcp"
+          }
+        },
+        {
+          "from_idx": 1,
+          "to_idx": 2,
+          "mode": "transit",
+          "duration_min": 15,
+          "description": "白城沙滩公交/打车至沙坡尾 15 分钟",
+          "distance_m": 2200,
+          "path": [
+            [
+              118.1009,
+              24.4323
+            ],
+            [
+              118.095,
+              24.435
+            ],
+            [
+              118.0876,
+              24.4376
+            ]
+          ],
+          "source": "amap-mcp",
+          "fare": {
+            "min": 2,
+            "max": 15,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 6,
+            "total_max": 45,
+            "label": "公交/打车",
+            "source": "amap-mcp"
+          }
+        },
+        {
+          "from_idx": 2,
+          "to_idx": 3,
+          "mode": "transit",
+          "duration_min": 35,
+          "description": "沙坡尾公交/打车至椰风寨 35 分钟",
+          "distance_m": 9000,
+          "path": [
+            [
+              118.0876,
+              24.4376
+            ],
+            [
+              118.115,
+              24.432
+            ],
+            [
+              118.1619,
+              24.4426
+            ]
+          ],
+          "source": "amap-mcp",
+          "fare": {
+            "min": 5,
+            "max": 35,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 15,
+            "total_max": 105,
+            "label": "公交/打车",
+            "source": "amap-mcp"
+          }
+        },
+        {
+          "from_idx": 3,
+          "to_idx": 4,
+          "mode": "transit",
+          "duration_min": 15,
+          "description": "椰风寨公交至黄厝海滩 15 分钟",
+          "distance_m": 3500,
+          "path": [
+            [
+              118.1619,
+              24.4426
+            ],
+            [
+              118.172,
+              24.439
+            ],
+            [
+              118.18,
+              24.45
+            ]
+          ],
+          "source": "amap-mcp",
+          "fare": {
+            "min": 2,
+            "max": 15,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 6,
+            "total_max": 45,
+            "label": "公交",
+            "source": "amap-mcp"
+          }
+        },
+        {
+          "from_idx": 4,
+          "to_idx": 5,
+          "mode": "transit",
+          "duration_min": 25,
+          "description": "黄厝公交/打车至演武大桥 25 分钟",
+          "distance_m": 8000,
+          "path": [
+            [
+              118.18,
+              24.45
+            ],
+            [
+              118.14,
+              24.445
+            ],
+            [
+              118.097,
+              24.435
+            ]
+          ],
+          "source": "amap-mcp",
+          "fare": {
+            "min": 3,
+            "max": 25,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 9,
+            "total_max": 75,
+            "label": "公交/打车",
+            "source": "amap-mcp"
+          }
+        },
+        {
+          "from_idx": 5,
+          "to_idx": 0,
+          "mode": "transit",
+          "duration_min": 15,
+          "description": "演武大桥公交/打车回中山路 15 分钟",
+          "distance_m": 3500,
+          "path": [
+            [
+              118.097,
+              24.435
+            ],
+            [
+              118.09,
+              24.445
+            ],
+            [
+              118.079,
+              24.459
+            ]
+          ],
+          "source": "amap-mcp",
+          "fare": {
+            "min": 2,
+            "max": 15,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 6,
+            "total_max": 45,
+            "label": "公交/打车",
+            "source": "amap-mcp"
+          }
+        }
+      ],
+      "meals": {
+        "lunch": {
+          "main": {
+            "name": "阿杰店沙茶面(沙坡尾分店)",
+            "why": "大学路 162 号；老八市地标店",
+            "price": {
+              "min": 35,
+              "max": 60,
+              "currency": "CNY",
+              "unit": "per_person",
+              "quantity": 3,
+              "total_min": 105,
+              "total_max": 180,
+              "label": "午餐",
+              "source": "amap-mcp",
+              "source_ref": "沙茶面人均"
+            }
+          }
+        },
+        "dinner": {
+          "main": {
+            "name": "老厦门八市沙茶面(名汇广场店)",
+            "why": "思明东路 70 号；中山路附近",
+            "price": {
+              "min": 40,
+              "max": 70,
+              "currency": "CNY",
+              "unit": "per_person",
+              "quantity": 3,
+              "total_min": 120,
+              "total_max": 210,
+              "label": "晚餐",
+              "source": "amap-mcp",
+              "source_ref": "沙茶面人均估"
+            }
+          }
+        }
+      }
+    },
+    {
+      "day": 4,
+      "date": "2026-06-29",
+      "weekday": "周一",
+      "region": "集美学村",
+      "theme": "集美学村南洋风 + 返程",
+      "weather": "多云 31℃",
+      "weather_emoji": "⛅",
+      "center": [
+        118.106,
+        24.568
+      ],
+      "zoom": 14,
+      "pois": [
+        {
+          "idx": 1,
+          "time": "09:30",
+          "name": "酒店退房 + 出发",
+          "cat": "transport",
+          "lng": 118.1064,
+          "lat": 24.568,
+          "duration_min": 30,
+          "why": "周一人少；地铁 1 号线可达 (80 分钟)",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "免费",
+            "source": "computed",
+            "source_ref": "免费"
+          },
+          "links": {
+            "amap_navi": "https://uri.amap.com/navigation?to=118.1064,24.5680&mode=transit"
+          },
+          "note": "退房存行李或寄送机场；打车去集美学村"
+        },
+        {
+          "idx": 2,
+          "time": "11:00",
+          "name": "集美鳌园景区 (陈嘉庚纪念胜地)",
+          "cat": "sight",
+          "lng": 118.106375,
+          "lat": 24.568005,
+          "duration_min": 120,
+          "why": "集美学村核心；南洋风格建筑群 + 海边",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "免费",
+            "source": "computed",
+            "source_ref": "免费"
+          },
+          "links": {
+            "amap_navi": "https://uri.amap.com/navigation?to=118.1064,24.5680&mode=walk"
+          },
+          "note": "鳌园路 24 号；08:00-17:30；陈嘉庚墓 + 南洋楼 + 鳌园"
+        },
+        {
+          "idx": 3,
+          "time": "13:00",
+          "name": "集美学村午餐",
+          "cat": "food",
+          "lng": 118.097,
+          "lat": 24.575,
+          "duration_min": 60,
+          "why": "集美学村本地餐厅；学生价便宜",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "免费",
+            "source": "computed",
+            "source_ref": "免费"
+          },
+          "slot_costs": [
+            {
+              "label": "午餐",
+              "price": {
+                "min": 30,
+                "max": 60,
+                "currency": "CNY",
+                "unit": "per_person",
+                "quantity": 3,
+                "total_min": 90,
+                "total_max": 180,
+                "label": "餐饮",
+                "source": "amap-mcp",
+                "source_ref": "学村餐厅人均估"
+              }
+            }
+          ],
+          "links": {
+            "amap_navi": "https://uri.amap.com/navigation?to=118.0970,24.5750&mode=walk"
+          },
+          "note": "集美学村石鼓路 / 大社；同安封蹄膀 / 沙茶面"
+        },
+        {
+          "idx": 4,
+          "time": "14:30",
+          "name": "嘉庚公园 / 龙舟池",
+          "cat": "sight",
+          "lng": 118.11,
+          "lat": 24.572,
+          "duration_min": 45,
+          "why": "陈嘉庚纪念胜地延伸；海边",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "免费",
+            "source": "computed",
+            "source_ref": "免费"
+          },
+          "links": {
+            "amap_navi": "https://uri.amap.com/navigation?to=118.1100,24.5720&mode=walk"
+          },
+          "note": "嘉庚公园 + 龙舟池；南洋风建筑群；涨潮时更美"
+        },
+        {
+          "idx": 5,
+          "time": "15:30",
+          "name": "出发去机场",
+          "cat": "transport",
+          "lng": 118.106,
+          "lat": 24.568,
+          "duration_min": 30,
+          "why": "集美学村→机场 28 分钟车程",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "免费",
+            "source": "computed",
+            "source_ref": "免费"
+          },
+          "links": {
+            "amap_navi": "https://uri.amap.com/navigation?to=118.1371,24.5395&mode=car"
+          },
+          "note": "打车 / 公交 / 地铁 1 号线转 BRT 快 1 路"
+        },
+        {
+          "idx": 6,
+          "time": "18:00",
+          "name": "厦门高崎国际机场 (返程)",
+          "cat": "transport",
+          "lng": 118.13709,
+          "lat": 24.539495,
+          "duration_min": 60,
+          "why": "周一回程票价最低",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "免费",
+            "source": "computed",
+            "source_ref": "免费"
+          },
+          "slot_costs": [
+            {
+              "label": "机票(回程)",
+              "price": {
+                "min": 500,
+                "max": 800,
+                "currency": "CNY",
+                "unit": "per_person",
+                "quantity": 3,
+                "total_min": 1500,
+                "total_max": 2400,
+                "label": "机票",
+                "source": "ctrip-webfetch",
+                "source_ref": "厦门→武汉 6/29 携程估算"
+              },
+              "attach": "departure"
+            }
+          ],
+          "note": "办理登机 + 安检；预留 90 分钟缓冲；建议订 19:30 后航班",
+          "flight_time": "19:30",
+          "end_time": "19:30"
+        },
+        {
+          "idx": 0,
+          "time": "22:00",
+          "name": "抵达武汉天河机场",
+          "cat": "transport",
+          "lng": 114.219634,
+          "lat": 30.772048,
+          "duration_min": 0,
+          "why": "飞行 2 小时；落地后回家",
+          "price": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "免费",
+            "source": "computed",
+            "source_ref": "免费"
+          },
+          "end_time": "22:00"
+        }
+      ],
+      "transports": [
+        {
+          "from_idx": 0,
+          "to_idx": 1,
+          "mode": "transit",
+          "duration_min": 46,
+          "description": "地铁 1 号线 80 分钟 / 打车 46 分钟 (中山路→集美)",
+          "distance_m": 15860,
+          "path": [
+            [
+              118.079,
+              24.459
+            ],
+            [
+              118.09,
+              24.51
+            ],
+            [
+              118.1064,
+              24.568
+            ]
+          ],
+          "source": "amap-mcp",
+          "fare": {
+            "min": 7,
+            "max": 80,
+            "currency": "CNY",
+            "unit": "per_person",
+            "quantity": 3,
+            "total_min": 21,
+            "total_max": 240,
+            "label": "地铁/打车",
+            "source": "amap-mcp"
+          }
+        },
+        {
+          "from_idx": 1,
+          "to_idx": 2,
+          "mode": "driving",
+          "duration_min": 5,
+          "description": "驾车 5 分钟 / 1.2 公里 (集美地铁站→鳌园)",
+          "distance_m": 1200,
+          "path": [
+            [
+              118.1064,
+              24.568
+            ],
+            [
+              118.106,
+              24.567
+            ],
+            [
+              118.106375,
+              24.568005
+            ]
+          ],
+          "source": "amap-mcp",
+          "fare": {
+            "min": 10,
+            "max": 15,
+            "currency": "CNY",
+            "unit": "per_car",
+            "quantity": 1,
+            "total_min": 10,
+            "total_max": 15,
+            "label": "打车",
+            "source": "amap-mcp"
+          }
+        },
+        {
+          "from_idx": 2,
+          "to_idx": 3,
+          "mode": "walking",
+          "duration_min": 18,
+          "description": "步行 12 分钟 (学村→嘉庚公园)",
+          "distance_m": 900,
+          "path": [
+            [
+              118.097,
+              24.575
+            ],
+            [
+              118.105,
+              24.573
+            ],
+            [
+              118.11,
+              24.572
+            ]
+          ],
+          "source": "amap-mcp",
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "步行",
+            "source": "computed"
+          }
+        },
+        {
+          "from_idx": 3,
+          "to_idx": 4,
+          "mode": "walking",
+          "duration_min": 12,
+          "description": "步行 12 分钟 (嘉庚公园→打车点)",
+          "distance_m": 300,
+          "path": [
+            [
+              118.11,
+              24.572
+            ],
+            [
+              118.108,
+              24.57
+            ],
+            [
+              118.106,
+              24.568
+            ]
+          ],
+          "source": "amap-mcp",
+          "fare": {
+            "min": 0,
+            "max": 0,
+            "currency": "CNY",
+            "unit": "free",
+            "quantity": 1,
+            "total_min": 0,
+            "total_max": 0,
+            "label": "步行",
+            "source": "computed"
+          }
+        },
+        {
+          "from_idx": 4,
+          "to_idx": 5,
+          "mode": "driving",
+          "duration_min": 28,
+          "description": "驾车 28 分钟 / 11 公里 (集美→机场)",
+          "distance_m": 10951,
+          "path": [
+            [
+              118.11,
+              24.572
+            ],
+            [
+              118.105,
+              24.566
+            ],
+            [
+              118.106,
+              24.568
+            ]
+          ],
+          "source": "amap-mcp",
+          "fare": {
+            "min": 40,
+            "max": 60,
+            "currency": "CNY",
+            "unit": "per_car",
+            "quantity": 1,
+            "total_min": 40,
+            "total_max": 60,
+            "label": "打车",
+            "source": "amap-mcp"
+          }
+        }
+      ],
+      "meals": {
+        "lunch": {
+          "main": {
+            "name": "集美学村本地餐厅",
+            "why": "同安封蹄膀 + 沙茶面；学生价",
+            "price": {
+              "min": 30,
+              "max": 60,
+              "currency": "CNY",
+              "unit": "per_person",
+              "quantity": 3,
+              "total_min": 90,
+              "total_max": 180,
+              "label": "午餐",
+              "source": "amap-mcp",
+              "source_ref": "学村餐厅人均估"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "prebook": [
+    {
+      "item": "国内机票（武汉 → 厦门 6/26 周五）",
+      "deadline": "出发前 2 周",
+      "url": "https://flights.ctrip.com/itinerary/oneway/wuh-xmn?date=2026-06-26",
+      "note": "建议订 12:00-14:00 到达厦门的航班；机场打车 50 分钟到酒店",
+      "price": {
+        "min": 600,
+        "max": 900,
+        "currency": "CNY",
+        "unit": "per_person",
+        "quantity": 3,
+        "total_min": 1800,
+        "total_max": 2700,
+        "label": "机票(去)",
+        "source": "ctrip-webfetch",
+        "source_ref": "武汉→厦门 6/26 携程估算"
+      }
+    },
+    {
+      "item": "国内机票（厦门 → 武汉 6/29 周一）",
+      "deadline": "出发前 2 周",
+      "url": "https://flights.ctrip.com/itinerary/oneway/xmn-wuh?date=2026-06-29",
+      "note": "建议订 19:00-21:00 航班；周一回程票价最低",
+      "price": {
+        "min": 500,
+        "max": 800,
+        "currency": "CNY",
+        "unit": "per_person",
+        "quantity": 3,
+        "total_min": 1500,
+        "total_max": 2400,
+        "label": "机票(回)",
+        "source": "ctrip-webfetch",
+        "source_ref": "厦门→武汉 6/29 携程估算"
+      }
+    },
+    {
+      "item": "7天优品酒店(中山路步行街店) - 1 大床房 3 晚",
+      "deadline": "出发前 1 周",
+      "url": "https://hotels.ctrip.com/hotels/list?cityname=%E5%8E%A6%E9%97%A8&keyword=%E4%B8%AD%E5%B1%B1%E8%B7%AF%E6%AD%A5%E8%A1%8C%E8%A1%97",
+      "note": "携程对比价；连锁品质稳定",
+      "price": {
+        "min": 180,
+        "max": 240,
+        "currency": "CNY",
+        "unit": "per_night",
+        "quantity": 3,
+        "total_min": 540,
+        "total_max": 720,
+        "label": "房费(7天)",
+        "source": "ctrip-webfetch"
+      }
+    },
+    {
+      "item": "家家乐酒店(中山路步行街镇邦店) - 1 双床房 3 晚",
+      "deadline": "出发前 1 周",
+      "url": "https://hotels.ctrip.com/hotels/list?cityname=%E5%8E%A6%E9%97%A8&keyword=%E5%AE%B6%E5%AE%B6%E4%B9%90%E9%85%92%E5%BA%97",
+      "note": "本地小酒店便宜；步行 5 分钟到 7 天优品",
+      "price": {
+        "min": 120,
+        "max": 180,
+        "currency": "CNY",
+        "unit": "per_night",
+        "quantity": 3,
+        "total_min": 360,
+        "total_max": 540,
+        "label": "房费(家家乐)",
+        "source": "ctrip-webfetch"
+      }
+    },
+    {
+      "item": "鼓浪屿船票 (邮轮中心→三丘田)",
+      "deadline": "出发前 1 天",
+      "url": "https://www.xmferry.com/",
+      "note": "35 元/人，提前在「厦门轮渡」公众号预订",
+      "price": {
+        "min": 35,
+        "max": 35,
+        "currency": "CNY",
+        "unit": "per_person",
+        "quantity": 3,
+        "total_min": 105,
+        "total_max": 105,
+        "label": "船票",
+        "source": "official"
+      }
+    },
+    {
+      "item": "日光岩门票",
+      "deadline": "出发前 1 天",
+      "url": "https://www.glyyl.com/",
+      "note": "50 元/人；提前 1 天公众号预约",
+      "price": {
+        "min": 50,
+        "max": 60,
+        "currency": "CNY",
+        "unit": "per_person",
+        "quantity": 3,
+        "total_min": 150,
+        "total_max": 180,
+        "label": "日光岩",
+        "source": "official"
+      }
+    },
+    {
+      "item": "菽庄花园门票",
+      "deadline": "出发前 1 天",
+      "url": "https://www.glyyl.com/",
+      "note": "30 元/人；含钢琴博物馆",
+      "price": {
+        "min": 30,
+        "max": 30,
+        "currency": "CNY",
+        "unit": "per_person",
+        "quantity": 3,
+        "total_min": 90,
+        "total_max": 90,
+        "label": "菽庄",
+        "source": "official"
+      }
+    }
+  ],
+  "party_size": 3,
+  "rooms": 2,
+  "xhs_destination_brief": {
+    "must_visit": [
+      "鼓浪屿",
+      "环岛路海边",
+      "八市",
+      "中山路",
+      "沙坡尾",
+      "集美学村"
+    ],
+    "skip_or_caution": [
+      "曾厝垵(吃贵坑)",
+      "鼓浪屿蜡像馆/贝壳馆",
+      "南普陀(低精力跳过)",
+      "植物园(夏季蚊虫)",
+      "环岛路路边一日游"
+    ],
+    "region_layout": {
+      "day_1": "中山路 / 八市 / 沙坡尾 (老城区)",
+      "day_2": "鼓浪屿全天",
+      "day_3": "环岛路海边 (白城-椰风寨-黄厝)",
+      "day_4": "集美学村 + 返程"
+    },
+    "pace_hints": [
+      "低精力人群每天 1 主区域",
+      "鼓浪屿需提前订船票+日光岩门票",
+      "看海重点在 Day 3 整日"
+    ],
+    "source_notes": [
+      "今天又饿了～: 厦门4天3晚不绕路不踩雷懒人版",
+      "蘇三疯: 不要抱团刚回来亲身体验",
+      "喜东东xixi: 厦门无法超越的10个地方（免费）",
+      "阿晚很哇塞: 到了厦门才知道攻略有多离谱"
+    ]
+  },
+  "weather_info": {
+    "city": "厦门",
+    "fetched_date": "2026-06-18",
+    "note": "当前为查询时天气，6/26-6/29 临近前 1 天再查；午后雷阵雨概率高"
+  },
+  "budget_summary": {
+    "currency": "CNY",
+    "by_category": {
+      "transport_flight": {
+        "min": 3300,
+        "max": 5100,
+        "note": "3 人往返机票 (携程估)"
+      },
+      "transport_local": {
+        "min": 350,
+        "max": 700,
+        "note": "市内交通 (打车/公交/BRT/船票)"
+      },
+      "food": {
+        "min": 1080,
+        "max": 1830,
+        "note": "3 人 × 4 天 (3 早酒店 / 3 午 / 4 晚)"
+      },
+      "tickets": {
+        "min": 375,
+        "max": 420,
+        "note": "鼓浪屿船票 + 日光岩 + 菽庄花园 + 皓月园"
+      },
+      "hotel": {
+        "min": 900,
+        "max": 1260,
+        "note": "2 间 × 3 晚 (7天优品 + 家家乐)"
+      }
+    },
+    "grand_total_min": 6005,
+    "grand_total_max": 9310,
+    "per_person_min": 2002,
+    "per_person_max": 3104,
+    "note": "3 人 4 天 3 晚 总预算区间 (不含购物)"
+  },
+  "deleted": [
+    {
+      "item": "南普陀寺",
+      "reason": "小红书评论指出'没必要去，没有信仰只是扫一眼拍两张'"
+    },
+    {
+      "item": "厦门大学",
+      "reason": "需提前预约；'门口打卡10分钟'评价；与低精力定位不符"
+    },
+    {
+      "item": "植物园 + 钟鼓索道",
+      "reason": "评论指出'夏天很热，蚊虫巨多'；与看海诉求重叠度低"
+    },
+    {
+      "item": "鼓浪屿蜡像馆 / 贝壳馆",
+      "reason": "小红书高赞笔记明确避雷"
+    },
+    {
+      "item": "曾厝垵住宿",
+      "reason": "攻略称'吃的很坑'；改住中山路更优"
+    },
+    {
+      "item": "鼓浪屿住宿",
+      "reason": "攻略明确指出'贵且交通不便'"
+    }
+  ]
+}
